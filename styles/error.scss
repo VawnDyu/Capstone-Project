@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* { 
+    margin: 0; padding: 0;
+    font-family: 'Poppins', calibri;
+}
+
+.main-container {
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    & > .centerbox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80%;
+        width: 30%;
+        position: relative;
+
+        @media only screen and (max-width: 500px) {
+            width: 80%;
+        }
+
+        & > .svg-container {
+            width: 270px;
+            position: relative;
+            height: 270px;
+
+            @media only screen and (max-width: 500px) {
+                height: 200px;
+                width: 200px;
+            }
+
+            & > svg {
+                width: 270px;
+                transform: translate(-5px, -80px);
+
+                @media only screen and (max-width: 500px) {
+                    width: 200px;
+                    transform: translate(-5px, -120px);
+                }
+            }
+        }
+
+        & > .messagebox {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            margin: 10px 0 20px 0;
+
+            & > h1 {
+                font-weight: 500;
+                font-size: 35px;
+                
+                @media only screen and (max-width: 500px) {
+                    font-size: 28px;
+                }
+            }
+
+            & > p {
+                font-weight: 400;
+                color: #414141;
+                font-size: 20px;
+                width: 95%;
+
+                @media only screen and (max-width: 500px) {
+                    font-size: 18px;
+                }
+            }
+        }
+
+
+        & > .buttonbox {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            & > button {
+                background-color: #4848FE;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 30px 10px 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                cursor: pointer;
+
+                @media only screen and (max-width: 500px) {
+                    padding: 8px 30px 8px 50px;
+                }
+
+                &:hover {
+                    background: darken(#4848FE, 5%);
+                }
+                
+                & > a {
+                    text-decoration: none;
+                    color: #fff;
+                    font-weight: 500;
+                    font-size: 16px;
+                    text-align: center;
+                    position: relative;
+                    cursor: pointer;
+
+                    & > span {
+                        position: absolute;
+                        left: -30px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.view-modal {
+    height: 100vh;
+    width: 100vw;
+    background-color: #00000045;
+    position: absolute;
+    top: 0; left: 0;
+    display: none;
+}
+
+.view-modal > form {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: white;
+}
+
+#show-modal {
+    display: block !important;
+}

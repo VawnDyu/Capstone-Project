@@ -1,0 +1,14 @@
+[05-Apr-2022 14:23:59 UTC] PHP Warning:  Undefined array key "percentage" in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 1086
+[05-Apr-2022 14:28:06 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.sss_table' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/secclass.php:643
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/secclass.php(643): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/SecretaryPortal/createsalary.php(7): Payroll->automaticGenerateSalary()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 643
+[05-Apr-2022 14:28:44 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.sss_table' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/secclass.php:643
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/secclass.php(643): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/SecretaryPortal/createsalary.php(7): Payroll->automaticGenerateSalary()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 643
+[05-Apr-2022 14:30:05 UTC] PHP Warning:  A non-numeric value encountered in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 719

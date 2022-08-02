@@ -1,0 +1,1860 @@
+@import 'sass/Config';
+
+.success {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: 60px;
+    border-radius: 5px;
+    background: #19C773;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: popup 4.5s ease-in-out forwards;
+
+
+    & > .icon-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+
+        
+        & > span {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align:center;
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: $bold;
+            color: #19C773;
+        }
+    }
+
+    & > p {
+        font-weight: $semibold;
+        color: #fff;
+        margin-right: 20px;
+    }
+
+    & > .closeContainer {
+        height: 100%;
+        background-color: #34D889;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten(#34D889, 5%);
+        }
+
+        & > span {
+            color: #fff;
+        }
+    }
+}
+
+.error {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: 60px;
+    border-radius: 5px;
+    background: #FF6C6C;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: popup 4.5s ease-in-out forwards;
+    z-index: 99;
+
+
+    & > .icon-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+
+        
+        & > span {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align:center;
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: $bold;
+            color: #FF6C6C;
+        }
+    }
+
+    & > p {
+        font-weight: $semibold;
+        color: #fff;
+        margin-right: 20px;
+    }
+
+    & > .closeContainer {
+        height: 100%;
+        background-color: #FF8080;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten(#FF8080, 5%);
+        }
+
+        & > span {
+            color: #fff;
+        }
+    }
+}
+
+@keyframes popup {
+    0% {
+        top: 40px;
+        opacity: 0;
+    }
+    20% {
+        top: 30px;
+        opacity: 1;
+    }
+    90% {
+        top: 30px;
+        opacity: 1;
+    }
+    100% {
+        top: 10px;
+        display: flex !important;
+        opacity: 0;
+    }
+}
+
+.main-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: $back;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-right: 30px;
+
+    @media only screen and (min-width: 1050px) {
+        padding-right: 15px;
+	}
+
+    @media only screen and (min-width: 1300px) {
+        padding-right: 30px;
+	}
+
+    @media only screen and (min-width: 1500px) {
+        padding-right: 30px;
+	}
+
+    @media only screen and (min-width: 1700px) {
+        padding-right: 30px;
+	}
+
+    // leftbar and others
+    & > .leftbar, .centerbar, .rightbar {
+        height: 100%;
+        background: $front;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    & > .leftbar {
+        width: 18%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 25px 0px 20px 30px;
+        box-sizing: border-box;
+
+        @media only screen and (min-width: 1050px) {
+            padding: 25px 0px 20px 20px;
+        }
+
+        @media only screen and (min-width: 1300px) {
+            padding: 25px 0px 20px 30px;
+        }
+
+        @media only screen and (min-width: 1500px) {
+            padding: 25px 0px 20px 30px;
+        }
+
+        @media only screen and (min-width: 1700px) {
+            padding: 25px 0px 20px 50px;
+        }
+
+        & > .logo-container {
+            height: 7%;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            @media only screen and (min-width: 1050px) {
+                transform: translateX(0px);
+            }
+    
+            @media only screen and (min-width: 1300px) {
+                transform: translateX(0px);
+            }
+    
+            @media only screen and (min-width: 1500px) {
+                transform: translateX(0px);
+            }
+    
+            @media only screen and (min-width: 1700px) {
+                transform: translateX(-10px);
+            }
+
+
+            & > .logo {
+                height: 30px;
+                width: 30px;
+                background-image: url("../img/jtdv.png");
+                background-size: cover;
+                margin-right: 10px;
+
+                @media only screen and (min-width: 1050px) {
+                    height: 30px;
+                    width: 30px;
+                }
+        
+                @media only screen and (min-width: 1300px) {
+                    height: 30px;
+                    width: 30px;
+                }
+        
+                @media only screen and (min-width: 1500px) {
+                    height: 30px;
+                    width: 30px;
+                }
+        
+                @media only screen and (min-width: 1700px) {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+
+            & > h1 {
+                font-size: 18px;
+                font-weight: $bold;
+                color: #774AB0;
+
+                @media only screen and (min-width: 1050px) {
+                    font-size: 18px;
+                }
+        
+                @media only screen and (min-width: 1300px) {
+                    font-size: 18px;
+                }
+        
+                @media only screen and (min-width: 1500px) {
+                    font-size: 18px;
+                }
+        
+                @media only screen and (min-width: 1700px) {
+                    font-size: 22px;
+                }
+            }
+        }
+
+        & > .links-container {
+            height: 88%;
+            width: 100%;
+            position: relative;
+            box-sizing: border-box;
+            padding-left: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            & > ul {
+                list-style: none;
+
+                & > li {
+                    margin-bottom: 10px;
+                    padding: 5px 0;
+                    font-weight: $semibold;
+                    position: relative;
+                    color: #B7B7B7;
+                    transition: 200ms ease-in-out;
+
+                    @media only screen and (min-width: 1050px) {
+                        font-size: 14px;
+                        padding: 5px 0;
+                    }
+
+                    @media only screen and (min-width: 1300px) {
+                        font-size: 16px;
+                        padding: 5px 0;
+                    }
+
+                    @media only screen and (min-width: 1500px) {
+                        font-size: 16px;
+                        padding: 5px 0;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        font-size: 18px;
+                        padding: 10px 0;
+                    }
+
+                    & > a {
+                        text-decoration: none;
+                        color: #B7B7B7;
+
+                        @media only screen and (min-width: 1050px) {
+                            font-size: 14px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            font-size: 16px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            font-size: 16px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            font-size: 18px;
+                        }
+                    }
+
+                    &:nth-child(1):hover {
+                        color: #000;
+
+                        &::before {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 20px;
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    &:nth-child(2):hover {
+                        color: #000;
+
+                        &::before {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 20px;
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    &:nth-child(3):hover {
+                        color: #000;
+
+                        &::before {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 4%;
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    &:nth-child(4):hover {
+
+                        &::before {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 55%;
+                            left: -38px;
+                            transform: translateY(-45%);
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    // dashboard
+                    &:nth-child(1)::before {
+                        content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 56%;
+                        transform: translateY(-50%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    // records
+                    &:nth-child(2)::before {
+                        content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 4%;
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    // manage report
+                    &:nth-child(3)::before {
+                        content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 4%;
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    // activities
+                    &:nth-child(4)::before {
+                        content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 55%;
+                        transform: translateY(-45%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    &.active-parent {
+                        color: #000;
+
+                        & > a {
+                            text-decoration: none;
+                            color: #000;
+                        }
+
+                        &::before {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 20px;
+                            transform: translateY(-50%);
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        &::after {
+                            content: '';
+                            height: 22%;
+                            width: 4px;
+                            border-radius: 4px;
+                            background: #774AB0;
+                            position: absolute;
+                            top: 27%;
+                            right: 0;
+                        }
+                    }
+                    
+                    // employee highlight
+                    
+                    &:nth-child(2) > ul > li:nth-child(1) > a {
+                        color: #000;
+                    }
+
+                    & > ul {
+                        list-style: none;
+                        padding-top: 12px;
+                        box-sizing: border-box;
+
+                        & > li {
+                            font-weight: $semibold;
+                            padding: 5px 0 5px 25px;
+                            border-left: 4px solid #8B69B6;
+
+                            @media only screen and (min-width: 1050px) {
+                                padding: 5px 0 5px 25px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                padding: 5px 0 5px 25px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                padding: 5px 0 5px 25px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                padding: 10px 0 5px 25px;
+                            }
+
+                            & > a {
+                                text-decoration: none;
+                                color: #B7B7B7;
+                                transition: 200ms ease-in-out;
+                            }
+
+                            &:hover a {
+                                color: #000;
+                            }
+
+                            &:first-child {
+                                padding-top: 0px;
+                            }
+
+                            &:last-child {
+                                padding-bottom: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // logout
+            & > div {
+                position: relative;
+                margin-bottom: 20px;
+
+                &::before {
+                    content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                    position: absolute;
+                    top: 60%;
+                    transform: translateY(-50%);
+                    left: -38px;
+                    transition: 200ms ease-in-out;
+
+                    @media only screen and (min-width: 1050px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                        left: -38px;
+                    }
+
+                    @media only screen and (min-width: 1300px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                        left: -38px;
+                    }
+
+                    @media only screen and (min-width: 1500px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                        left: -38px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=35');
+                        left: -48px;
+                    }
+                }
+
+                &:focus-within {
+
+                    &::before {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                        position: absolute;
+                        top: 60%;
+                        transform: translateY(-50%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    a {
+                        color: #000;
+                    }
+                }
+
+                &:hover {
+                    &::before {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                        position: absolute;
+                        top: 60%;
+                        transform: translateY(-50%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    a {
+                        color: #000;
+                    }
+                }
+
+                & > a {
+                    text-decoration: none;
+                    color: #B7B7B7;
+                    font-weight: $semibold;
+                    transition: 200ms ease-in-out;
+
+                    @media only screen and (min-width: 1050px) {
+                        font-size: 14px;
+                    }
+
+                    @media only screen and (min-width: 1300px) {
+                        font-size: 16px;
+                    }
+
+                    @media only screen and (min-width: 1500px) {
+                        font-size: 16px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+    
+    & > .centerbar {
+        width: 54%;
+        padding: 35px 0 20px 15px;
+        background: transparent !important;
+        // @include y-center;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        & > div {
+            background: $front;
+            width: 100%;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        & > .header-info {
+            height: 4%;
+            background: transparent !important;
+            border: none !important;
+
+            & > h1 {
+                font-size: 16px;
+                font-weight: $semibold;
+
+                @media only screen and (min-width: 1050px) {
+                    font-size: 16px;
+                }
+        
+                @media only screen and (min-width: 1300px) {
+                    font-size: 16px;
+                }
+        
+                @media only screen and (min-width: 1500px) {
+                    font-size: 16px;
+                }
+        
+                @media only screen and (min-width: 1700px) {
+                    font-size: 19px;
+                }
+            }
+        }
+
+        & > .availability-container {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            min-height: 360px;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-end;
+            background: transparent;
+
+            & > div {
+                display: flex;
+                height: 90%;
+                width: 100%;
+                border-radius: 5px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            & > .available, .unavailable {
+                width: 37.5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                & > .svg-info {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    // background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.205), rgba(0, 0, 0, 0));
+                    padding: 25px 25px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    box-sizing: border-box;
+
+                    & > h1 {
+                        font-weight: $medium;
+                        color: #fff;
+                        font-size: 26px;
+                        line-height: 35px;
+                        margin-bottom: 15px;
+                    }
+
+                    & > button {
+                        border: none;
+                        width: 55%;
+                        padding: 7px 0;
+                        border-radius: 5px;
+                        background: #f29233;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: darken(#f29233, 5%);
+                        }
+                        
+                        & > a {
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: $semibold;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            & > .available {
+                background: #5454a9;
+
+                & > object {
+                    height: 86%;
+                }
+            }
+
+            & > .unavailable {
+                background: #3F3D56;
+
+                & > object {
+                    height: 83%;
+                }
+            }
+
+            & > .next {
+                width: 25%;
+                background: #A294AC;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                & > object {
+                    height: 67%;
+                    transform: translateY(-25px);
+                }
+
+                & > .svg-info {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.405), rgba(0, 0, 0, 0));
+                    padding: 25px 25px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    box-sizing: border-box;
+
+                    & > h1 {
+                        font-weight: $medium;
+                        font-size: 26px;
+                        line-height: 35px;
+
+                        & > a {
+                            text-decoration: none;
+                            color: #fff;
+
+                            &:hover {
+                                color: darken(#fff, 15%);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        & > .employee-record {
+            min-height: 180px;
+            width: 100%;
+            // background: $front;
+            margin-top: 15px;
+            border-radius: 5px;
+
+            & > .employee-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                background: $front;
+                padding: 0px 30px;
+                box-sizing: border-box;
+                height: 40%;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+
+                @media only screen and (min-width: 1050px) {
+                    padding: 0px 20px;
+                }
+
+                @media only screen and (min-width: 1300px) {
+                    padding: 0px 30px;
+                }
+
+                @media only screen and (min-width: 1500px) {
+                    padding: 0px 30px;
+                }
+
+                & > h2 {
+                    font-size: 16px;
+                    font-weight: $semibold;
+
+                    @media only screen and (min-width: 1050px) {
+                        font-size: 16px;
+                    }
+    
+                    @media only screen and (min-width: 1300px) {
+                        font-size: 16px;
+                    }
+    
+                    @media only screen and (min-width: 1500px) {
+                        font-size: 16px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        font-size: 17px;
+                    }
+                }
+
+                & > form {
+                    
+                    & > div {
+                        width: 160px; 
+                        position: relative;
+
+                        & > input {
+                            width: 100%;
+                            padding: 2px 0;
+                            text-indent: 10px;
+                            border: 2px solid #cecece;
+                            border-radius: 5px;
+                            font-size: 12px;
+                            outline: none;
+                        }
+                    }
+
+                    & > button { display: none; }
+                }
+            }
+
+            & > .employee-content {
+                // height: 60%;
+                width: 100%;
+                position: relative;
+                padding-bottom: 21px;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+
+                &::-webkit-scrollbar {
+                    width: 0px;
+                }
+
+                & > table {
+                    padding: 0 30px;
+                    background: $front;
+                    border-collapse:separate;
+                    border-spacing:0 10px;
+
+                    @media only screen and (min-width: 1050px) {
+                        padding: 0px 20px;
+                    }
+
+                    @media only screen and (min-width: 1300px) {
+                        padding: 0px 30px;
+                    }
+
+                    @media only screen and (min-width: 1500px) {
+                        padding: 0px 30px;
+                    }
+
+                    & > thead {
+    
+                        & > tr > th {
+                            text-align: left;
+                            color: #ABABAB;
+                            font-weight: $semibold;
+                            font-size: 14px;
+
+                            @media only screen and (min-width: 1050px) {
+                                font-size: 14px;
+                            }
+            
+                            @media only screen and (min-width: 1300px) {
+                                font-size: 14px;
+                            }
+            
+                            @media only screen and (min-width: 1500px) {
+                                font-size: 14px;
+                            }
+        
+                            @media only screen and (min-width: 1700px) {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+    
+                    & > tbody {
+                        
+                        & > tr > td {
+                            font-size: 13px;
+                            font-weight: $regular;
+                            vertical-align: top;
+
+                            @media only screen and (min-width: 1050px) {
+                                font-size: 13px;
+                            }
+            
+                            @media only screen and (min-width: 1300px) {
+                                font-size: 13px;
+                            }
+            
+                            @media only screen and (min-width: 1500px) {
+                                font-size: 13px;
+                            }
+        
+                            @media only screen and (min-width: 1700px) {
+                                font-size: 15px;
+                            }
+
+                            & > .circle-with-text {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+
+                                & > .circle {
+                                    height: 7px;
+                                    width: 7px;
+                                    border-radius: 50%;
+                                    background: green;
+                                    float: left;
+                                    margin-right: 5px;
+
+                                    &.recent { background: #8EEE76; }
+                                    &.late { background: #EED476; }
+                                    &.old { background: #EA9683; }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & > .rightbar {
+        width: 28%;
+        padding-top: 30px;
+        background: transparent !important;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-sizing: border-box;
+        padding-bottom: 20px;
+        overflow-y: hidden;
+
+        & > .profile-container {
+            height: 10%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            box-sizing: border-box;
+            padding-right: 30px;
+
+            & > .profile-setter {
+                display: flex;
+                align-items: center;
+
+                & > h3 {
+                    font-size: 14px;
+                    font-weight: $medium;
+                    margin-right: 15px;
+                }
+    
+                & > a > .image-container > img {
+                    height: 33px;
+                    width: 33px;
+                    border-radius: 50%;
+                    background: rgb(102, 102, 102);
+                }
+            }
+
+            
+        }
+
+        & > .assignedguards-container {
+            height: 35%;
+            width: 100%;
+            background: $front;
+            border-radius: 5px;
+            box-sizing: border-box;
+            padding: 20px 23px 0px 23px;
+
+            & > .assignedguards-header {
+                display: flex;
+                align-items: flex-end;
+                height: 15%;
+    
+                & > h1 {
+                    font-size: 16px;
+                    font-weight: $semibold;
+
+                    @media only screen and (min-width: 1050px) {
+                        font-size: 16px;
+                    }
+    
+                    @media only screen and (min-width: 1300px) {
+                        font-size: 16px;
+                    }
+    
+                    @media only screen and (min-width: 1500px) {
+                        font-size: 18px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        font-size: 20px;
+                    }
+                }
+
+                & > a {
+                    color: #6B6B6B;
+                    font-size: 12px;
+                    font-weight: $semibold;
+
+                    &:hover {
+                        color: darken(#6B6B6B, 25%);
+                    }
+
+                    @media only screen and (min-width: 1050px) {
+                        font-size: 12px;
+                    }
+    
+                    @media only screen and (min-width: 1300px) {
+                        font-size: 12px;
+                    }
+    
+                    @media only screen and (min-width: 1500px) {
+                        font-size: 12px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            & > .assignedguards-content {
+                height: 75%;
+                width: 100%;
+                padding-top: 25px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+
+                @media only screen and (min-width: 1050px) {
+                    padding-top: 15px;
+                }
+
+                & > .assignedguard-row {
+                    margin-bottom: 15px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    line-height: 16px;
+
+                    @media only screen and (min-width: 1050px) {
+                        line-height: 16px;
+                    }
+    
+                    @media only screen and (min-width: 1300px) {
+                        line-height: 14px;
+                    }
+    
+                    @media only screen and (min-width: 1500px) {
+                        line-height: 20px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        line-height: 28px;
+                    }
+
+                    & > .assignedguard-row-text {
+                        
+                        & > p {
+                            font-size: 14px;
+                            font-weight: $medium;
+                            color: #262626;
+
+                            @media only screen and (min-width: 1050px) {
+                                font-size: 14px;
+                            }
+            
+                            @media only screen and (min-width: 1300px) {
+                                font-size: 14px;
+                            }
+            
+                            @media only screen and (min-width: 1500px) {
+                                font-size: 16px;
+                            }
+
+                            @media only screen and (min-width: 1700px) {
+                                font-size: 18px;
+                            }
+                        }
+
+                        & > span {
+                            font-size: 10px;
+                            color: #7A7A7A;
+
+                            @media only screen and (min-width: 1050px) {
+                                font-size: 10px;
+                            }
+            
+                            @media only screen and (min-width: 1300px) {
+                                font-size: 11px;
+                            }
+            
+                            @media only screen and (min-width: 1500px) {
+                                font-size: 12px;
+                            }
+
+                            @media only screen and (min-width: 1700px) {
+                                font-size: 14px;
+                            }
+
+                            & > b {
+                                color: #626262;
+                                font-weight: $medium;
+                            }
+                        }
+                    }
+
+                    & > .assignedguard-row-button {
+                        display: flex;
+                        align-items: center;
+
+                        .btn-delete {
+                            background-color: $bgi-delete;
+                            border-radius: 50%;
+                            height: 21px;
+                            width: 21px;
+                            text-align: center;
+                            @include y-center;
+
+                            &:hover {
+                                background-color: darken($bgi-delete, 5%);
+
+                                & > a > span {
+                                    color: darken($i-delete, 12%);
+                                }
+                            }
+
+                            & > a.btn-delete-icon {
+                                text-decoration: none;
+                                color: $i-delete;
+                                transform: translateY(2px);
+                                
+                                & > span {
+                                    font-size: 15px;
+                                }
+                            }
+                        }            
+                    }
+                }
+            }
+        }
+
+        & > .addemployee-container {
+            height: 55%;
+            width: 100%;
+            position: relative;
+            background: $front;
+            border-radius: 5px;
+            box-sizing: border-box;
+            padding: 20px 23px 15px 23px;
+            display: flex;
+            flex-direction: column;
+
+            & > .addemployee-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                height: 10%;
+                margin-bottom: 10px;
+
+                & > h1 {
+                    font-size: 16px;
+                    font-weight: $semibold;
+
+                    @media only screen and (min-width: 1050px) {
+                        font-size: 16px;
+                    }
+    
+                    @media only screen and (min-width: 1300px) {
+                        font-size: 16px;
+                    }
+    
+                    @media only screen and (min-width: 1500px) {
+                        font-size: 18px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        font-size: 20px;
+                    }
+                }
+
+                & > a {
+                    color: #6B6B6B;
+                    font-size: 12px;
+                    font-weight: $semibold;
+
+                    @media only screen and (min-width: 1050px) {
+                        font-size: 12px;
+                    }
+    
+                    @media only screen and (min-width: 1300px) {
+                        font-size: 12px;
+                    }
+    
+                    @media only screen and (min-width: 1500px) {
+                        font-size: 12px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        font-size: 15px;
+                    }
+
+                    &:hover {
+                        color: darken(#6B6B6B, 25%);
+                    }
+                }
+            }
+
+            & > .addemployee-content {
+                height: 90%;
+                width: 100%;
+                box-sizing: border-box;
+                position: relative;
+
+                & > form {
+                    height: 93%;
+                    width: 100%;
+                    position: relative;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+
+                    & > .form-holder {
+                        height: 84%;
+                        width: 100%;
+                        position: relative;
+                        overflow-y: scroll;
+                        margin-bottom: 20px;
+                        padding-right: 10px;
+
+                        /* width */
+                        &::-webkit-scrollbar {
+                            width: 5px;
+                        }
+                        
+                        /* Track */
+                        &::-webkit-scrollbar-track {
+                            background: #f1f1f1; 
+                        }
+                        
+                        /* Handle */
+                        &::-webkit-scrollbar-thumb {
+                            background: #888;
+                            border-radius: 8px;
+                        }
+                        
+                        /* Handle on hover */
+                        &::-webkit-scrollbar-thumb:hover {
+                            background: rgb(85, 85, 85); 
+                        }
+
+                        & > div {
+                            display: flex;
+                            flex-direction: column;
+                            margin-bottom: 15px;
+                            position: relative;
+    
+                            & > label {
+                                font-weight: $semibold;
+                                font-size: 14px;
+                                color: #292929;
+                                margin-bottom: 5px;
+                            }
+    
+                            & > input {
+                                border: none;
+                                border-bottom: 1px solid #D9D9D9;
+                                outline: none;
+                            }
+
+                            & > div {
+                                background: #774ab09e;
+                                border-radius: 5px;
+                                width: fit-content;
+                                padding: 2px 10px;
+                                font-size: 12px;
+                                color: white;
+                                font-weight: medium;
+                                position: absolute;
+                                top: 0;
+                                left: 69px;
+                                cursor: pointer;
+
+                                &:hover {
+                                    background: darken(#764ab0, 5%);
+                                }
+                            }
+                        }
+                    }
+
+                    & > button {
+                        width: 35%;
+                        border: none;
+                        background-color: $btn-add;
+                        @include x-center;
+                        align-items: center;
+                        padding: 8px 0;
+                        border-radius: 5px;
+                        color: #fff;
+                        font-weight: $semibold;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: darken($btn-add, 5%);
+                        }
+
+                        & > span {
+                            color: #fff;
+                            font-size: 15px;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    
+}
+
+.modal-addguard {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0; left: 0;
+    background: rgba(0,0,0,.37);
+    @include y-center;
+
+    & > .modal-holder {
+        background: white;
+        border-radius: 5px;
+        width: 33%;
+        max-height: 80%;
+        position: relative;
+        padding: 13px 0px;
+        box-sizing: border-box;
+
+        & > .addguard-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgb(200, 200, 200);
+            height: 7%;
+            box-sizing: border-box;
+
+            & > h1 {
+                font-size: 20px;
+                font-weight: $medium;
+            }
+
+            & > span {
+                position: absolute;
+                right: 20px;
+                cursor: pointer;
+            }
+        }
+
+        & > .addguard-content {
+            width: 100%;
+            height: 93%;
+            @include x-center;
+            box-sizing: border-box;
+            overflow-y: scroll;
+
+            /* width */
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: #f1f1f1; 
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: #888;
+                border-radius: 8px;
+            }
+            
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: rgb(85, 85, 85); 
+            }
+
+            & > form {
+                padding-top: 20px;
+                height: 100%;
+                min-width: 70%;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+
+                & > div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 10px;
+                    position: relative;
+
+                    & > label {
+                        font-weight: $semibold;
+                        font-size: 16px;
+                    }
+
+                    & > input {
+                        border: none;
+                        border-bottom: 1px solid #D9D9D9;
+                        margin-top: 5px;
+                        font-size: 14px;
+                        outline: none;
+                        color: #464646;
+                        font-weight: $regular;
+                    }
+
+                    & > div {
+                        background: #774ab09e;
+                        border-radius: 5px;
+                        width: fit-content;
+                        padding: 2px 10px;
+                        font-size: 12px;
+                        color: white;
+                        font-weight: medium;
+                        position: absolute;
+                        top: 0;
+                        left: 85px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: darken(#764ab0, 5%);
+                        }
+                    }
+
+                    // firstname, lastname
+                    &:nth-child(1)::before,
+                    &:nth-child(2)::before {
+                        content: url('https://api.iconify.design/akar-icons/person.svg?color=%239747ff&height=20');
+                        position: absolute;
+                        top: 2px;
+                        left: -38px;
+                        transition: 200ms ease-in-out;
+                    }
+
+                    // address
+                    &:nth-child(3)::before {
+                        content: url('https://api.iconify.design/akar-icons/location.svg?color=%239747ff&height=20');
+                        position: absolute;
+                        top: 2px;
+                        left: -38px;
+                        transition: 200ms ease-in-out;
+                    }
+
+                    // email
+                    &:nth-child(4)::before {
+                        content: url('https://api.iconify.design/eva/email-outline.svg?color=%239747ff&height=20');
+                        position: absolute;
+                        top: 2px;
+                        left: -38px;
+                        transition: 200ms ease-in-out;
+                    }
+
+                    // contact number
+                    &:nth-child(5)::before {
+                        content: url('https://api.iconify.design/feather/phone-call.svg?color=%239747ff&height=19');
+                        position: absolute;
+                        top: 2px;
+                        left: -38px;
+                        transition: 200ms ease-in-out;
+                    }
+
+                    // qrcode
+                    &:nth-child(6)::before {
+                        content: url('https://api.iconify.design/bx/qr.svg?color=%239747ff&height=20');
+                        position: absolute;
+                        top: 2px;
+                        left: -38px;
+                        transition: 200ms ease-in-out;
+                    }
+
+                    // button
+                    &:nth-child(7) {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 10px 0;
+
+                        & > button {
+                            padding: 7px 0;
+                            width: 45%;
+                            border: none;
+                            background: $btn-add;
+                            border-radius: 5px;
+                            color: #fff;
+                            font-weight: $semibold;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: darken($btn-add, 5%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-deleteguard {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0; left: 0;
+    background: rgba(0,0,0,.37);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-top: 70px;
+
+    & > .modal-holder {
+        background: white;
+        border-radius: 5px;
+        width: 33%;
+        max-height: 34%;
+        position: relative;
+        padding: 0px 0px 30px 0;
+        box-sizing: border-box;
+
+        & > .deleteguard-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-bottom: 1px solid rgb(200, 200, 200);
+            height: 25%;
+            box-sizing: border-box;
+
+            & > h1 {
+                font-size: 20px;
+                font-weight: $medium;
+            }
+
+            & > span {
+                position: absolute;
+                right: 20px;
+                cursor: pointer;
+            }
+        }
+
+        & > .deleteguard-content {
+            width: 100%;
+            height: 75%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+
+            & > h1 {
+                font-size: 18px;
+                font-weight: $medium;
+                text-align: center;
+                width: 70%;
+                padding: 20px 0;
+            }
+
+            & > form {
+                width: 35%;
+                @include x-center;
+
+                & > button {
+                    width: 100%;
+                    padding: 7px 0;
+                    border-radius: 5px;
+                    background-color: $btn-delete;
+                    border: none;
+                    color: white;
+                    font-weight: $semibold;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: darken($btn-delete, 5%);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+/vendor/
+/.env
+/emailTemplate.php
+/ep.php
+/validations.txt

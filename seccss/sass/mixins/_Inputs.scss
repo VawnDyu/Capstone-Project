@@ -1,0 +1,16 @@
+@import '../_Variables.scss';
+
+/* for input icons material+icons */
+@mixin label($icon, $weight, $font) {
+    &::before {
+        font-family: $font;
+        font-weight: $weight;
+        content: $icon;
+        font-size: 20px !important;
+        color: $violet;
+        position: absolute;
+        top: 0px;
+        left: -40px;
+        /* text-shadow: 0px 0px $violet; */
+    }
+}

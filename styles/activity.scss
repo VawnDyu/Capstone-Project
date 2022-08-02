@@ -1,0 +1,963 @@
+@import 'sass/Config';
+
+.success {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: 60px;
+    border-radius: 5px;
+    background: #19C773;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: popup 4.5s ease-in-out forwards;
+
+
+    & > .icon-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+
+        
+        & > span {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align:center;
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: $bold;
+            color: #19C773;
+        }
+    }
+
+    & > p {
+        font-weight: $semibold;
+        color: #fff;
+        margin-right: 20px;
+    }
+
+    & > .closeContainer {
+        height: 100%;
+        background-color: #34D889;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten(#34D889, 5%);
+        }
+
+        & > span {
+            color: #fff;
+        }
+    }
+}
+
+.error {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: 60px;
+    border-radius: 5px;
+    background: #FF6C6C;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: popup 4.5s ease-in-out forwards;
+    z-index: 99;
+
+
+    & > .icon-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+
+        
+        & > span {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align:center;
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: $bold;
+            color: #FF6C6C;
+        }
+    }
+
+    & > p {
+        font-weight: $semibold;
+        color: #fff;
+        margin-right: 20px;
+    }
+
+    & > .closeContainer {
+        height: 100%;
+        background-color: #FF8080;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten(#FF8080, 5%);
+        }
+
+        & > span {
+            color: #fff;
+        }
+    }
+}
+
+@keyframes popup {
+    0% {
+        top: 40px;
+        opacity: 0;
+    }
+    20% {
+        top: 30px;
+        opacity: 1;
+    }
+    90% {
+        top: 30px;
+        opacity: 1;
+    }
+    100% {
+        top: 10px;
+        display: flex !important;
+        opacity: 0;
+    }
+}
+
+.main-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: $back;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-right: 30px;
+
+    @media only screen and (min-width: 1050px) {
+        padding-right: 15px;
+	}
+
+    @media only screen and (min-width: 1300px) {
+        padding-right: 30px;
+	}
+
+    @media only screen and (min-width: 1500px) {
+        padding-right: 30px;
+	}
+
+    @media only screen and (min-width: 1700px) {
+        padding-right: 30px;
+	}
+
+    & > .leftbar, .centerbar, .rightbar {
+        height: 100%;
+        background: $front;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    & > .leftbar {
+        width: 18%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 25px 0px 20px 30px;
+        box-sizing: border-box;
+
+        @media only screen and (min-width: 1050px) {
+            padding: 25px 0px 20px 20px;
+        }
+
+        @media only screen and (min-width: 1300px) {
+            padding: 25px 0px 20px 30px;
+        }
+
+        @media only screen and (min-width: 1500px) {
+            padding: 25px 0px 20px 30px;
+        }
+
+        @media only screen and (min-width: 1700px) {
+            padding: 25px 0px 20px 50px;
+        }
+
+        & > .logo-container {
+            height: 7%;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            @media only screen and (min-width: 1050px) {
+                transform: translateX(0px);
+            }
+    
+            @media only screen and (min-width: 1300px) {
+                transform: translateX(0px);
+            }
+    
+            @media only screen and (min-width: 1500px) {
+                transform: translateX(0px);
+            }
+    
+            @media only screen and (min-width: 1700px) {
+                transform: translateX(-10px);
+            }
+
+
+            & > .logo {
+                height: 30px;
+                width: 30px;
+                background-image: url("../img/jtdv.png");
+                background-size: cover;
+                margin-right: 10px;
+
+                @media only screen and (min-width: 1050px) {
+                    height: 30px;
+                    width: 30px;
+                }
+        
+                @media only screen and (min-width: 1300px) {
+                    height: 30px;
+                    width: 30px;
+                }
+        
+                @media only screen and (min-width: 1500px) {
+                    height: 30px;
+                    width: 30px;
+                }
+        
+                @media only screen and (min-width: 1700px) {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+
+            & > h1 {
+                font-size: 18px;
+                font-weight: $bold;
+                color: #774AB0;
+
+                @media only screen and (min-width: 1050px) {
+                    font-size: 18px;
+                }
+        
+                @media only screen and (min-width: 1300px) {
+                    font-size: 18px;
+                }
+        
+                @media only screen and (min-width: 1500px) {
+                    font-size: 18px;
+                }
+        
+                @media only screen and (min-width: 1700px) {
+                    font-size: 22px;
+                }
+            }
+        }
+
+        & > .links-container {
+            height: 88%;
+            width: 100%;
+            position: relative;
+            box-sizing: border-box;
+            padding-left: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            & > ul {
+                list-style: none;
+
+                & > li {
+                    margin-bottom: 10px;
+                    padding: 5px 0;
+                    font-weight: $semibold;
+                    position: relative;
+                    color: #B7B7B7;
+                    transition: 200ms ease-in-out;
+
+                    @media only screen and (min-width: 1050px) {
+                        font-size: 14px;
+                        padding: 5px 0;
+                    }
+
+                    @media only screen and (min-width: 1300px) {
+                        font-size: 16px;
+                        padding: 5px 0;
+                    }
+
+                    @media only screen and (min-width: 1500px) {
+                        font-size: 16px;
+                        padding: 5px 0;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        font-size: 18px;
+                        padding: 10px 0;
+                    }
+
+                    & > a {
+                        text-decoration: none;
+                        color: #B7B7B7;
+
+                        @media only screen and (min-width: 1050px) {
+                            font-size: 14px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            font-size: 16px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            font-size: 16px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            font-size: 18px;
+                        }
+                    }
+
+                    &:nth-child(1):hover {
+                        color: #000;
+
+                        &::before {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 56%;
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    &:nth-child(2):hover {
+                        color: #000;
+
+                        &::before {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 4%;
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    &:nth-child(3):hover {
+                        color: #000;
+
+                        &::before {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 4%;
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    &:nth-child(4):hover {
+
+                        &::before {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 55%;
+                            left: -38px;
+                            transform: translateY(-45%);
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    // dashboard
+                    &:nth-child(1)::before {
+                        content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 56%;
+                        transform: translateY(-50%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    // records
+                    &:nth-child(2)::before {
+                        content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 4%;
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    // manage report
+                    &:nth-child(3)::before {
+                        content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 4%;
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    // activities
+                    &:nth-child(4)::before {
+                        content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 55%;
+                        transform: translateY(-45%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    &.active-parent {
+
+                        & > a {
+                            text-decoration: none;
+                            color: #000;
+                        }
+
+                        &::before {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 55%;
+                            transform: translateY(-45%);
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                                left: -48px;
+                            }
+                        }
+
+                        &::after {
+                            content: '';
+                            height: 100%;
+                            width: 4px;
+                            border-radius: 4px;
+                            background: #774AB0;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                        }
+                    }
+                    
+
+                    & > ul {
+                        list-style: none;
+                        padding-top: 12px;
+                        box-sizing: border-box;
+
+                        & > li {
+                            font-weight: $semibold;
+                            padding: 5px 0 5px 25px;
+                            border-left: 4px solid #8B69B6;
+
+                            @media only screen and (min-width: 1050px) {
+                                padding: 5px 0 5px 25px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                padding: 5px 0 5px 25px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                padding: 5px 0 5px 25px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                padding: 10px 0 5px 25px;
+                            }
+
+                            & > a {
+                                text-decoration: none;
+                                color: #B7B7B7;
+                                transition: 200ms ease-in-out;
+                            }
+
+                            &:hover a {
+                                color: #000;
+                            }
+
+                            &:first-child {
+                                padding-top: 0px;
+                            }
+
+                            &:last-child {
+                                padding-bottom: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // logout
+            & > div {
+                position: relative;
+                margin-bottom: 20px;
+
+                &::before {
+                    content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                    position: absolute;
+                    top: 60%;
+                    transform: translateY(-50%);
+                    left: -38px;
+                    transition: 200ms ease-in-out;
+
+                    @media only screen and (min-width: 1050px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                        left: -38px;
+                    }
+
+                    @media only screen and (min-width: 1300px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                        left: -38px;
+                    }
+
+                    @media only screen and (min-width: 1500px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                        left: -38px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=35');
+                        left: -48px;
+                    }
+                }
+
+                &:focus-within {
+
+                    &::before {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                        position: absolute;
+                        top: 60%;
+                        transform: translateY(-50%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    a {
+                        color: #000;
+                    }
+                }
+
+                &:hover {
+                    &::before {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                        position: absolute;
+                        top: 60%;
+                        transform: translateY(-50%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    a {
+                        color: #000;
+                    }
+                }
+
+                & > a {
+                    text-decoration: none;
+                    color: #B7B7B7;
+                    font-weight: $semibold;
+                    transition: 200ms ease-in-out;
+
+                    @media only screen and (min-width: 1050px) {
+                        font-size: 14px;
+                    }
+
+                    @media only screen and (min-width: 1300px) {
+                        font-size: 16px;
+                    }
+
+                    @media only screen and (min-width: 1500px) {
+                        font-size: 16px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    & > .centerbar {
+        width: 82%;
+        padding: 35px 15px 30px 15px;
+        background: transparent !important;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+
+        /* width */
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        & > .header-info {
+            height: 4%;
+            background: transparent !important;
+            border: none !important;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 15px;
+
+            & > h1 {
+                font-size: 16px;
+                font-weight: $semibold;
+
+                @media only screen and (min-width: 1050px) {
+                    font-size: 16px;
+                }
+        
+                @media only screen and (min-width: 1300px) {
+                    font-size: 16px;
+                }
+        
+                @media only screen and (min-width: 1500px) {
+                    font-size: 16px;
+                }
+        
+                @media only screen and (min-width: 1700px) {
+                    font-size: 19px;
+                }
+            }
+
+            & > .profile-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                width: 92%;
+                transform: translateY(4px);
+
+                & > .profile-setter {
+                    display: flex;
+                    align-items: center;
+    
+                    & > h3 {
+                        font-size: 14px;
+                        font-weight: $medium;
+                        margin-right: 15px;
+                    }
+        
+                    & > a > .image-container > img {
+                        height: 33px;
+                        width: 33px;
+                        border-radius: 50%;
+                        background: rgb(102, 102, 102);
+                    }
+                }
+            }
+
+        }
+
+        & > .remarks-table {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            position: relative;
+            margin-top: 50px;
+
+            & > .table-header {
+                width: 100%;
+
+                & > h1 {
+                    font-size: 16px;
+                    font-weight: $semibold;
+                }
+            }
+
+            & > table {
+                margin-top: 15px;
+                padding: 20px 10px;
+                border-radius: 5px;
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 10px;
+                background-color: $front;
+                
+                & > thead > tr > th {
+                    text-align: left;
+                    font-weight: $semibold;
+                    color: #2B2B2B;
+                    font-size: 15px;
+
+                    &:first-child {
+                        padding-left: 10px;
+                    }
+                }
+
+                & > tbody > tr {
+                    border-radius: 5px; 
+
+                    &:nth-child(odd){
+                        background-color: #f9fbff;
+                    }
+                }
+
+                & > tbody > tr > td {
+                    font-size: 13px;
+                    padding: 5px 0;
+
+                    &:first-child {
+                        padding-left: 10px;
+                    }
+
+                    &:last-child {
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

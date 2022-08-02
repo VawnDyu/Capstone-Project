@@ -1,0 +1,10 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.6",
+        "dompdf/dompdf": "^1.2",
+        "clegginabox/pdf-merger": "dev-master",
+        "jurosh/pdf-merge": "^2.1",
+        "vlucas/phpdotenv": "^5.4",
+        "endroid/qrcode": "^4.3"
+    }
+}

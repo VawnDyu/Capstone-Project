@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+label {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+button[type=submit] {
+  width: 100%;
+  padding: 10px 0px 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: whitesmoke;
+  background: #48117c;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 4px;
+  outline: none;
+}
+
+button[type=submit]:hover {
+  background-color: #591697;
+}
+
+input[type=email], input[type=password] {
+  width: 100%;
+  padding: 10px 20px 10px;
+  font-size: 20px;
+  margin: 10px 0 20px;
+  background: #6f1abd;
+  color: whitesmoke;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+}
+
+input[type=email]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder {
+  color: whitesmoke;
+}
+
+input[type=email]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder {
+  color: whitesmoke;
+}
+
+input[type=email]::-ms-input-placeholder, input[type=password]::-ms-input-placeholder {
+  color: whitesmoke;
+}
+
+input[type=email]::placeholder, input[type=password]::placeholder {
+  color: whitesmoke;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+  border: 1px solid whitesmoke;
+}
+
+input[type=email]:focus::-webkit-input-placeholder, input[type=password]:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input[type=email]:focus:-ms-input-placeholder, input[type=password]:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+input[type=email]:focus::-ms-input-placeholder, input[type=password]:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+input[type=email]:focus::placeholder, input[type=password]:focus::placeholder {
+  color: transparent;
+}
+
+.main-container {
+  background-color: whitesmoke;
+  height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[18];
+      grid-template-rows: repeat(18, 1fr);
+  -ms-grid-columns: (1fr)[18];
+      grid-template-columns: repeat(18, 1fr);
+}
+
+.main-container > .company-banner {
+  background-color: whitesmoke;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 18;
+  grid-row: 1 / 19;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 10;
+  grid-column: 1 / 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-container > .company-banner > .banner {
+  padding: 20px;
+  text-align: center;
+  color: #8a2be2;
+  font-size: 30px;
+  margin-top: 90px;
+}
+
+.main-container > .company-banner > .banner > .company {
+  font-weight: 600;
+  font-size: 68px;
+}
+
+.main-container > .company-banner > .banner > .info {
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.main-container > .login-form {
+  background-color: #8a2be2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 18;
+  grid-row: 1 / 19;
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 8;
+  grid-column: 11 / 19;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-container > .login-form > form {
+  padding: 20px;
+}
+
+.main-container > .login-form > form > .header {
+  color: whitesmoke;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.main-container > .login-form > form > .header > .main {
+  font-size: 36px;
+  font-weight: 500;
+  padding-top: 50px;
+}
+
+.main-container > .login-form > form > .header > .sub {
+  padding-bottom: 60px;
+}
+
+.main-container > .login-form > form > .message {
+  color: whitesmoke;
+  text-align: center;
+  padding: 10px;
+  background: lightcoral;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+/*# sourceMappingURL=styles.css.map */

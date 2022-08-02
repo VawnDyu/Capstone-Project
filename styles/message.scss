@@ -1,0 +1,153 @@
+@import 'sass/Config';
+
+.success {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: 60px;
+    border-radius: 5px;
+    background: #19C773;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: popup 4.5s ease-in-out forwards;
+
+
+    & > .icon-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+
+        
+        & > span {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align:center;
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: $bold;
+            color: #19C773;
+        }
+    }
+
+    & > p {
+        font-weight: $semibold;
+        color: #fff;
+        margin-right: 20px;
+    }
+
+    & > .closeContainer {
+        height: 100%;
+        background-color: #34D889;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten(#34D889, 5%);
+        }
+
+        & > span {
+            color: #fff;
+        }
+    }
+}
+
+.error {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: 60px;
+    border-radius: 5px;
+    background: #FF6C6C;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: popup 4.5s ease-in-out forwards;
+
+
+    & > .icon-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+
+        
+        & > span {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align:center;
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: $bold;
+            color: #FF6C6C;
+        }
+    }
+
+    & > p {
+        font-weight: $semibold;
+        color: #fff;
+        margin-right: 20px;
+    }
+
+    & > .closeContainer {
+        height: 100%;
+        background-color: #FF8080;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten(#34D889, 5%);
+        }
+
+        & > span {
+            color: #fff;
+        }
+    }
+}
+
+@keyframes popup {
+    0% {
+        top: 40px;
+        opacity: 0;
+    }
+    20% {
+        top: 30px;
+        opacity: 1;
+    }
+    90% {
+        top: 30px;
+        opacity: 1;
+    }
+    100% {
+        top: 10px;
+        display: flex !important;
+        opacity: 0;
+    }
+}

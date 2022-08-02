@@ -1,0 +1,13 @@
+{
+    "name": "JTDV Mobile",
+    "short_name": "JTDV",
+    "start_url": "m_login.php",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "img/icon.png",
+        "type": "image/png", "sizes": "288x288"
+      }
+    ]
+  }

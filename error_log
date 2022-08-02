@@ -1,0 +1,1161 @@
+[23-Mar-2022 15:28:48 Asia/Manila] PHP Notice:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4780
+[23-Mar-2022 15:28:48 Asia/Manila] PHP Notice:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4781
+[23-Mar-2022 15:54:01 Asia/Manila] PHP Notice:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4780
+[23-Mar-2022 15:54:01 Asia/Manila] PHP Notice:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4781
+[23-Mar-2022 16:01:35 Asia/Manila] PHP Notice:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4780
+[23-Mar-2022 16:01:35 Asia/Manila] PHP Notice:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4781
+[23-Mar-2022 16:08:18 Asia/Manila] PHP Notice:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4780
+[23-Mar-2022 16:08:18 Asia/Manila] PHP Notice:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4781
+[23-Mar-2022 16:11:31 Asia/Manila] PHP Notice:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4806
+[23-Mar-2022 16:11:31 Asia/Manila] PHP Notice:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4807
+[23-Mar-2022 16:14:04 Asia/Manila] PHP Notice:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4780
+[23-Mar-2022 16:14:04 Asia/Manila] PHP Notice:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4781
+[23-Mar-2022 16:37:15 Asia/Manila] PHP Notice:  session_start(): A session had already been started - ignoring in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2959
+[23-Mar-2022 16:37:15 Asia/Manila] PHP Notice:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2962
+[23-Mar-2022 16:37:15 Asia/Manila] PHP Notice:  Undefined property: stdClass::$empId in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2964
+[23-Mar-2022 16:37:15 Asia/Manila] PHP Notice:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2965
+[23-Mar-2022 16:37:15 Asia/Manila] PHP Notice:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2966
+[23-Mar-2022 16:37:15 Asia/Manila] PHP Notice:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2967
+[23-Mar-2022 16:38:27 Asia/Manila] PHP Notice:  session_start(): A session had already been started - ignoring in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2959
+[23-Mar-2022 16:38:27 Asia/Manila] PHP Notice:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2962
+[23-Mar-2022 16:38:27 Asia/Manila] PHP Notice:  Undefined property: stdClass::$empId in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2964
+[23-Mar-2022 16:38:27 Asia/Manila] PHP Notice:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2965
+[23-Mar-2022 16:38:27 Asia/Manila] PHP Notice:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2966
+[23-Mar-2022 16:38:27 Asia/Manila] PHP Notice:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2967
+[23-Mar-2022 17:32:10 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.emp_log' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:219
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(219): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 219
+[23-Mar-2022 17:32:18 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.emp_log' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:219
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(219): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 219
+[23-Mar-2022 17:37:07 Asia/Manila] PHP Warning:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 702
+[23-Mar-2022 17:37:07 Asia/Manila] PHP Warning:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 703
+[23-Mar-2022 17:37:07 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.emp_log' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:713
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(713): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 713
+[23-Mar-2022 17:37:08 Asia/Manila] PHP Warning:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 702
+[23-Mar-2022 17:37:08 Asia/Manila] PHP Warning:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 703
+[23-Mar-2022 17:37:08 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.emp_log' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:713
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(713): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 713
+[23-Mar-2022 17:37:28 Asia/Manila] PHP Warning:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 702
+[23-Mar-2022 17:37:28 Asia/Manila] PHP Warning:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 703
+[23-Mar-2022 17:37:28 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.emp_log' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:713
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(713): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 713
+[23-Mar-2022 17:37:51 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:34
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(34): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(4717): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 34
+[23-Mar-2022 17:38:04 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:34
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(34): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(4717): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 34
+[23-Mar-2022 17:38:20 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:34
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(34): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(4717): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 34
+[23-Mar-2022 17:39:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4780
+[23-Mar-2022 17:39:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4781
+[23-Mar-2022 17:39:50 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.emp_log' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:4791
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(4791): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4791
+[23-Mar-2022 17:42:30 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:23
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(23): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(4706): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 23
+[23-Mar-2022 17:43:41 Asia/Manila] PHP Warning:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4769
+[23-Mar-2022 17:43:41 Asia/Manila] PHP Warning:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4770
+[23-Mar-2022 17:43:41 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.emp_log' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:4780
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(4780): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4780
+[23-Mar-2022 17:43:51 Asia/Manila] PHP Warning:  Undefined property: stdClass::$browserfingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4769
+[23-Mar-2022 17:43:51 Asia/Manila] PHP Warning:  Undefined property: stdClass::$devicefingerprint in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4770
+[23-Mar-2022 17:43:51 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.emp_log' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:4780
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(4780): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4780
+[23-Mar-2022 17:46:05 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.emp_log' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:4778
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(4778): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 4778
+[23-Mar-2022 18:02:18 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2959
+[23-Mar-2022 18:02:18 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2962
+[23-Mar-2022 18:02:18 Asia/Manila] PHP Warning:  Undefined property: stdClass::$empId in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2964
+[23-Mar-2022 18:02:18 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2965
+[23-Mar-2022 18:02:18 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2966
+[23-Mar-2022 18:02:18 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2967
+[23-Mar-2022 18:19:21 Asia/Manila] PHP Warning:  Undefined property: stdClass::$empId in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2961
+[23-Mar-2022 23:02:46 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2969
+[23-Mar-2022 23:02:46 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2972
+[23-Mar-2022 23:02:46 Asia/Manila] PHP Warning:  Undefined property: stdClass::$empId in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2974
+[23-Mar-2022 23:02:46 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2975
+[23-Mar-2022 23:02:46 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2976
+[23-Mar-2022 23:02:46 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2977
+[23-Mar-2022 23:04:30 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2969
+[23-Mar-2022 23:04:30 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2972
+[23-Mar-2022 23:04:30 Asia/Manila] PHP Warning:  Undefined property: stdClass::$empId in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2974
+[23-Mar-2022 23:04:30 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2975
+[23-Mar-2022 23:04:30 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2976
+[23-Mar-2022 23:04:30 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2977
+[24-Mar-2022 00:05:59 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2969
+[24-Mar-2022 00:05:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2972
+[24-Mar-2022 00:05:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$empId in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2974
+[24-Mar-2022 00:05:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2975
+[24-Mar-2022 00:05:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2976
+[24-Mar-2022 00:05:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2977
+[24-Mar-2022 06:56:09 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2969
+[24-Mar-2022 06:56:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2972
+[24-Mar-2022 06:56:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$empId in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2974
+[24-Mar-2022 06:56:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2975
+[24-Mar-2022 06:56:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2976
+[24-Mar-2022 06:56:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2977
+[24-Mar-2022 08:03:07 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/secclass.php:23
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/secclass.php(23): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/secclass.php(2692): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/seclogin.php(3): Payroll->seclogin()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 23
+[24-Mar-2022 16:04:39 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2738
+[24-Mar-2022 16:04:39 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2741
+[24-Mar-2022 16:04:39 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2742
+[24-Mar-2022 16:04:39 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2743
+[24-Mar-2022 16:52:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[24-Mar-2022 16:52:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[24-Mar-2022 16:52:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[24-Mar-2022 16:52:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[24-Mar-2022 17:14:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[24-Mar-2022 17:14:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[24-Mar-2022 17:14:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[24-Mar-2022 17:14:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[24-Mar-2022 19:21:05 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:19
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(19): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(132): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/m_login.php(3): Payroll->mobile_login()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 19
+[25-Mar-2022 07:23:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 07:23:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 07:23:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 07:23:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 07:35:10 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 07:35:10 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 07:35:10 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 07:35:10 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 08:36:48 Asia/Manila] PHP Warning:  Undefined array key "OICDetails" in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 268
+[25-Mar-2022 08:36:48 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 268
+[25-Mar-2022 08:36:48 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'empId' cannot be null in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:273
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(273): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_logout.php(3): Payroll->mobile_logout()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 273
+[25-Mar-2022 09:02:20 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 09:02:20 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 09:02:20 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 09:02:20 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 09:26:57 Asia/Manila] PHP Warning:  Undefined array key "OICDetails" in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 268
+[25-Mar-2022 09:26:57 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 268
+[25-Mar-2022 09:26:57 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'empId' cannot be null in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:273
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(273): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_logout.php(3): Payroll->mobile_logout()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 273
+[25-Mar-2022 09:35:51 Asia/Manila] PHP Warning:  Undefined property: stdClass::$email in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 86
+[25-Mar-2022 09:35:51 Asia/Manila] PHP Warning:  Undefined property: stdClass::$password in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 88
+[25-Mar-2022 09:47:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 09:47:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 09:47:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 09:47:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 09:48:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 09:48:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 09:48:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 09:48:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 09:51:12 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[25-Mar-2022 09:56:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$email in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 86
+[25-Mar-2022 09:56:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$password in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 88
+[25-Mar-2022 02:03:59 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[25-Mar-2022 10:06:39 Asia/Manila] PHP Warning:  Attempt to read property "timer" on bool in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 246
+[25-Mar-2022 10:07:27 Asia/Manila] PHP Warning:  Attempt to read property "timer" on bool in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 246
+[25-Mar-2022 10:08:45 Asia/Manila] PHP Warning:  Undefined array key "OICDetails" in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 268
+[25-Mar-2022 10:08:45 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 268
+[25-Mar-2022 10:08:45 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'empId' cannot be null in /home/u359933141/domains/jtdv.tech/public_html/classemp.php:273
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/classemp.php(273): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/m_logout.php(3): Payroll->mobile_logout()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 273
+[25-Mar-2022 02:08:55 UTC] PHP Warning:  Undefined array key "attempt" in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2763
+[25-Mar-2022 10:09:08 Asia/Manila] PHP Warning:  Attempt to read property "timer" on bool in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 246
+[25-Mar-2022 10:11:50 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[25-Mar-2022 10:19:58 Asia/Manila] PHP Warning:  Attempt to read property "timer" on bool in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 246
+[25-Mar-2022 10:26:38 Asia/Manila] PHP Warning:  Attempt to read property "timer" on bool in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 246
+[25-Mar-2022 10:26:55 Asia/Manila] PHP Warning:  Attempt to read property "timer" on bool in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 246
+[25-Mar-2022 11:15:46 Asia/Manila] PHP Warning:  Attempt to read property "timer" on bool in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 246
+[25-Mar-2022 11:18:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 11:18:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 11:18:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 11:18:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 04:40:26 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(3287): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/dashboard.php(55): Payroll->countNewGuardsWelcome()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[25-Mar-2022 12:41:41 Asia/Manila] PHP Fatal error:  Uncaught ArgumentCountError: PDOStatement::execute() expects at most 1 argument, 2 given in /home/u359933141/domains/jtdv.tech/public_html/class.php:3108
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(3108): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/dashboard.php(368): Payroll->approveRequest()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 3108
+[25-Mar-2022 04:52:38 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[25-Mar-2022 12:54:56 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduletimeIn in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 171
+[25-Mar-2022 12:58:32 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 12:58:32 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 12:58:32 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 12:58:32 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 13:16:30 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[25-Mar-2022 14:15:42 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 14:15:42 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 14:15:42 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 14:15:42 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 14:28:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 14:28:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 14:28:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 14:28:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 14:47:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 14:47:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 14:47:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 14:47:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 14:48:29 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 14:48:29 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 14:48:29 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 14:48:29 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 06:49:24 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[25-Mar-2022 14:49:40 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[25-Mar-2022 14:54:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 14:54:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 14:54:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 14:54:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 14:58:19 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2744
+[25-Mar-2022 14:58:19 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2747
+[25-Mar-2022 14:58:19 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2748
+[25-Mar-2022 14:58:19 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2749
+[25-Mar-2022 07:00:32 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[25-Mar-2022 07:15:39 UTC] PHP Warning:  Array to string conversion in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2769
+[25-Mar-2022 15:16:22 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2802
+[25-Mar-2022 15:16:22 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2805
+[25-Mar-2022 15:16:22 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2806
+[25-Mar-2022 15:16:22 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2807
+[25-Mar-2022 15:20:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2802
+[25-Mar-2022 15:20:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2805
+[25-Mar-2022 15:20:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2806
+[25-Mar-2022 15:20:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2807
+[25-Mar-2022 15:22:35 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2802
+[25-Mar-2022 15:22:35 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2805
+[25-Mar-2022 15:22:35 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2806
+[25-Mar-2022 15:22:35 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2807
+[25-Mar-2022 15:26:33 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2802
+[25-Mar-2022 15:26:33 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2805
+[25-Mar-2022 15:26:33 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2806
+[25-Mar-2022 15:26:33 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2807
+[25-Mar-2022 17:04:37 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2802
+[25-Mar-2022 17:04:37 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2805
+[25-Mar-2022 17:04:37 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2806
+[25-Mar-2022 17:04:37 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2807
+[25-Mar-2022 17:05:22 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[25-Mar-2022 09:05:27 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[25-Mar-2022 17:21:40 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[25-Mar-2022 09:21:59 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[25-Mar-2022 17:22:34 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[25-Mar-2022 09:56:39 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[25-Mar-2022 18:09:38 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[25-Mar-2022 10:20:49 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[25-Mar-2022 10:21:01 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[25-Mar-2022 20:00:36 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[25-Mar-2022 12:05:11 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[26-Mar-2022 04:21:14 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[26-Mar-2022 05:12:06 Asia/Manila] PHP Fatal error:  Uncaught ArgumentCountError: PDOStatement::execute() expects at most 1 argument, 2 given in /home/u359933141/domains/jtdv.tech/public_html/class.php:3100
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(3100): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/dashboard.php(368): Payroll->approveRequest()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 3100
+[26-Mar-2022 14:16:11 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[26-Mar-2022 07:37:10 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[26-Mar-2022 16:16:12 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[26-Mar-2022 08:55:07 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 428
+[26-Mar-2022 08:55:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[26-Mar-2022 08:55:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[26-Mar-2022 08:55:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 55
+[26-Mar-2022 16:55:07 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 102
+[26-Mar-2022 16:55:07 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 105
+[26-Mar-2022 16:55:38 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 01:27:51 Asia/Manila] PHP Warning:  Undefined property: stdClass::$email in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 86
+[27-Mar-2022 01:27:51 Asia/Manila] PHP Warning:  Undefined property: stdClass::$password in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 88
+[27-Mar-2022 11:00:02 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 11:08:55 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 03:22:52 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[27-Mar-2022 05:24:33 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[27-Mar-2022 13:29:43 Asia/Manila] PHP Warning:  Undefined property: stdClass::$email in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 86
+[27-Mar-2022 13:29:43 Asia/Manila] PHP Warning:  Undefined property: stdClass::$password in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 88
+[27-Mar-2022 13:37:06 Asia/Manila] PHP Warning:  Undefined property: stdClass::$email in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 88
+[27-Mar-2022 13:37:06 Asia/Manila] PHP Warning:  Undefined property: stdClass::$password in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 90
+[27-Mar-2022 13:38:24 Asia/Manila] PHP Warning:  Undefined property: stdClass::$email in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 88
+[27-Mar-2022 13:38:24 Asia/Manila] PHP Warning:  Undefined property: stdClass::$password in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 90
+[27-Mar-2022 13:40:36 Asia/Manila] PHP Warning:  Undefined property: stdClass::$email in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 86
+[27-Mar-2022 13:40:36 Asia/Manila] PHP Warning:  Undefined property: stdClass::$password in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 88
+[27-Mar-2022 14:35:36 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 18:33:39 Asia/Manila] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/u359933141/domains/jtdv.tech/public_html/classemp.php:2372) in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 2443
+[27-Mar-2022 19:23:09 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 19:47:41 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 19:53:49 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 20:02:18 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 20:17:17 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 20:17:32 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 20:31:13 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 20:31:20 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[27-Mar-2022 21:04:43 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[28-Mar-2022 18:17:30 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[28-Mar-2022 18:21:26 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[28-Mar-2022 10:43:29 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[28-Mar-2022 21:39:32 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[28-Mar-2022 13:55:55 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 411
+[28-Mar-2022 22:02:00 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[28-Mar-2022 22:02:08 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[28-Mar-2022 22:02:31 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`u359933141_payroll`.`violationsandremarks`, CONSTRAINT `violationsandremarks_ibfk_2` FOREIGN KEY (`remark`) REFERENCES `inbox` (`id`)) in /home/u359933141/domains/jtdv.tech/public_html/class.php:4008
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(4008): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/dashboard.php(315): Payroll->dashboardDeleteGuards()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 4008
+[28-Mar-2022 14:04:40 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 426
+[29-Mar-2022 00:39:25 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 02:29:05 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 13:02:19 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 05:03:27 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 426
+[29-Mar-2022 13:05:24 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 05:06:33 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 426
+[29-Mar-2022 13:24:46 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 05:24:58 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 426
+[29-Mar-2022 13:26:40 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 13:27:11 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 06:15:45 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 426
+[29-Mar-2022 14:16:01 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 06:17:19 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 426
+[29-Mar-2022 14:18:20 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 14:18:28 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 06:21:00 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 426
+[29-Mar-2022 14:21:21 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 06:23:16 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 426
+[29-Mar-2022 14:24:19 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 14:28:59 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 06:33:48 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 426
+[29-Mar-2022 14:36:05 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 06:51:32 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 426
+[29-Mar-2022 06:59:46 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 426
+[29-Mar-2022 15:33:31 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 17:37:10 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 256
+[29-Mar-2022 18:20:05 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'admin_id' in 'field list' in /home/u359933141/domains/jtdv.tech/public_html/class.php:254
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(254): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/login.php(3): Payroll->login()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 254
+[29-Mar-2022 18:20:16 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'admin_id' in 'field list' in /home/u359933141/domains/jtdv.tech/public_html/class.php:254
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(254): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/login.php(3): Payroll->login()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 254
+[29-Mar-2022 18:23:59 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 257
+[29-Mar-2022 10:44:06 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 428
+[29-Mar-2022 18:51:48 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 257
+[29-Mar-2022 18:57:18 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 257
+[29-Mar-2022 19:18:00 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 257
+[29-Mar-2022 19:40:32 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2834
+[29-Mar-2022 19:40:32 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2837
+[29-Mar-2022 19:40:32 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2838
+[29-Mar-2022 19:40:32 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2839
+[29-Mar-2022 11:46:34 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 428
+[29-Mar-2022 19:50:36 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2834
+[29-Mar-2022 19:50:36 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2837
+[29-Mar-2022 19:50:36 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2838
+[29-Mar-2022 19:50:36 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2839
+[29-Mar-2022 19:53:49 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2834
+[29-Mar-2022 19:53:49 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2837
+[29-Mar-2022 19:53:49 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2838
+[29-Mar-2022 19:53:49 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2839
+[29-Mar-2022 20:07:52 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2868
+[29-Mar-2022 20:07:52 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2871
+[29-Mar-2022 20:07:52 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2872
+[29-Mar-2022 20:07:52 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2873
+[29-Mar-2022 21:06:11 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 257
+[29-Mar-2022 15:49:30 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 428
+[29-Mar-2022 23:59:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2869
+[29-Mar-2022 23:59:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2872
+[29-Mar-2022 23:59:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2873
+[29-Mar-2022 23:59:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2874
+[29-Mar-2022 16:44:31 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(383): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/class.php(219): Payroll->checkEmailExist()
+#3 /home/u359933141/domains/jtdv.tech/public_html/login.php(3): Payroll->login()
+#4 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[30-Mar-2022 00:45:34 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 00:47:55 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 00:52:48 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2869
+[30-Mar-2022 00:52:48 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2872
+[30-Mar-2022 00:52:48 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2873
+[30-Mar-2022 00:52:48 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2874
+[29-Mar-2022 17:29:06 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 433
+[30-Mar-2022 02:39:08 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 06:46:30 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 07:53:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2869
+[30-Mar-2022 07:53:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2872
+[30-Mar-2022 07:53:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2873
+[30-Mar-2022 07:53:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2874
+[30-Mar-2022 02:03:28 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 450
+[30-Mar-2022 02:03:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 02:03:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 02:03:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 61
+[30-Mar-2022 10:03:28 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 108
+[30-Mar-2022 10:03:28 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 111
+[30-Mar-2022 10:03:32 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 10:46:28 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 02:56:31 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 433
+[30-Mar-2022 10:56:46 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 03:16:59 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 433
+[30-Mar-2022 12:13:22 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 12:30:43 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 12:54:17 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 04:57:29 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 433
+[30-Mar-2022 12:58:36 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 13:21:53 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 14:29:01 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 14:33:37 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 06:59:02 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 433
+[30-Mar-2022 16:27:36 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 16:31:15 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 16:56:42 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 17:47:03 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 10:41:34 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[30-Mar-2022 18:42:52 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 10:47:32 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[30-Mar-2022 18:48:27 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 11:02:33 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[30-Mar-2022 19:08:01 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 11:11:27 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[30-Mar-2022 19:13:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2869
+[30-Mar-2022 19:13:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2872
+[30-Mar-2022 19:13:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2873
+[30-Mar-2022 19:13:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2874
+[30-Mar-2022 20:23:08 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 12:30:01 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[30-Mar-2022 21:25:37 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[30-Mar-2022 21:39:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2869
+[30-Mar-2022 21:39:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2872
+[30-Mar-2022 21:39:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2873
+[30-Mar-2022 21:39:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2874
+[31-Mar-2022 00:17:21 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 01:55:29 Asia/Manila] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/u359933141/domains/jtdv.tech/public_html/m_login.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/m_login.php on line 6
+[30-Mar-2022 19:53:29 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[30-Mar-2022 19:53:29 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 19:53:29 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 19:53:29 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 61
+[31-Mar-2022 03:53:29 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 108
+[31-Mar-2022 03:53:29 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 111
+[30-Mar-2022 20:13:10 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[30-Mar-2022 20:13:10 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 20:13:10 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 20:13:10 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 61
+[31-Mar-2022 04:13:10 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 108
+[31-Mar-2022 04:13:10 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 111
+[30-Mar-2022 20:13:28 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[30-Mar-2022 20:13:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 20:13:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 20:13:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 61
+[31-Mar-2022 04:13:28 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 108
+[31-Mar-2022 04:13:28 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 111
+[30-Mar-2022 20:24:01 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[30-Mar-2022 20:24:01 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 20:24:01 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 20:24:01 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 61
+[31-Mar-2022 04:24:01 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 108
+[31-Mar-2022 04:24:01 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 111
+[30-Mar-2022 20:24:12 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[30-Mar-2022 20:24:12 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 20:24:12 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 20:24:12 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 61
+[31-Mar-2022 04:24:12 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 108
+[31-Mar-2022 04:24:12 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 111
+[30-Mar-2022 20:27:13 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[30-Mar-2022 20:27:13 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 20:27:13 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[30-Mar-2022 20:27:13 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 61
+[31-Mar-2022 04:27:13 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 108
+[31-Mar-2022 04:27:13 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 111
+[31-Mar-2022 05:57:25 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2938
+[31-Mar-2022 05:57:25 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2941
+[31-Mar-2022 05:57:25 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2942
+[31-Mar-2022 05:57:25 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2943
+[31-Mar-2022 06:04:13 Asia/Manila] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in /home/u359933141/domains/jtdv.tech/public_html/trylang.php:190
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/trylang.php(190): number_format()
+#1 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 190
+[31-Mar-2022 06:05:14 Asia/Manila] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in /home/u359933141/domains/jtdv.tech/public_html/trylang.php:190
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/trylang.php(190): number_format()
+#1 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 190
+[31-Mar-2022 06:05:43 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2938
+[31-Mar-2022 06:05:43 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2941
+[31-Mar-2022 06:05:43 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2942
+[31-Mar-2022 06:05:43 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2943
+[31-Mar-2022 06:05:51 Asia/Manila] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in /home/u359933141/domains/jtdv.tech/public_html/trylang.php:190
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/trylang.php(190): number_format()
+#1 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 190
+[31-Mar-2022 06:06:15 Asia/Manila] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in /home/u359933141/domains/jtdv.tech/public_html/trylang.php:190
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/trylang.php(190): number_format()
+#1 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 190
+[31-Mar-2022 06:07:03 Asia/Manila] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in /home/u359933141/domains/jtdv.tech/public_html/trylang.php:190
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/trylang.php(190): number_format()
+#1 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 190
+[31-Mar-2022 06:32:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2938
+[31-Mar-2022 06:32:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2941
+[31-Mar-2022 06:32:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2942
+[31-Mar-2022 06:32:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2943
+[31-Mar-2022 08:48:46 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 08:48:50 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND isDeleted = 0 '83'' at line 1 in /home/u359933141/domains/jtdv.tech/public_html/class.php:4891
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(4891): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/dashboard.php(275): Payroll->dashboardEditGuardsModal()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 4891
+[31-Mar-2022 11:53:55 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 03:55:15 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[31-Mar-2022 12:04:29 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2938
+[31-Mar-2022 12:04:29 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2941
+[31-Mar-2022 12:04:29 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2942
+[31-Mar-2022 12:04:29 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2943
+[31-Mar-2022 13:35:51 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 05:43:24 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[31-Mar-2022 13:45:19 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 05:45:22 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[31-Mar-2022 13:46:51 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 316
+[31-Mar-2022 13:47:24 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 05:47:30 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[31-Mar-2022 13:49:28 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 15:02:04 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 07:02:14 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[31-Mar-2022 07:06:43 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[31-Mar-2022 15:06:53 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 15:20:37 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 15:50:34 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 15:54:37 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 15:56:50 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 16:06:52 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 16:14:41 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 16:57:27 Asia/Manila] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/u359933141/domains/jtdv.tech/public_html/classemp.php:2328) in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 2557
+[31-Mar-2022 16:58:35 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 09:18:57 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[31-Mar-2022 17:38:47 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 17:43:39 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 18:06:41 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 18:11:22 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 10:57:31 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[31-Mar-2022 19:06:10 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 19:16:51 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 19:23:23 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 13:54:53 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u359933141_payroll.system_admin' doesn't exist in /home/u359933141/domains/jtdv.tech/public_html/a_login.php:13
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/a_login.php(13): PDOStatement->execute()
+#1 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/a_login.php on line 13
+[31-Mar-2022 22:11:21 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 22:14:42 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 22:17:32 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 14:19:37 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[31-Mar-2022 14:30:05 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[31-Mar-2022 14:30:05 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[31-Mar-2022 14:30:05 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[31-Mar-2022 14:30:05 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 61
+[31-Mar-2022 22:30:05 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 108
+[31-Mar-2022 22:30:05 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 111
+[31-Mar-2022 22:30:36 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 22:36:14 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[31-Mar-2022 14:41:38 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[31-Mar-2022 16:03:08 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[31-Mar-2022 16:03:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[31-Mar-2022 16:03:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[31-Mar-2022 16:03:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 61
+[01-Apr-2022 00:03:08 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 108
+[01-Apr-2022 00:03:08 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 111
+[31-Mar-2022 16:03:11 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[31-Mar-2022 16:03:11 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[31-Mar-2022 16:03:11 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[31-Mar-2022 16:03:11 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 61
+[01-Apr-2022 00:03:11 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 108
+[01-Apr-2022 00:03:11 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 111
+[01-Apr-2022 01:29:06 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 316
+[01-Apr-2022 01:37:12 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[01-Apr-2022 04:08:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2974
+[01-Apr-2022 04:08:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2977
+[01-Apr-2022 04:08:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2978
+[01-Apr-2022 04:08:09 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2979
+[01-Apr-2022 04:11:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2974
+[01-Apr-2022 04:11:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2977
+[01-Apr-2022 04:11:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2978
+[01-Apr-2022 04:11:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2979
+[01-Apr-2022 09:47:18 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 260
+[01-Apr-2022 09:53:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2626
+[01-Apr-2022 09:53:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2629
+[01-Apr-2022 09:53:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2630
+[01-Apr-2022 09:53:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2631
+[01-Apr-2022 01:59:51 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 434
+[01-Apr-2022 10:14:37 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 277
+[01-Apr-2022 10:16:55 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 277
+[01-Apr-2022 02:25:13 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[01-Apr-2022 10:25:31 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 277
+[01-Apr-2022 10:28:46 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 277
+[01-Apr-2022 02:32:22 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[01-Apr-2022 10:40:19 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2626
+[01-Apr-2022 10:40:19 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2629
+[01-Apr-2022 10:40:19 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2630
+[01-Apr-2022 10:40:19 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2631
+[01-Apr-2022 02:50:44 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[01-Apr-2022 11:14:14 Asia/Manila] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in /home/u359933141/domains/jtdv.tech/public_html/trylang.php:190
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/trylang.php(190): number_format()
+#1 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 190
+[01-Apr-2022 11:14:51 Asia/Manila] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in /home/u359933141/domains/jtdv.tech/public_html/trylang.php:190
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/trylang.php(190): number_format()
+#1 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 190
+[01-Apr-2022 03:28:18 UTC] PHP Warning:  Attempt to read property "firstname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 206
+[01-Apr-2022 03:28:18 UTC] PHP Warning:  Attempt to read property "lastname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 206
+[01-Apr-2022 03:28:18 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 207
+[01-Apr-2022 03:28:18 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 208
+[01-Apr-2022 03:28:18 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 209
+[01-Apr-2022 03:28:18 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 209
+[01-Apr-2022 03:28:18 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 210
+[01-Apr-2022 03:28:18 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 210
+[01-Apr-2022 03:28:18 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 211
+[01-Apr-2022 03:28:18 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 211
+[01-Apr-2022 03:28:21 UTC] PHP Warning:  Attempt to read property "firstname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 206
+[01-Apr-2022 03:28:21 UTC] PHP Warning:  Attempt to read property "lastname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 206
+[01-Apr-2022 03:28:21 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 207
+[01-Apr-2022 03:28:21 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 208
+[01-Apr-2022 03:28:21 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 209
+[01-Apr-2022 03:28:21 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 209
+[01-Apr-2022 03:28:21 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 210
+[01-Apr-2022 03:28:21 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 210
+[01-Apr-2022 03:28:21 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 211
+[01-Apr-2022 03:28:21 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 211
+[01-Apr-2022 11:37:34 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2626
+[01-Apr-2022 11:37:34 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2629
+[01-Apr-2022 11:37:34 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2630
+[01-Apr-2022 11:37:34 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2631
+[01-Apr-2022 03:47:47 UTC] PHP Warning:  Attempt to read property "firstname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 206
+[01-Apr-2022 03:47:47 UTC] PHP Warning:  Attempt to read property "lastname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 206
+[01-Apr-2022 03:47:47 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 207
+[01-Apr-2022 03:47:47 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 208
+[01-Apr-2022 03:47:47 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 209
+[01-Apr-2022 03:47:47 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 209
+[01-Apr-2022 03:47:47 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 210
+[01-Apr-2022 03:47:47 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 210
+[01-Apr-2022 03:47:47 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 211
+[01-Apr-2022 03:47:47 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 211
+[01-Apr-2022 03:48:14 UTC] PHP Warning:  Attempt to read property "firstname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 206
+[01-Apr-2022 03:48:14 UTC] PHP Warning:  Attempt to read property "lastname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 206
+[01-Apr-2022 03:48:14 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 207
+[01-Apr-2022 03:48:14 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 208
+[01-Apr-2022 03:48:14 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 209
+[01-Apr-2022 03:48:14 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 209
+[01-Apr-2022 03:48:14 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 210
+[01-Apr-2022 03:48:14 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 210
+[01-Apr-2022 03:48:14 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 211
+[01-Apr-2022 03:48:14 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 211
+[01-Apr-2022 03:52:27 UTC] PHP Warning:  Attempt to read property "firstname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 206
+[01-Apr-2022 03:52:27 UTC] PHP Warning:  Attempt to read property "lastname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 206
+[01-Apr-2022 03:52:27 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 207
+[01-Apr-2022 03:52:27 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 208
+[01-Apr-2022 03:52:27 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 209
+[01-Apr-2022 03:52:27 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 209
+[01-Apr-2022 03:52:27 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 210
+[01-Apr-2022 03:52:27 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 210
+[01-Apr-2022 03:52:27 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 211
+[01-Apr-2022 03:52:27 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 211
+[01-Apr-2022 12:09:07 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2632
+[01-Apr-2022 12:09:07 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2635
+[01-Apr-2022 12:09:07 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2636
+[01-Apr-2022 12:09:07 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2637
+[01-Apr-2022 13:45:28 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 277
+[01-Apr-2022 05:57:28 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[01-Apr-2022 06:00:10 UTC] PHP Parse error:  Unclosed '{' on line 715 in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 718
+[01-Apr-2022 06:00:14 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(390): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/class.php(226): Payroll->checkEmailExist()
+#3 /home/u359933141/domains/jtdv.tech/public_html/login.php(3): Payroll->login()
+#4 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 06:00:16 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(390): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/class.php(226): Payroll->checkEmailExist()
+#3 /home/u359933141/domains/jtdv.tech/public_html/login.php(3): Payroll->login()
+#4 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 14:00:32 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 14:03:37 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:03 Asia/Manila] PHP Warning:  Attempt to read property "rateperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:33 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 14:09:50 Asia/Manila] PHP Warning:  Undefined property: stdClass::$rateperDay in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 191
+[01-Apr-2022 06:10:13 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 14:10:21 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 06:10:27 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 14:10:52 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 14:13:16 Asia/Manila] PHP Warning:  Undefined variable $display in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:13:16 Asia/Manila] PHP Warning:  A non-numeric value encountered in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 06:15:07 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 14:15:07 Asia/Manila] PHP Warning:  Undefined variable $totald in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 180
+[01-Apr-2022 14:16:01 Asia/Manila] PHP Warning:  Undefined variable $totald in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 180
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 14:56:16 Asia/Manila] PHP Warning:  Undefined variable $total0 in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 204
+[01-Apr-2022 15:21:45 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 15:22:29 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 07:26:12 UTC] PHP Warning:  Attempt to read property "firstname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 259
+[01-Apr-2022 07:26:12 UTC] PHP Warning:  Attempt to read property "lastname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 259
+[01-Apr-2022 07:26:12 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 260
+[01-Apr-2022 07:26:12 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 261
+[01-Apr-2022 07:26:12 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 262
+[01-Apr-2022 07:26:12 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 262
+[01-Apr-2022 07:26:12 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 07:26:12 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 07:26:12 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 264
+[01-Apr-2022 07:26:12 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 264
+[01-Apr-2022 07:27:04 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 15:28:45 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 15:32:13 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 07:33:46 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 07:34:24 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 15:35:49 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 323
+[01-Apr-2022 15:36:52 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 15:36:55 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 07:36:56 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 15:37:11 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 07:38:05 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 07:42:04 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 15:42:22 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 07:42:25 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 15:43:00 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 323
+[01-Apr-2022 15:43:35 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 07:43:39 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 08:01:13 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 08:14:30 UTC] PHP Warning:  Attempt to read property "firstname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 08:14:30 UTC] PHP Warning:  Attempt to read property "lastname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 08:14:30 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 264
+[01-Apr-2022 08:14:30 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 265
+[01-Apr-2022 08:14:30 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 266
+[01-Apr-2022 08:14:30 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 266
+[01-Apr-2022 08:14:30 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 267
+[01-Apr-2022 08:14:30 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 267
+[01-Apr-2022 08:14:30 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 268
+[01-Apr-2022 08:14:30 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 268
+[01-Apr-2022 08:14:36 UTC] PHP Warning:  Attempt to read property "firstname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 08:14:36 UTC] PHP Warning:  Attempt to read property "lastname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 08:14:36 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 264
+[01-Apr-2022 08:14:36 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 265
+[01-Apr-2022 08:14:36 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 266
+[01-Apr-2022 08:14:36 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 266
+[01-Apr-2022 08:14:36 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 267
+[01-Apr-2022 08:14:36 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 267
+[01-Apr-2022 08:14:36 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 268
+[01-Apr-2022 08:14:36 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 268
+[01-Apr-2022 08:14:38 UTC] PHP Warning:  Attempt to read property "firstname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 08:14:38 UTC] PHP Warning:  Attempt to read property "lastname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 08:14:38 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 264
+[01-Apr-2022 08:14:38 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 265
+[01-Apr-2022 08:14:38 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 266
+[01-Apr-2022 08:14:38 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 266
+[01-Apr-2022 08:14:38 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 267
+[01-Apr-2022 08:14:38 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 267
+[01-Apr-2022 08:14:38 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 268
+[01-Apr-2022 08:14:38 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 268
+[01-Apr-2022 08:14:41 UTC] PHP Warning:  Attempt to read property "firstname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 08:14:41 UTC] PHP Warning:  Attempt to read property "lastname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 08:14:41 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 264
+[01-Apr-2022 08:14:41 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 265
+[01-Apr-2022 08:14:41 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 266
+[01-Apr-2022 08:14:41 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 266
+[01-Apr-2022 08:14:41 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 267
+[01-Apr-2022 08:14:41 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 267
+[01-Apr-2022 08:14:41 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 268
+[01-Apr-2022 08:14:41 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 268
+[01-Apr-2022 16:39:08 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 323
+[01-Apr-2022 16:39:21 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 267
+[01-Apr-2022 08:39:23 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 441
+[01-Apr-2022 08:39:48 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(392): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/class.php(228): Payroll->checkEmailExist()
+#3 /home/u359933141/domains/jtdv.tech/public_html/login.php(3): Payroll->login()
+#4 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 08:39:57 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(392): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/class.php(228): Payroll->checkEmailExist()
+#3 /home/u359933141/domains/jtdv.tech/public_html/login.php(3): Payroll->login()
+#4 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 08:39:58 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(63): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/login.php(4): Payroll->maintenance()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 08:40:00 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(63): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/login.php(4): Payroll->maintenance()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 08:40:01 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(63): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/login.php(4): Payroll->maintenance()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 08:40:01 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(63): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/login.php(4): Payroll->maintenance()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 08:40:02 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(63): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/login.php(4): Payroll->maintenance()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 08:40:06 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(63): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/login.php(4): Payroll->maintenance()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 08:40:06 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 460
+[01-Apr-2022 08:40:06 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[01-Apr-2022 08:40:06 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[01-Apr-2022 08:40:06 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(63): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/dashboard.php(5): Payroll->maintenance()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 08:40:09 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 460
+[01-Apr-2022 08:40:09 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[01-Apr-2022 08:40:09 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/dashboard.php on line 4
+[01-Apr-2022 08:40:09 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(63): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/dashboard.php(5): Payroll->maintenance()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 08:40:09 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(63): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/login.php(4): Payroll->maintenance()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 08:40:09 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(63): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/login.php(4): Payroll->maintenance()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[01-Apr-2022 16:41:00 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 325
+[01-Apr-2022 16:47:53 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 08:48:30 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 443
+[01-Apr-2022 16:49:32 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 08:52:29 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 443
+[01-Apr-2022 16:52:39 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 08:52:55 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 443
+[01-Apr-2022 16:56:41 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 16:56:41 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 16:56:41 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 16:56:41 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 16:57:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 16:57:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 16:57:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 16:57:23 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 16:59:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 16:59:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 16:59:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 16:59:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 16:59:40 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 16:59:40 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 16:59:40 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 16:59:40 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 16:59:56 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 16:59:56 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 16:59:56 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 16:59:56 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:01:40 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:01:40 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:01:40 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:01:40 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:01:51 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:01:51 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:01:51 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:01:51 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:02:17 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 17:05:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:05:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:05:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:05:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:06:52 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:06:52 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:06:52 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:06:52 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:07:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:07:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:07:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:07:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:08:48 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:08:48 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:08:48 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:08:48 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:11:18 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 09:11:23 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 443
+[01-Apr-2022 09:13:46 UTC] PHP Warning:  Undefined array key 1 in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 366
+[01-Apr-2022 17:13:46 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 325
+[01-Apr-2022 17:14:21 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 17:18:03 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:18:03 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:18:03 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:18:03 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:18:10 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:18:10 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:18:10 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:18:10 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:20:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:20:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:20:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:20:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:21:45 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:21:45 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:21:45 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:21:45 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:22:56 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:22:56 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:22:56 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:22:56 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:23:14 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:23:14 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:23:14 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:23:14 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:24:35 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 09:25:09 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 443
+[01-Apr-2022 17:26:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:26:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:26:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:26:47 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 09:27:00 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2673
+[01-Apr-2022 17:27:20 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:27:20 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:27:20 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:27:20 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:27:41 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:27:41 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:27:41 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:27:41 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:28:15 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:28:15 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:28:15 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:28:15 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:28:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:28:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:28:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:28:44 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:29:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:29:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:29:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:29:01 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:29:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:29:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:29:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:29:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:29:36 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:29:36 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:29:36 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:29:36 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:29:49 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:29:49 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:29:49 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:29:49 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:29:51 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 17:30:07 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:30:07 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:30:07 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:30:07 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:30:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:30:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:30:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:30:31 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 17:33:18 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 17:33:18 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 17:33:18 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 17:33:18 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 09:33:32 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 443
+[01-Apr-2022 17:34:13 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 09:36:23 UTC] PHP Warning:  Attempt to read property "firstname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 09:36:23 UTC] PHP Warning:  Attempt to read property "lastname" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 263
+[01-Apr-2022 09:36:23 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 264
+[01-Apr-2022 09:36:23 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 265
+[01-Apr-2022 09:36:23 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 266
+[01-Apr-2022 09:36:23 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 266
+[01-Apr-2022 09:36:23 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 267
+[01-Apr-2022 09:36:23 UTC] PHP Warning:  Attempt to read property "ratesperDay" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 267
+[01-Apr-2022 09:36:23 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 268
+[01-Apr-2022 09:36:23 UTC] PHP Warning:  Attempt to read property "overtime_rate" on bool in /home/u359933141/domains/jtdv.tech/public_html/trylang.php on line 268
+[01-Apr-2022 09:49:22 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2673
+[01-Apr-2022 17:59:15 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 10:01:28 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 443
+[01-Apr-2022 18:02:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 18:02:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 18:02:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 18:02:17 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[01-Apr-2022 18:22:46 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 20:23:15 Asia/Manila] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 269
+[01-Apr-2022 21:10:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2646
+[01-Apr-2022 21:10:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[01-Apr-2022 21:10:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2650
+[01-Apr-2022 21:10:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2651
+[03-Apr-2022 21:55:55 Asia/Manila] PHP Warning:  file_get_contents(../mail_template_message.html): Failed to open stream: No such file or directory in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 457
+[03-Apr-2022 21:55:56 Asia/Manila] PHP Warning:  file_get_contents(../mail_template_message.html): Failed to open stream: No such file or directory in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 457
+[03-Apr-2022 21:55:58 Asia/Manila] PHP Warning:  file_get_contents(../mail_template_message.html): Failed to open stream: No such file or directory in /home/u359933141/domains/jtdv.tech/public_html/classemp.php on line 457
+[05-Apr-2022 22:23:34 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2644
+[05-Apr-2022 22:23:34 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2647
+[05-Apr-2022 22:23:34 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2648
+[05-Apr-2022 22:23:34 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[08-Apr-2022 13:38:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2644
+[08-Apr-2022 13:38:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2647
+[08-Apr-2022 13:38:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2648
+[08-Apr-2022 13:38:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649
+[08-Apr-2022 16:11:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$position in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2644
+[08-Apr-2022 16:11:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2647
+[08-Apr-2022 16:11:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$scheduleTimeOut in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2648
+[08-Apr-2022 16:11:54 Asia/Manila] PHP Warning:  Undefined property: stdClass::$datetimeIn in /home/u359933141/domains/jtdv.tech/public_html/secclass.php on line 2649

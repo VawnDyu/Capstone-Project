@@ -1,0 +1,3679 @@
+@import 'sass/_Config';
+@import 'sass/_Variables';
+@import 'sass/mixins//Position';
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(202, 202, 202);
+    border-radius: 9px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 18% repeat(16, 1fr);
+    grid-template-rows: repeat(19, minmax(70px, auto));
+    grid-gap: 15px;
+    // full height - 1 / 9
+    padding-right: 25px;
+    overflow-x: hidden;
+    transition: ease;
+    height: 100vh;
+
+    .sidebar {
+        height: 100vh;
+        grid-column: 1 / 2;
+        margin-right: 10px;
+        position: fixed;
+        
+    }
+
+
+    .page-info-head {
+        grid-row: 1 / 2;
+        grid-column: 2 / 13;
+        display: flex;
+        align-items: center;
+        font-size: $header;
+        font-weight: $bold;
+    }
+
+    .user-info {
+        grid-row: 1 / 2;
+        grid-column: 13 / 18;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 30px;
+
+        a {
+            color: $ic-primary;
+            font-weight: $semibold;
+            margin-right: 10px;
+        }
+
+        p {
+            font-weight: $medium;
+            font-size: $subhead;
+        }
+
+        .user-profile {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background: crimson;
+            margin-left: 30px;
+        }
+    }
+
+    .user_edit_profile_header{
+        position: absolute;
+        left: 285px;
+        top: 120px;
+        font-weight: $semibold;
+        font-size: $subhead;
+    }
+
+
+    .payroll-automatic-svg {
+        grid-row: 6 / 10;
+        grid-column: 1 / 17;
+        
+    }
+
+
+    .edit-profile-card {
+        grid-row: 3 / 13;
+        grid-column: 2 / 18;
+        background: $front;
+        border-radius: 8px;
+    
+
+        .changeprofile {
+            display: flex;
+            flex-direction: column;
+            width: 35%;
+
+            object {
+                margin: 40px 50px;
+                margin-bottom: 20px;
+                height: 200px;
+                width: 200px;
+            }
+
+            a {
+                font-weight: $semibold;
+                position: relative;
+                left: 80px;
+                text-decoration: underline;
+            }
+        }
+
+        .edit-profile-card__form {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            left: 250px;
+            bottom: 200px;
+            
+
+            label {
+                margin-bottom: 10px;
+                font-weight: $semibold;
+                
+            }
+
+            input[type="text"],input[type="number"]{
+                height: 40px;
+                margin-bottom: 40px;
+                width: 40%;
+                background-color: $input-background;
+                padding-left: 10px;
+                border: none;
+                font-size: $subhead;
+                font-weight: $medium;                
+            }
+            
+            button {
+                position: relative;
+                left: 115px;
+                bottom: 10px;
+                width: 30%;
+            }
+        }
+
+        &__svg {
+            box-sizing: border-box;
+
+            & object {
+                height: 500px;
+                width: 500px;
+                position: absolute;
+                top: 530px;
+                right: -20px;
+            }
+        }
+    }
+
+    .changepassword-card {
+        grid-row: 3 / 10;
+        grid-column: 2 / 17;
+        background: $front;
+        border-radius: 8px;
+    
+
+        .changepassword-card__form {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            left: 80px;
+            top: 60px;
+            
+
+            label {
+                margin-bottom: 10px;
+                font-weight: $semibold;
+                
+            }
+
+            input[type="text"],input[type="password"]{
+                height: 40px;
+                margin-bottom: 40px;
+                width: 40%; 
+                border: none;
+                background: $input-background;
+                padding-left: 10px;
+                font-size: $subhead;
+                font-weight: $medium;                
+            }
+
+            p {
+                font-size: $paragraph;
+                font-weight: $medium;
+                width: 40%;
+                position: absolute;
+                bottom: -5px;
+                
+            }
+            
+            button {
+                position: absolute;
+                left: 115px;
+                bottom: -50px;
+                width: 30%;
+            }
+        }
+
+        &__svg {
+            box-sizing: border-box;
+
+            & object {
+                height: 400px;
+                width: 400px;
+                position: absolute;
+                top: 350px;
+                right: 50px;
+            }
+        }
+    }
+
+    .recentviolations {
+        margin-top: 10px;
+        grid-row: 2 / 5;
+        grid-column: 2 / 8;
+        color: white;
+        background: $orange;
+        border-radius: 8px;
+        padding: 20px 30px;
+
+        &__header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            h1 {
+                font-weight: $semibold;
+            }
+
+            h2 {
+                font-weight: $semibold;
+            }
+        }
+
+        &__content {
+            position: relative;
+            top: 35px;
+
+            
+            p {
+            
+                font-weight: $medium;
+                font-size: 1.5em;
+            }
+
+            button {
+                margin-top: 20px;
+                height: 30px;
+                width: 120px !important;
+                background-color: white;
+                font-weight: $semibold;
+                font-size: $paragraph;
+                
+                & > a {
+                    color: $orange2;
+                    font-weight: $semibold;
+                    font-size: $subhead;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .addviolations {
+        margin-left: 10px;
+        margin-top: 10px;
+        grid-row: 2 / 5;
+        grid-column: 8 / 14;
+        color: white;
+        background: $black;
+        border-radius: 8px;
+        padding: 20px 30px;
+
+        &__header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            h1 {
+                font-weight: $semibold;
+            }
+
+            a {
+                margin-top: 5px;
+                color: white;
+                font-size: $subhead;
+                text-decoration: underline;
+                font-weight: $semibold;
+            }
+        }
+
+        &__content {
+            position: relative;
+            top: 35px;
+            
+            p {
+            
+                font-weight: $medium;
+                font-size: 1.5em;
+            }
+
+            button {
+                margin-top: 20px;
+                height: 30px;
+                width: 120px !important;
+                background-color: $orange;
+                font-weight: $semibold;
+                font-size: $paragraph;
+                
+                & > a {
+                    font-size: $subhead;
+                    color: white;
+                    font-weight: $semibold;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .violationsbanner_header {
+        position: absolute;
+        left: 280px;
+        top: 360px;
+        margin-left: 10px;
+        font-size: $header;
+        font-weight: $bold;
+    }
+    
+    .violations_banner {
+        margin-top: 60px;
+        grid-row: 5 / 9;
+        height: 70%;
+        grid-column: 2 / 14;
+        background: $front;
+        border-radius: 8px;
+        padding: 20px 30px;
+
+        object {
+            height: 290px;
+            width: 290px;
+            position: relative;
+            bottom: 80px;
+            left: 30px;
+            
+        }
+
+        &__content {
+            position: relative;
+            top: -260px;
+            right: -380px;
+            width: 55%;
+            font-weight: $medium;
+
+            h1 {
+                font-weight: $medium;
+            }
+            
+        }
+    }
+
+    .mostviolations_header {
+        position: absolute;
+        right: 205px;
+        top: 360px;
+        margin-left: 10px;
+        font-size: $header;
+        font-weight: $bold;
+    }
+
+    .mostviolations_card {
+        margin-top: 60px;
+        padding: 20px;
+        grid-row: 5 / 8;
+        grid-column: 14 / 19;
+        height: 95%;
+        background: $front;
+        border-radius: 8px;
+
+        p {
+            font-weight: $semibold;
+        }
+
+        .user {
+            margin-bottom: 40px;
+        }
+
+        button {
+            margin-top: 30px;
+            height: 30px;
+            width: 120px !important;
+            background-color: $orange;
+            font-weight: $semibold;
+            font-size: $paragraph;
+            
+            & > a {
+                font-size: $subhead;
+                color: white;
+                font-weight: $semibold;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    
+    .violationtable_header {
+        position: absolute;
+        bottom: 60px;
+        left: 280px;
+        margin-left: 10px;
+        font-size: $header;
+        font-weight: $bold;
+    }
+
+    .violation_table {
+        margin-top: 15px;
+        grid-row: 9 / 16;
+        grid-column: 2 / 14;
+        background: $front;
+        border-radius: 8px;
+        padding: 15px 30px;
+        overflow-y: scroll;
+
+        .header-violations-table {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            .search-svg {
+                position: sticky;
+                transform: translate(-230px, -30px);
+                height: 18px;
+            }
+                
+            h2 {
+                padding-top: 20px;
+                padding-left: 20px;
+                font-size: $header;
+                font-weight: $semibold;
+                margin-bottom: 30px;  
+            }
+
+            input[type=search] {
+                font-weight: $medium;
+                padding-left: 30px;
+                transform: translate(190px, -22px);
+            }
+        }
+
+        &__content {
+            width: 100%;
+            position: relative;
+            display: flex;
+            
+            table {
+                margin-left: 20px;
+                width: 90%;
+
+                thead > tr > th {
+                    text-align: left;
+                    color: $table-subhead;
+                    font-weight: $semibold;
+                    padding: 10px 0;
+                }
+
+                tbody > tr > td {
+                    padding: 15px 0px;
+                    font-size: $table-modal-paragraph;
+                    font-weight: $regular;
+                    
+                }
+
+                .td-action {
+                    display: flex;
+                    justify-content: space-around;
+                    
+
+                    a {
+                        margin-top: 5px;
+                    }
+                    
+                    .td-view {
+                        color:$ic-primary;
+
+                    }
+
+                    .td-edit {
+                        color:$ic-success;
+                    }
+
+                    .td-delete {
+                        color:$ic-danger;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .leave_table {
+        margin-top: 50px;
+        margin-left: 20px;
+        grid-row: 5 / 13;
+        grid-column: 6 / 17;
+        width: 105%;
+        background: $front;
+        border-radius: 8px;
+        padding: 15px 20px;
+        overflow-y: scroll;
+        
+        .leave_header_table {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+                
+            h2 {
+                padding-top: 20px;
+                padding-left: 20px;
+                font-size: $header;
+                font-weight: $semibold;
+                margin-bottom: 30px;  
+            }
+        }
+
+        &__content {
+            width: 100%;
+            position: relative;
+            display: flex;
+            font-weight: $medium;
+            
+            table {
+                margin-left: 20px;
+                width: 90%;
+
+                thead > tr > th {
+                    text-align: left;
+                    color: $table-subhead;
+                    font-weight: $semibold;
+                    padding: 10px 0;
+                }
+
+                tbody > tr > td {
+                    padding: 15px 0px;
+                    font-size: $table-modal-paragraph;
+                    font-weight: $regular;
+                    
+                }
+
+                .td-action {
+                    display: flex;
+                    justify-content: space-between;
+
+                    a {
+                        margin-top: 5px;
+                    }
+                    
+                    .td-view {
+                        color:$ic-primary;
+                    }
+
+                    .td-edit {
+                        color:$ic-success;
+                    }
+
+                    .td-delete {
+                        color:$ic-danger;
+                    }
+                }
+            }
+        }
+    }
+
+    .leave-banner {
+        margin-top: 20px;
+        grid-row: 2 / 5;
+        grid-column: 8 / 18;
+        background: $front;
+        border-radius: 8px;
+        padding: 20px 10px;
+        margin-right: 25px;
+        
+        object {
+            position: relative;
+            bottom: 100px;
+            width: 340px;
+            height: 340px;
+        }
+
+        .greetings_message {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 60%;
+            left: 270px;
+            top: -320px;
+
+            h2 {
+                font-weight: $medium;
+            }
+
+            p {
+                font-weight: $medium;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .recent-activities-leave {
+        position: absolute;
+        bottom: 370px;
+        left: 280px;
+        margin-left: 10px;
+        font-size: $header;
+        font-weight: $bold;
+    }
+
+    .employee-request-leave {
+        position: absolute;
+        bottom: 370px;
+        left: 605px;
+        margin-left: 10px;
+        font-size: $header;
+        font-weight: $bold;
+    }
+
+    .leave-approved {
+        margin-top: 50px;
+        grid-row: 5 / 9;
+        grid-column: 2 / 6;
+        background: $front;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 20px;
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            bottom: -5px;
+            margin-bottom: 30px;
+
+            .eclipse-green {
+                position: relative;
+                height: 15px;
+                width: 15px;
+            }
+
+            h2 {
+                position: relative;
+                font-weight: $semibold;
+                bottom: 6px;
+                margin-left: 20px;
+                margin-bottom: 10px;
+            }
+
+            .close-btn {
+                position: relative;
+                bottom: 5px;
+                left: 90px;
+
+                a {
+
+                    font-weight: $bold;
+                    color: $black;
+                }
+            }
+        }
+
+        .content {
+            
+            h1{
+                font-weight: $medium;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-weight: $semibold;
+                font-size: $paragraph;
+            }
+        }
+
+    }
+
+    .leave-rejected {
+        margin-top: 10px;
+        grid-row: 9 / 13;
+        grid-column: 2 / 6;
+        background: $front;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 20px;
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            bottom: -7px;
+            margin-bottom: 30px;
+
+            .eclipse-red {
+                position: relative;
+                height: 15px;
+                width: 15px;
+            }
+
+            h2 {
+                font-weight: $semibold;
+                position: relative;
+                bottom: 5px;
+                margin-left: 20px;
+                margin-bottom: 10px;
+            }
+
+            .close-btn {
+                position: relative;
+                bottom: 5px;
+                left: 100px;
+
+                a {
+
+                    font-weight: $bold;
+                    color: $black;
+                }
+            }
+        }
+
+        .content {
+            
+            h1{
+                font-weight: $medium;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-weight: $semibold;
+                font-size: $paragraph;
+            }
+        }
+    }
+
+
+    .available_guards_select_company-header {
+        grid-row: 2 / 4;
+        grid-column: 2 / 17;
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            font-size: $header;
+            font-weight: $bold;
+        }
+
+        .search-input {
+            display: flex;
+            height: 20%;
+
+            input[type="text"] {
+                padding-left: 5px;
+                font-weight: $medium;
+                background-color: transparent;
+                border-top-style: hidden;
+                border-left-style: hidden;
+                border-right-style: hidden;
+                border-bottom-style: 10px solid;
+            }
+
+            object {
+                position: relative;
+                right: 20px;
+                top: 5px;
+                height: 20px;
+            }
+        }
+    }
+
+    .assign_select_company {
+        margin-top: 50px;
+        grid-row: 2 / 8;
+        grid-column: 2 / 8;
+        background: $front;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 40px;
+
+        label {
+            font-weight: $semibold;
+            margin-bottom: 10px;
+        }
+        
+        select {
+            margin-bottom: 10px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    }
+
+    
+
+    .banner {
+        grid-row: 2 / 4;
+        grid-column: 2 / 13;
+        background: $front;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 30px;
+
+        &__welcome {
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h1 {
+                font-size: 1.25rem !important;
+                font-weight: $medium;
+            }
+
+            p {
+                width: 230px;
+                font-size: 1rem !important;
+                color: #50505B;
+            }
+
+            button {
+                height: 30px;
+                width: 120px !important;
+                background-color: $orange2;
+                font-weight: $semibold;
+                font-size: $paragraph;
+                
+                & > a {
+                    color: white;
+                }
+            }
+        }
+
+
+        &__svg {
+            box-sizing: border-box;
+
+            & object {
+                height: 350px;
+                width: 350px;
+                transform: translate(-30px, -124px);
+            }
+        }
+    }
+
+    .recent-acc-title{
+        position: relative;
+        height: 50px;
+        width: 830px;
+        top: 120px;
+        left: 280px;
+
+        .acc-header {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            h1 {
+                padding-left: 5px;
+                font-size: $header;
+                font-weight: $semibold;
+            }
+
+            a { 
+                color: #464646;
+                text-decoration: underline;
+                font-weight: $semibold;
+            }
+
+        }
+    }    
+
+    .rec-acc-pos1 {
+        padding-left: 30px;
+        padding-top: 40px;
+        grid-row: 3 / 7;
+        grid-column: 2 / 9;
+        border-radius: 8px;
+        background-color: white;
+
+        & > h1 {
+            font-size: $header;
+            font-weight: $semibold;
+        }
+
+        button {
+            height: 30px;
+            width: 100px !important;
+            background-color: $ic-primary;
+            font-weight: $semibold;
+            font-size: $paragraph;
+            position: absolute;
+            top: 300px;
+            left: 845px;
+            & > a {
+                color: white;
+            }
+        }
+
+        & > h2 {
+            font-size: $header;
+            font-weight: $regular;
+            position: absolute;
+            top: 410px;
+            left: 390px;
+            margin-left: 10px;
+        }
+
+        & > h3 {
+            font-size: $header;
+            font-weight: $semibold;
+            position: absolute;
+            top: 440px;
+            left: 390px;
+            margin-left: 10px;
+        }
+
+        &__svg1 {
+            box-sizing: border-box;
+
+            & object {
+                height: 250px;
+                width: 250px;
+                position: absolute;
+                top: 220px;
+                left: 550px;
+            }
+        }
+
+        &__avatar1 {
+            box-sizing: border-box;
+
+            & object {
+                height: 70px;
+                width: 70px;
+                position: absolute;
+                top: 395px;
+                left: 315px;
+            }
+        }
+
+    }
+
+    .rec-acc-pos2 {
+        padding-left: 30px;
+        padding-top: 40px;
+        grid-row: 3 / 7;
+        grid-column: 9 / 13;
+        border-radius: 8px;
+        background-color: white;
+
+        & > h1 {
+            font-size: $header;
+            font-weight: $semibold;
+        }
+
+        button {
+            height: 30px;
+            width: 100px !important;
+            background-color: $ic-primary;
+            font-weight: $semibold;
+            font-size: $paragraph;
+            position: absolute;
+            top: 300px;
+            left: 315px;
+            & > a {
+                color: white;
+            }
+        }
+
+
+        & > h2 {
+            font-size: $header;
+            font-weight: $regular;
+            position: absolute;
+            top: 410px;
+            left: 920px;
+            margin-left: 10px;
+        }
+
+        & > h3 {
+            font-size: $header;
+            font-weight: $semibold;
+            position: absolute;
+            top: 440px;
+            left: 920px;
+            margin-left: 10px;
+        }
+
+        &__svg2 {
+            box-sizing: border-box;
+
+            & object {
+                height: 200px;
+                width: 185px;
+                transform: translate(125px, -50px);
+            }
+        }
+
+        &__avatar2 {
+            box-sizing: border-box;
+
+            & object {
+                height: 70px;
+                width: 70px;
+                position: absolute;
+                top: 395px;
+                left: 845px;
+            }
+        }
+    }
+
+    .sec_act_title {
+        position: relative;
+        height: 50px;
+        width: 830px;
+        top: 440px;
+        left: 280px;
+
+        .sec_act_container{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            h1 {
+                font-size: $header;
+                font-weight: $semibold;
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .sec_act_content {
+        grid-row: 7 / 12;
+        grid-column: 2 / 13;
+        background: white;
+        border-radius: 8px;
+        padding: 25px 30px;
+        margin-top: 60px;
+        position: relative;
+        overflow-y: scroll;
+
+        &__header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            h1 {
+                position: relative;
+                top: 5px;
+                font-size: $header;
+                font-weight: $semibold;
+            }
+
+            a { 
+                color: #464646;
+                text-decoration: underline;
+                font-weight: $semibold;
+            }
+
+        }
+
+        &__content2 {
+            width: 100%;
+            min-width: 800px;
+            position: relative;
+            top: 10px;
+            
+
+            & > table {
+                width: 100%;
+                min-width: 800px;
+                border-collapse: collapse;
+                margin-bottom: 20px;  
+
+                & > thead > tr > th {
+                    text-align: left;
+                    padding: 10px 0;
+                    font-size: $table-modal-subhead;
+                    font-weight: $semibold;
+                }
+
+                & > tbody > tr > td {
+                    padding: 15px 0px;
+                    font-size: $table-modal-paragraph;
+                    font-weight: $regular;
+
+                }
+                
+            }
+        }
+    }
+
+    .sec_table {
+        grid-row: 2 / 6;
+        grid-column: 2 / 12;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding-top: 10px;
+
+
+
+        h1 {
+            font-size: $header;
+            font-weight: $semibold;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            height: 400px;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            overflow-y: scroll;
+
+
+            &__header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                position: relative;
+
+                .search-svg {
+                    position: relative;
+                    top: -30px;
+                    right: 230px;
+                    height: 18px;
+                }
+                
+                h2 {
+                    padding-top: 20px;
+                    padding-left: 20px;
+                    font-size: $header;
+                    font-weight: $semibold;
+                    margin-bottom: 30px;  
+                }
+
+                input[type=search] {
+                    padding-left: 30px;
+                    font-weight: $medium;
+                    position: relative;
+                    right: -140px;
+                    top: -20px;
+                }
+            }
+
+            &__content {
+                width: 100%;
+                position: relative;
+                display: flex;
+
+                table {
+                    margin-left: 30px;
+                    width: 90%;
+
+                    thead > tr > th {
+                        text-align: left;
+                        color: $table-subhead;
+                        font-weight: $semibold;
+                        padding: 10px 0;
+                    }
+
+                    tbody > tr > td {
+                        padding: 15px 0px;
+                        font-size: $table-modal-paragraph;
+                        font-weight: $regular;
+                        
+                    }
+
+                    .td-action {
+                        display: flex;
+                        justify-content: space-between;
+
+                        a {
+                            margin-top: 5px;
+                        }
+                        
+
+                        .td-view {
+                            color:$ic-primary;
+                        }
+
+                        .td-edit {
+                            color:$ic-success;
+                        }
+
+                        .td-delete {
+                            color:$ic-danger;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .attendance_monitoring {
+        grid-row: 2 / 8;
+        grid-column: 2 / 18;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin-top: 20px;
+
+
+        &__header {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            bottom: 25px;
+
+            h1 {
+                font-size: $header;
+                font-weight: $semibold;
+                margin-bottom: 30px;  
+            }
+
+            span {
+                position: relative;
+                top: 25px;
+                right: 20px;
+            }
+
+            &__svg {
+                box-sizing: border-box;
+    
+                & object {
+                    position: absolute;
+                    right: 190px;
+                    top: 20px;
+                    height: 20px;
+                    width: 20px;
+                }   
+            }
+
+            button {
+                height: 40px;
+                width: 150px !important;
+                background-color: $ic-primary;
+                font-weight: $semibold;
+                font-size: $paragraph;
+                position: absolute;
+                top: 12px;
+                right: 220px;
+    
+                a {
+                    color: white;
+                }
+            }
+
+            
+
+            input[type=search] {
+                height: 40px;
+                transform: translate(-15px, 10px);
+                background-color: transparent;
+                border-top-style: hidden;
+                border-left-style: hidden;
+                border-right-style: hidden;
+                border-bottom-style: solid;
+            }
+        }
+
+        .card {
+            height: 600px;
+            width: 100%;
+            background-color: $front;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            overflow-y: scroll;
+
+            &__content {
+                width: 100%;
+                position: relative;
+
+                table {
+                    margin-left: 10px;
+                    width: 105%;
+                    border-collapse: separate;
+                    border-spacing: 0 15px;
+
+                    thead > tr > th {
+                        text-align: center;
+                        color: $black;
+                        font-weight: $semibold;
+                        padding: 30px 0;
+                        padding-left: 5px;
+                    }
+
+                    & > thead > tr > th:first-child {
+                        padding: 20px 5px;
+                    }
+
+                    tbody > tr > td {
+                        padding: 30px 10px;
+                        font-size: $table-modal-paragraph;
+                        font-weight: $medium;
+                        background-color: $back;
+
+                    }
+
+                    .td-action {
+                        display: flex;
+                        justify-content: space-between;
+
+
+                        .td-view {
+                            color: $ic-primary;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+
+    .employee-available-guards {
+        grid-row: 2 / 8;
+        grid-column: 2 / 17;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+       
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+
+            h1 {
+                padding-top: 20px;
+                font-size: $header;
+                font-weight: $semibold;
+                margin-bottom: 30px;  
+            }
+
+            input[type=search] {
+                height: 40px;
+                transform: translate(-15px, 10px);
+                background-color: transparent;
+                border-top-style: hidden;
+                border-left-style: hidden;
+                border-right-style: hidden;
+                border-bottom-style: solid;
+            }
+        }
+
+        .card {
+            height: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            overflow-y: scroll;
+            padding: 20px 20px;
+
+
+            &__content {
+                width: 100%;
+                position: relative;
+
+                select {
+                    margin-left: 20px;
+                    height: 40px;
+                    width: 150px;
+                    padding-left: 10px;
+                    border-top-style: hidden;
+                    border-left-style: hidden;
+                    border-right-style: hidden;
+                    border-bottom-style: solid;                
+                }
+
+                table {
+                    margin-left: 20px;
+                    width: 95%;
+
+                    thead > tr > th {
+                        text-align: left;
+                        color: $table-subhead;
+                        font-weight: $semibold;
+                        padding: 20px 0;
+                        padding-left: 5px;
+                    }
+
+                    & > thead > tr > th:first-child {
+                        padding: 20px 5px;
+                    }
+
+                    tbody > tr > td {
+                        padding: 10px 5px;
+                        font-size: $table-modal-paragraph;
+                        font-weight: $regular;
+
+                        & > input[type="checkbox"] {
+                            margin-left: 10px;
+                            height: 20px;
+                            width: 20px;
+                            transform: translateY(3px);
+                            border: 1px solid #252525;
+                        }
+
+                        & > tbody > tr > td:first-child {
+                            padding: 0px 20px;
+                        }
+                    }
+                    
+                    .td-action {
+                        display: flex;
+                        justify-content: space-between;
+                        position: relative;
+
+                        a {
+                            margin-top: 5px;
+                        }
+                        
+                        .td-view {
+                            color:$ic-primary;
+                        }
+    
+                        .td-edit {
+                            color:$ic-success;
+                        }
+    
+                        .td-delete {
+                            color:$ic-danger;
+                        }
+                    }
+                } 
+            }
+        }
+
+        button {
+            height: 40px;
+            width: 150px !important;
+            background-color: $ic-primary;
+            font-weight: $semibold;
+            font-size: $paragraph;
+            position: absolute;
+            top: 690px;
+            left: 0;
+
+            & > a {
+                color: white;
+            }
+        }
+    }
+
+    .record-employee-table {
+        grid-row: 7 / 9;
+        grid-column: 2 / 13;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin-top: 10px;
+
+        .card {
+            height: 400px;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 18px;
+
+            &__header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                
+                h2 {
+                    padding-top: 20px;
+                    padding-left: 20px;
+                    font-size: $header;
+                    font-weight: $semibold;
+                    margin-bottom: 30px;  
+                }
+
+                input[type=search] {
+                    transform: translate(-15px, -22px);
+                }
+            }
+
+            &__content {
+                width: 100%;
+                position: relative;
+
+                table {
+                    margin-left: 20px;
+                    width: 95%;
+
+                    thead > tr > th {
+                        text-align: left;
+                        color: $table-subhead;
+                        font-weight: $semibold;
+                        padding: 5px 0;
+                    }
+
+                    tbody > tr > td {
+                        padding: 10px 0px;
+                        font-size: $table-modal-paragraph;
+                        font-weight: $regular;
+                    }
+                }
+            }
+        }
+    }
+
+    .list_company_table {
+        grid-row: 7 / 9;
+        grid-column: 2 / 13;
+        border-radius: 8px;
+        width: 97%;
+        height: 100%;
+        position: relative;
+        margin-top: 30px;
+
+        h1 {
+            font-size: $header;
+            font-weight: $semibold;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            height: 400px;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            overflow-y: auto;
+
+            &__header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                
+                h2 {
+                    padding-top: 20px;
+                    padding-left: 20px;
+                    font-size: $header;
+                    font-weight: $semibold;
+                    margin-bottom: 30px;  
+                }
+
+                input[type=search] {
+                    transform: translate(-15px, -22px);
+                }
+            }
+
+            &__content {
+                width: 100%;
+                position: relative;
+
+                table {
+                    margin-left: 20px;
+                    width: 90%;
+
+                    thead > tr > th {
+                        text-align: left;
+                        color: $table-subhead;
+                        font-weight: $semibold;
+                        padding: 10px 0;
+                    }
+
+                    tbody > tr > td {
+                        padding: 15px 0px;
+                        font-size: $table-modal-paragraph;
+                        font-weight: $regular;
+                    }
+
+                    .td-action {
+                        display: flex;
+                        justify-content: space-between;
+                        position: relative;
+
+                        a {
+                            margin-top: 5px;
+                        }
+                        
+                        .td-view {
+                            color:$ic-primary;
+                        }
+    
+                        .td-edit {
+                            color:$ic-success;
+                        }
+    
+                        .td-delete {
+                            color:$ic-danger;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .relative_links {
+        grid-row: 2 / 6;
+        grid-column: 12 / 14;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding-top: 15px;
+        
+
+        h2 {
+            font-size: $header;
+            font-weight: $semibold;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        .card {
+            height: 125px;
+            width: 300%;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            margin-left: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            a {
+                color: #6B6B6B;
+                text-decoration: underline;
+                font-weight: $semibold;
+                font-size: 1.2rem;
+            }
+
+            &__svg {
+                box-sizing: border-box;
+    
+                & object {
+                    height: 350px;
+                    width: 350px;
+                    
+                }   
+            }
+            
+            &:nth-child(3){
+                background-color: #464646;
+                
+                a {
+                    color: white;
+                    margin-left: 5px;
+                }
+            }
+
+            &:nth-child(2){
+                background-color: $orange;
+                
+                a {
+                    color: white;
+                    margin-left: 5px;
+                }
+            }
+
+        }
+        
+    }
+
+    .statistics {
+        grid-row: 4 / 6;
+        grid-column: 2 / 13;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding-top: 10px;
+
+        h1 {
+            font-size: $header;
+            font-weight: $semibold;
+            margin-bottom: 30px;
+        }
+
+        .cards_container {
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .card {
+                height: 90px;
+                width: 49%;
+                background: white;
+                border-radius: 8px;
+                margin-bottom: 18px;
+
+                h1 {
+                    font-size: $header;
+                    font-weight: $semibold; 
+                    align-items: center; 
+                }
+            }
+        }
+    }
+
+    .company_newly_added {
+        grid-row: 4 / 6;
+        grid-column: 2 / 13;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding-top: 10px;
+
+        h1 {
+            font-size: $header;
+            font-weight: $semibold;
+            margin-bottom: 10px;
+        }
+
+        .cards_container {
+            display: flex;
+            height: 100%;
+            flex-direction: row;
+
+            .card {
+                text-align: center;
+                height: 200px;
+                width: 49%;
+                background: white;
+                border-radius: 8px;
+                margin-right: 30px;
+                padding-top: 30px;
+                padding-left: 5px;
+                padding-right: 5px;
+                
+                .company-profile-icon {
+                    margin: 0 auto;
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    background: crimson;    
+                }
+
+                h1 {
+                    margin-top: 10px;
+                    font-size: $header;
+                    font-weight: $semibold; 
+                    align-items: center; 
+                }
+
+                p {
+                    font-weight: $medium;
+                    font-size: $subhead;
+                }
+
+                
+            }
+        }
+    }
+
+    .company_add_company {
+        background-color: white;
+        grid-row: 1 / 18;
+        grid-column: 13 / 18;
+        border-radius: 8px;
+
+        .user-profile {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background: crimson;
+            margin-left: 20px;
+            transform: translate(300px, 30px);
+        }
+        
+        h1 {
+            transform: translate(20px, 50px);
+            font-size: $header;
+            font-weight: $semibold; 
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            width: 94%;
+            height: 85%;
+            padding: 100px 20px;
+
+            label {
+                position: relative;
+                font-size: $subhead;
+                font-weight: $semibold;
+                margin-bottom: 5px;
+            }
+
+            select {
+                margin-bottom: 20px;
+                padding-left: 8px;
+                height: 50px;
+                width: 250px;
+                outline: none;
+                border: none;
+                background: transparent;
+                border-bottom: 1px solid #D9D9D9;
+            }
+            iframe {
+                margin-top: 20px;
+            }
+
+            input[type="text"] {
+                font-size: $modal-input-subhead;
+                font-weight: $medium;
+                color: #464646;
+                background: transparent;
+                margin-bottom: 20px;
+                margin-top: 10px;
+                
+            }
+
+            button {
+                height: 40px;
+                width: 150px !important;
+                background-color: $ic-primary;
+                font-weight: $semibold;
+                font-size: $paragraph;
+                
+                & > a {
+                    color: white;
+                }
+            }
+       
+        }
+
+    }
+
+    .btn-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-right: 1.5em;
+
+        & > button {
+            margin-right: 2em;
+        }
+    }
+
+    .newguards {
+        grid-row: 2 / 6;
+        grid-column: 13 / 18;
+        background: white;
+        border-radius: 8px;
+        padding: 22px 18px;
+
+        &__header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            h1 {
+                font-size: $header;
+                font-weight: $semibold;
+            }
+
+            a {
+                color: #6B6B6B;
+                text-decoration: underline;
+                font-weight: $semibold;
+            }
+        }
+
+        &__content {
+            height: 16px;
+            margin-top: 20px;
+            display: block;
+
+            .emp_details{
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+
+                .user-name {
+                    display: flex;
+                    flex-direction: column;
+                    
+                    h1 {
+                        font-weight: $medium;
+                        font-size: $header;
+                    }
+                    
+                    p {
+                        color: $table-subhead;
+                        font-weight: $medium;
+                    }
+                }
+
+                .actions {
+                    margin-top: 5px;
+                    display: flex;
+                    width: 20%;
+                    justify-content: space-between;
+
+                    .td-edit {
+                        color:$ic-success;
+                    }
+
+                    .td-delete {
+                        color:$ic-danger;
+                    }
+
+                }
+            }
+        }
+        
+    }
+
+    .leaverequest {
+        grid-row: 6 / 12;
+        grid-column: 13 / 18;
+        background: white;
+        border-radius: 8px;
+        padding: 22px 18px;
+
+        &__header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            h1 {
+                font-size: $header;
+                font-weight: $semibold;
+            }
+
+            a {
+                color: #6B6B6B;
+                text-decoration: underline;
+                font-weight: $semibold;
+            }
+        }
+
+        &__content {
+            height: 16px;
+            margin-top: 20px;
+            display: block;
+
+            .leave_details {
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+
+                .user-name {
+                    display: flex;
+                    flex-direction: column;
+                    
+                    h1 {
+                        font-weight: $medium;
+                        font-size: $header;
+                    }
+                    
+                    p {
+                        color: $table-subhead;
+                        font-weight: $medium;
+                    }
+                }
+
+                .actions {
+                    margin-top: 5px;
+                    display: flex;
+                    width: 20%;
+                    justify-content: space-between;
+
+                    .td-edit {
+                        color:$ic-success;
+                    }
+
+                    .td-delete {
+                        color:$ic-danger;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .record-add-employee {
+        grid-row: 6 / 12;
+        grid-column: 13 / 18;
+        background: white;
+        border-radius: 8px;
+        padding: 22px 18px;
+
+        &__header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+
+            h1 {
+                font-size: $header;
+                font-weight: $semibold;
+            }
+
+            a {
+                color: #6B6B6B;
+                text-decoration: underline;
+                font-weight: $semibold;
+            }
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+                position: relative;
+                font-size: $subhead;
+                font-weight: $semibold;
+                margin-bottom: 13px;
+            }
+
+            input {
+                font-size: $modal-input-subhead;
+                font-weight: $medium;
+                color: #464646;
+                background: transparent;
+                margin-bottom: 35px;
+            }
+
+            button {
+                height: 40px;
+                width: 150px !important;
+                background-color: $ic-primary;
+                font-weight: $semibold;
+                font-size: $paragraph;
+                
+                & > a {
+                    color: white;
+                }
+            }
+        }
+    }
+
+
+    .recentactivity {
+        margin-top: 30px;
+        grid-row: 7 / 12;
+        grid-column: 2 / 13;
+        background: white;
+        border-radius: 8px;
+        padding: 30px 30px;
+
+        &__header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 99%;
+
+            h1 {
+                font-size: $header;
+                font-weight: $semibold;
+            }
+
+            button {
+                height: 30px;
+                width: 120px !important;
+                background-color: $ic-primary;
+                font-weight: $semibold;
+                font-size: $paragraph;
+                
+                & > a {
+                    color: white;
+                }
+            }
+        }
+
+        &__content {
+            width: 100%;
+            position: relative;
+            display: flex;
+
+            table {
+                width: 100%;
+
+                thead > tr > th {
+                    text-align: left;
+                    color: $table-subhead;
+                    font-weight: $semibold;
+                    padding: 30px 0px;
+                }
+
+                tbody > tr > td {
+                    font-size: $table-modal-paragraph;
+                    font-weight: $medium;
+                    
+                }
+            }
+        }
+
+    }
+
+// FOR SECRETARY ADD ACCOUNT
+
+    .sec_add_act_title {
+        height: 50px;
+        width: 260px;
+        position: absolute;
+        top: 525px;
+        right: 135px;
+
+        .sec_act_title_container{
+            display: flex;
+            
+            h1 {
+                font-size: $header;
+                font-weight: $semibold;
+            }
+
+            a {
+                color: #6B6B6B;
+                text-decoration: underline;
+                font-weight: $semibold;
+            }
+        }
+    }
+
+    .sec_add_acc {
+        margin-top: 60px;
+        grid-row: 7 / 12;
+        grid-column: 13 / 18;
+        background: white;
+        border-radius: 8px;
+        padding: 22px 18px;
+        overflow-y: scroll;
+
+        &__header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            h1 {
+                font-size: $header;
+                font-weight: $semibold;
+                margin-bottom: 25px;
+            }      
+        } 
+        
+        &__content {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+                position: relative;
+                font-size: $subhead;
+                font-weight: $semibold;
+                margin-bottom: 13px;
+            }
+
+            input {
+                font-size: $modal-input-subhead;
+                font-weight: $medium;
+                color: #464646;
+                background: transparent;
+                margin-bottom: 35px;
+            }
+
+            button {
+                height: 40px;
+                width: 100px !important;
+                background-color: $ic-primary;
+                font-weight: $semibold;
+                font-size: $paragraph;
+                
+                & > a {
+                    color: white;
+                }
+            }
+
+            select {
+                margin-bottom: 35px;
+                padding-left: 8px;
+                height: 40px;
+                width: 320px;
+                outline: none;
+                border: none;
+                background: transparent;
+                border-bottom: 1px solid #D9D9D9;
+            }
+        }
+    }
+
+    
+    .manual-payroll_header {
+        position: absolute;
+        left: 284px;
+        top: 100px;
+        font-size: $header;
+        font-weight: $bold;
+    }
+
+    .payroll-detail_header {
+        position: absolute;
+        left: 286px;
+        top: 100px;
+        font-size: $header;
+        font-weight: $bold;
+    }
+
+    .payroll-deductions_header {
+        position: absolute;
+        left: 672px;
+        top: 100px;
+        font-size: $header;
+        font-weight: $bold;
+    }
+
+   .cashadvance {
+        grid-row: 2 / 9;
+        grid-column: 7 / 12;
+        width: 105%;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 30px 40px;
+        height: 75%;
+        margin-left: 20px;
+
+        &__header {
+            margin-bottom: 15px;
+        }
+
+        &__form {
+            display:flex;
+            flex-direction: column;
+
+            .detail {
+                margin-bottom: 20px;
+
+                label {
+                    font-weight: $semibold;
+                    font-size: $subhead;
+                }
+
+                select {
+                    height: 40px;
+                    min-width: 100%;
+                    margin-top: 10px;
+                    border-radius: 4px;
+                    border-color: $table-subhead;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    margin-bottom: 10px;
+                }
+
+                input[type="number"], input[type="text"] {
+                    height: 40px;
+                    min-width: 100%;
+                    border-radius: 4px;
+                    border-color: $table-subhead;
+                    padding-left: 10px;
+                    font-weight: $semibold;
+                }
+            }
+
+        }
+        
+        button {
+            margin-top: 20px;
+            background-color: $btn-primary;
+            min-width: 310px;
+            font-weight: $semibold;
+            color: $front;
+        }
+   } 
+
+    .emp-deductions {
+        grid-row: 2 / 8;
+        grid-column: 2 / 7;
+        width: 105%;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 30px 40px;
+
+        &__header {
+            margin-bottom: 15px;
+        }
+
+        &__form {
+            display:flex;
+            flex-direction: column;
+
+            .detail {
+                margin-bottom: 20px;
+
+                label {
+                    font-weight: $semibold;
+                    font-size: $subhead;
+                }
+
+                select {
+                    background-color: $back;
+                    border-radius: 4px;
+                    margin-top: 5px;
+                    min-height: 50px;
+                    min-width: 300px;
+                    padding-left: 15px;
+                    font-weight: $medium;
+
+                    option {
+                        padding-top: 20px;
+                    }
+                }
+            }
+
+            button {
+                margin-top: 50px;
+                background-color: $btn-primary;
+                min-width: 302px;
+                font-weight: $semibold;
+                color: $front;
+            }
+        }
+    }
+
+    .generated-deduction-table {
+        margin-top: 20px;
+        grid-row: 12 / 16;
+        grid-column: 2 / 18;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 30px 40px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        &__header {
+            margin-bottom: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            display: flex;
+            justify-content: space-between;
+
+            h1 {
+                font-size: $header;
+                font-weight: $bold;
+            }
+            
+            form {
+                display: flex;
+                justify-content: flex-end;
+                gap: 1.2em;
+
+                button {
+                    background-color: $ic-primary;
+                    color: white;
+                    min-width: 150px;
+                    font-weight: $semibold;
+                }
+
+                input[type="search"] {
+                    outline: none;
+                    font-weight: $medium;
+                    border: none;
+                    border-bottom: solid $black;
+                    padding: 5px;
+                    font-size: $subhead;
+                    text-indent: 5px;
+                }
+            } 
+        }
+        
+        table {
+            margin-left: 20px;
+            margin-right: 20px;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 15px;
+            
+
+            thead > tr > th {
+                text-align: left;
+                color: $table-subhead;
+                font-weight: $semibold;
+                padding: 10px 0;
+                padding-left: 25px;
+            }
+
+            tbody > tr {
+                
+               background-color: $back;   
+               
+                
+                td {
+                    padding: 10px 25px;
+                    font-size: $table-modal-paragraph;
+                    font-weight: $medium;
+                    
+                }
+            }
+
+            .td-action {
+                display: flex;
+                width: 80%;
+                justify-content: space-between;
+                
+                a {
+                    margin-top: 5px;
+                }
+                
+                .td-edit {
+                    color:$ic-success;
+
+                }
+
+                .td-view {
+                    color:$ic-primary;
+
+                }
+
+                .td-delete {
+                    color:$ic-danger;
+                }
+            }
+        }
+    }
+
+    .generated-cashadvance {
+        margin-top: 20px;
+        grid-row: 16 / 20;
+        grid-column: 2 / 18;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 30px 40px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        margin-bottom: 20px;
+
+        &__header {
+            margin-bottom: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            display: flex;
+            justify-content: space-between;
+
+            h1 {
+                font-size: $header;
+                font-weight: $bold;
+            }
+            
+            form {
+                display: flex;
+                justify-content: flex-end;
+                gap: 1.2em;
+
+                button {
+                    background-color: $ic-primary;
+                    color: white;
+                    min-width: 150px;
+                    font-weight: $semibold;
+                }
+
+                input[type="search"] {
+                    outline: none;
+                    font-weight: $medium;
+                    border: none;
+                    border-bottom: solid $black;
+                    padding: 5px;
+                    font-size: $subhead;
+                    text-indent: 5px;
+                }
+            } 
+        }
+        
+        table {
+            margin-left: 20px;
+            margin-right: 20px;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 15px;
+            
+
+            thead > tr > th {
+                text-align: left;
+                color: $table-subhead;
+                font-weight: $semibold;
+                padding: 10px 0;
+                padding-left: 25px;
+            }
+
+            tbody > tr {
+                
+               background-color: $back;   
+               
+                
+                td {
+                    padding: 10px 25px;
+                    font-size: $table-modal-paragraph;
+                    font-weight: $medium;
+                    
+                }
+            }
+
+            .td-action {
+                display: flex;
+                width: 80%;
+                justify-content: space-between;
+                
+
+                
+                
+                .td-view {
+                    color:$ic-primary;
+
+                }
+
+                .td-delete {
+                    color:$ic-danger;
+                }
+            }
+        }
+    }
+
+    .payroll-deductions {
+        margin-top: 50px;
+        grid-row: 2 / 12;
+        grid-column: 7 / 12;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 30px 40px;
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+
+            .detail {
+                margin-bottom: 20px;
+
+                label {
+                    font-weight: $semibold;
+                    font-size: $subhead;
+                }
+
+                input[type="number"], input[type="text"] {
+                    height: 40px;
+                    min-width: 100%;
+                    margin-top: 10px;
+                    border-radius: 4px;
+                    border-color: $table-subhead;
+                    padding-left: 10px;
+                    font-weight: $semibold;
+                }
+
+                p {
+                    font-size: $paragraph;
+                    color: $black;
+                }
+            }
+
+            button {
+                background: $btn-primary;
+                margin-top: 30px;
+                
+                a {
+                    color: white;
+                    font-weight: $medium;
+                }
+            }
+        }
+    }
+
+    .netpay {
+        margin-top: 50px;
+        grid-row: 3 / 8;
+        grid-column: 12 / 18;
+        border-radius: 8px;
+        width: 95%;
+        background-color: $front;
+        padding: 30px 40px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-weight: $semibold;
+            font-size: 1.5rem;
+        }
+
+        input[type="number"], input[type="text"] {
+            height: 200px;
+            min-width: 100%;
+            margin-top: 10px;
+            border-radius: 4px;
+            text-align: center;
+            border-color: $table-subhead;
+            padding-left: 10px;
+            font-size: 2rem;
+        }
+    }
+
+    .auto-generated-payroll-attendance {
+        margin-top: 50px;
+        grid-row: 2 / 10;
+        grid-column: 2 / 17;
+        width: 105%;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 20px 20px;
+        overflow-y: scroll;
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 20px;
+            width: 75%;
+            position: absolute;
+            top: 95px;
+
+            h1 {   
+                font-size: $header;
+                font-weight: $header;
+            }
+
+            span {
+                position: relative;
+                top: 10px;
+                right: 5px;
+            }
+
+            input[type="text"]{
+                height: 25px;
+                margin-right: 15px;
+                padding-left: 10px;
+                outline: none;
+                background-color: transparent;
+                border-top-style: hidden;
+                border-left-style: hidden;
+                border-right-style: hidden;
+                border-bottom-style: solid;
+            }
+
+            .act-searchbar {
+                position: relative;
+                left: 900px       
+            }
+        }
+
+        &__content {
+            width: 100%;
+            position: relative;
+            display: flex;
+            font-weight: $medium;
+            
+            table {
+                margin-left: 20px;
+                margin-right: 20px;
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 15px;
+                
+
+                thead > tr > th {
+                    text-align: left;
+                    color: $table-subhead;
+                    font-weight: $semibold;
+                    padding: 10px 0;
+                    padding-left: 25px;
+
+                    button {
+                        background-color: $btn-primary;
+
+                        a {
+                            font-weight: $semibold;
+                            color: $front;
+                        
+                        }
+                    }
+                    
+                }
+
+                tbody > tr {
+                    
+                   background-color: $back;   
+                   
+                    
+                    td {
+                        padding: 10px 25px;
+                        font-size: $table-modal-paragraph;
+                        font-weight: $medium;
+                        
+                    }
+                }
+
+                .td-action {
+                    display: flex;
+                    width: 96%;
+                    justify-content: space-between;
+                    
+
+                    a {
+                        margin-top: 5px;
+                    }
+                    
+                    .td-view {
+                        color:$ic-primary;
+
+                    }
+
+                    .td-delete {
+                        color:$ic-danger;
+                    }
+                }
+            }
+        }
+    }
+
+    .viewautomatedsalary-logo {
+        position: absolute;
+        right: 20px;
+    }
+
+    .auto-generated-salaries {
+        margin-top: 20px;
+        grid-row: 11 / 16;
+        grid-column: 2 / 17;
+        width: 105%;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 20px 20px;
+        overflow-y: scroll;
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            width: 70%;
+            position: absolute;
+            bottom: -130px;
+
+            h1 {
+            
+                font-size: $header;
+                font-weight: $header;
+            }
+
+            .searchbar {
+                display: flex;
+                justify-content: space-between;
+                width: 15%;
+
+                input[type="text"]{
+                    height: 25px;
+                    margin-right: 15px;
+                    padding-left: 10px;
+                    outline: none;
+                    background-color: transparent;
+                    border-top-style: hidden;
+                    border-left-style: hidden;
+                    border-right-style: hidden;
+                    border-bottom-style: solid;
+                }
+            }
+        }
+
+        &__content {
+            width: 100%;
+            position: relative;
+            display: flex;
+            font-weight: $medium;
+            
+            table {
+                margin-left: 20px;
+                margin-right: 20px;
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 15px;
+                
+
+                thead > tr > th {
+                    text-align: left;
+                    color: $table-subhead;
+                    font-weight: $semibold;
+                    padding: 10px 0;
+                    padding-left: 25px;
+                }
+
+                tbody > tr {
+                    
+                   background-color: $back;   
+                   
+                    
+                    td {
+                        padding: 10px 25px;
+                        font-size: $table-modal-paragraph;
+                        font-weight: $medium;
+                        
+                    }
+                }
+
+                .td-action {
+                    display: flex;
+                    width: 96%;
+                    justify-content: space-between;
+                    
+
+                    a {
+                        margin-top: 5px;
+                    }
+                    
+                    .td-view {
+                        color:$ic-primary;
+
+                    }
+
+                    .td-delete {
+                        color:$ic-danger;
+                    }
+                }
+            }
+        }
+    }
+
+    .manual-generated-table-header {
+        grid-row: 12 / 19;
+        grid-column: 2 / 18;
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        margin-top: 60px;
+
+        h1 {
+            font-size: $header;
+            
+        }
+
+        .searchbar {
+            display: flex;
+            justify-content: space-between;
+            width: 20%;
+
+            span {
+                margin-top: 4px;
+            }
+
+            input[type="text"]{
+                height: 25px;
+                margin-right: 15px;
+                padding-left: 10px;
+                outline: none;
+                font-weight: $semibold;
+                background-color: transparent;
+                border-top-style: hidden;
+                border-left-style: hidden;
+                border-right-style: hidden;
+                border-bottom-style: solid;
+            }
+        }
+        
+    }
+
+    .manual-generated-table {
+        grid-row: 13 / 19;
+        grid-column: 2 / 18;
+        width: 98%;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 20px 20px;
+        margin-top: 20px;
+        overflow-y: scroll;
+        
+        &__header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            width: 96%;
+
+            h1 {
+            
+                font-size: $header;
+                font-weight: $header;
+            }
+
+            
+        }
+
+        &__content {
+            width: 100%;
+            position: relative;
+            display: flex;
+            font-weight: $medium;
+            
+            table {
+                margin-left: 20px;
+                margin-right: 20px;
+                width: 95%;
+                border-collapse: separate;
+                border-spacing: 0 15px;
+
+                thead > tr > th {
+                    text-align: left;
+                    color: $table-subhead;
+                    font-weight: $semibold;
+                    padding: 10px 0;
+                    padding-left: 25px;
+                }
+
+                tbody > tr {
+                    background-color: $back;
+                    
+                    
+                    
+                    td {
+                        padding: 5px 25px;
+                        font-size: $table-modal-paragraph;
+                        font-weight: $regular;
+                        border-collapse: separate;
+                        border-spacing: 0 15px;
+                        
+                    }
+                }
+                .td-action {
+                    display: flex;
+                    width: 80%;
+                    justify-content: space-between;
+                    
+                    
+                    .td-edit {
+                        color:$ic-success;
+
+                    }
+
+                    .td-view {
+                        color:$ic-primary;
+                    }
+
+                    .td-delete {
+                        color:$ic-danger;
+                    }
+                }
+            }
+        }
+    }
+
+    .manual-generated-salaries {
+        grid-row: 8 / 12;
+        grid-column: 2 / 18;
+        width: 98%;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 20px 20px;
+        margin-top: 20px;
+        overflow-y: scroll;
+        
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            width: 96%;
+
+            h1 {
+            
+                font-size: $header;
+                font-weight: $header;
+            }
+
+            .searchbar {
+                display: flex;
+                justify-content: space-between;
+                width: 20%;
+
+                input[type="text"]{
+                    height: 25px;
+                    margin-right: 15px;
+                    padding-left: 10px;
+                    outline: none;
+                    background-color: transparent;
+                    border-top-style: hidden;
+                    border-left-style: hidden;
+                    border-right-style: hidden;
+                    border-bottom-style: solid;
+                }
+            }
+        }
+
+        &__content {
+            width: 100%;
+            position: relative;
+            display: flex;
+            font-weight: $medium;
+            
+            table {
+                margin-left: 20px;
+                margin-right: 20px;
+                width: 95%;
+                border-collapse: separate;
+                border-spacing: 0 15px;
+
+                thead > tr > th {
+                    text-align: left;
+                    color: $table-subhead;
+                    font-weight: $semibold;
+                    padding: 10px 0;
+                    padding-left: 25px;
+                }
+
+                tbody > tr {
+                    background-color: $back;
+                    
+                    
+                    
+                    td {
+                        padding: 5px 25px;
+                        font-size: $table-modal-paragraph;
+                        font-weight: $regular;
+                        border-collapse: separate;
+                        border-spacing: 0 15px;
+                        
+                    }
+                }
+                .td-action {
+                    display: flex;
+                    width: 80%;
+                    justify-content: space-between;
+                    
+                    
+                    .td-edit {
+                        color:$ic-success;
+
+                    }
+
+                    .td-view {
+                        color:$ic-primary;
+                    }
+
+                    .td-delete {
+                        color:$ic-danger;
+                    }
+                }
+            }
+        }
+    }
+
+    .cash-advance-generated {
+        grid-row: 12 / 17;
+        grid-column: 2 / 18;
+        width: 98%;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 20px 20px;
+        margin-top: 20px;
+        overflow-y: scroll;
+   
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            width: 96%;
+
+            h1 {
+            
+                font-size: $header;
+                font-weight: $header;
+            }
+
+            .searchbar {
+                display: flex;
+                justify-content: space-between;
+                width: 20%;
+
+                input[type="text"]{
+                    height: 25px;
+                    margin-right: 15px;
+                    padding-left: 10px;
+                    background-color: transparent;
+                    border-top-style: hidden;
+                    border-left-style: hidden;
+                    border-right-style: hidden;
+                    border-bottom-style: solid;
+                }
+            }
+        }
+
+        &__content {
+            width: 100%;
+            position: relative;
+            display: flex;
+            font-weight: $medium;
+            
+            table {
+                margin-left: 20px;
+                margin-right: 20px;
+                width: 95%;
+                border-collapse: separate;
+                border-spacing: 0 15px;
+
+                thead > tr > th {
+                    text-align: left;
+                    color: $table-subhead;
+                    font-weight: $semibold;
+                    padding: 10px 0;
+                    padding-left: 25px;
+                }
+
+                tbody > tr {
+                    background-color: $back;
+                    
+                    
+                    
+                    td {
+                        padding: 5px 25px;
+                        font-size: $table-modal-paragraph;
+                        font-weight: $regular;
+                        border-collapse: separate;
+                        border-spacing: 0 15px;
+                        
+                    }
+                }
+                .td-action {
+                    display: flex;
+                    width: 50%;
+                    justify-content: space-between;
+                    
+
+                    a {
+                        margin-top: 5px;
+                    }
+                    
+                    .td-view {
+                        color:$ic-primary;
+
+                    }
+
+                    .td-delete {
+                        color:$ic-danger;
+                    }
+                }
+            }
+        }
+    }
+
+    .automatic-empid {
+        margin-top: 50px;
+        grid-row: 2 / 6;
+        grid-column: 2 / 7;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 30px 40px;
+        height: 67%;
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+
+            .detail {
+                margin-bottom: 20px;
+
+                label {
+                    font-weight: $medium;
+                    font-size: $subhead;
+                }
+
+                select {
+                    height: 40px;
+                    min-width: 100%;
+                    margin-top: 10px;
+                    border-radius: 4px;
+                    border-color: $table-subhead;
+                    padding-left: 10px;
+                    margin-bottom: 20px;
+                }
+
+                button {
+                    background-color: $btn-primary;
+                    min-width: 100%;
+                    
+                    a {
+                        color: $front;
+                        font-weight: $medium;
+                    }
+                }
+            }
+        }
+    }
+
+    .payroll-details {
+        margin-top: 50px;
+        grid-row: 2 / 12;
+        grid-column: 2 / 7;
+        border-radius: 8px;
+        background-color: $front;
+        padding: 30px 40px;
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+
+            .detail {
+                margin-bottom: 20px;
+
+                label {
+                    font-weight: $semibold;
+                    font-size: $subhead;
+                }
+
+                input[type="number"], input[type="text"] {
+                    height: 40px;
+                    min-width: 100%;
+                    margin-top: 10px;
+                    border-radius: 4px;
+                    border-color: $table-subhead;
+                    padding-left: 10px;
+                }
+
+                p {
+                    font-size: $paragraph;
+                    color: $black;
+                }
+            }
+        }
+    }
+
+
+    .visit_title {
+        position: absolute;
+        top: 120px;
+        right: 280px;
+
+        h1 {
+            font-size: $header;
+            font-weight: $semibold;
+        }
+    }
+
+    .visit {
+        grid-row: 3 / 7;
+        grid-column: 14 / 18;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+
+        .cards_container {
+            display: flex;
+            height: 46%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-right: 40px;
+
+            a {
+                padding-top: 20px;
+                color: black;
+                font-size: $header;
+                text-decoration: underline;
+                font-weight: $semibold; 
+                 
+            }
+
+            .card {
+                text-align: center;
+                height: 150px;
+                width: 46%;
+                background: white;
+                border-radius: 8px;
+                margin-bottom: 10px;
+                padding-top: 25;
+                
+
+                &__svg {
+                    box-sizing: border-box;
+        
+                    & object {
+                        height: 350px;
+                        width: 350px;
+                        transform: translate(-30px, -124px);
+                    }   
+                }
+
+            &:nth-child(2){
+                background-color: #464646;
+                
+                a {
+                    color: white;
+                }
+            }
+
+        } 
+        }
+    }
+
+    .employee_list {
+        grid-row: 2 / 10;
+        grid-column: 2 / 18;
+        border-radius: 8px;
+        background-color: $front;
+        border-radius: 6px;
+        overflow-y: scroll;
+        padding: 20px 30px;
+        margin-top: 20px;
+
+        
+
+        &__header {
+            margin-bottom: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            display: flex;
+            justify-content: space-between;
+
+            span {
+                position:relative;
+                top: 8px;
+                left: 10px;
+            }
+
+            h1 {
+                font-size: $header;
+                font-weight: $bold;
+            }
+            
+            form {
+                display: flex;
+                justify-content: flex-end;
+                gap: 1.2em;
+
+                button {
+                    background-color: $ic-primary;
+                    color: white;
+                    min-width: 150px;
+                    font-weight: $semibold;
+                }
+
+                input[type="search"] {
+                    outline: none;
+                    font-weight: $medium;
+                    border: none;
+                    border-bottom: solid $black;
+                    padding: 5px;
+                    font-size: $subhead;
+                    text-indent: 5px;
+                }
+            } 
+        }
+
+        &__content {
+            width: 100%;
+            position: relative;
+            display: flex;
+            font-weight: $medium;
+            overflow-x: scroll;
+            
+            table {
+                margin-left: 20px;
+                margin-right: 20px;
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 15px;
+
+                thead > tr > th {
+                    text-align: left;
+                    color: $table-subhead;
+                    font-weight: $semibold;
+                    padding: 5px 0;
+                    padding-left: 25px;
+                }
+
+                tbody > tr {
+                    
+                   background-color: $back;   
+                   
+                    td {
+                        padding: 10px 25px;
+                        font-size: $table-modal-paragraph;
+                        font-weight: $medium;
+                        
+                    }
+                }
+
+                .td-action {
+                    display: flex;
+                    width: 98%;
+                    justify-content: space-between;
+                    
+                    a {
+                        margin-top: 5px;
+                    }
+                    
+                    
+                    .td-view {
+                        color:$ic-primary;
+
+                    }
+
+                    .td-delete {
+                        color:$ic-danger;
+                    }
+                }
+            }
+        }
+    }
+    .generate-deduction-table {
+        grid-row: 2 / 8;
+        grid-column: 2 / 18;
+        border-radius: 8px;
+        background-color: $front;
+        border-radius: 6px;
+        overflow-y: scroll;
+        margin-top: 20px;
+
+        &__header {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            display: flex;
+            justify-content: space-between;
+            button {
+                background-color: $btn-primary;
+                    font-weight: $semibold;
+                    color: $front;
+            }
+            h1 {
+                font-size: $header;
+                font-weight: $semibold;
+            }
+            .searchbar {
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    position: relative;
+                    top: 25px;
+                    right: 20px;
+                }
+    
+                input[type=search] {
+                    height: 40px;
+                    transform: translate(-15px, 10px);
+                    background-color: transparent;
+                    border-top-style: hidden;
+                    border-left-style: hidden;
+                    border-right-style: hidden;
+                    border-bottom-style: solid;
+                    font-weight: $semibold;
+                }
+            }
+        }
+
+        &__content {
+            width: 100%;
+            position: relative;
+
+            table {
+                margin-left: 40px;
+                width: 95%;
+                border-collapse: separate;
+                border-spacing: 0 15px;
+              
+
+                thead > tr > th {
+                    text-align: left;
+                    color: $black;
+                    font-weight: $semibold;
+                    padding: 15px 20px;
+                    padding-left: 5px;
+
+                    button {
+                        background-color: $btn-primary;
+
+                        a {
+                            font-weight: $semibold;
+                            color: $front;
+                        
+                        }
+                    }
+                }
+
+                & > thead > tr > th:first-child {
+                    padding: 20px 5px;
+                }
+
+                tbody > tr > td {
+                    padding: 15px 20px;
+                    font-size: $table-modal-paragraph;
+                    font-weight: $medium;
+                    background-color: $back;
+                  
+
+                }
+
+                .td-action {
+                    display: flex; 
+
+                    a {
+                        margin-top: 5px;
+                    }
+
+
+                    .td-edit {
+                        color: $ic-success;
+                    }
+
+                    .td-view {
+                        color: $ic-primary;
+                    }
+
+                    .td-delete {
+                        color: $ic-danger;
+                    }
+                }
+            } 
+        }
+    }
+
+    .generate-cashadvance-table{
+        grid-row: 8 / 15;
+        grid-column: 2 / 18;
+        border-radius: 8px;
+        background-color: $front;
+        border-radius: 6px;
+        overflow-y: scroll;
+        margin-top: 20px;
+
+        &__header {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            display: flex;
+            justify-content: space-between;
+            
+
+            h1 {
+                font-size: $header;
+                font-weight: $semibold;
+            }
+
+            .searchbar {
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    position: relative;
+                    top: 25px;
+                    right: 20px;
+                }
+    
+                input[type=search] {
+                    height: 40px;
+                    transform: translate(-15px, 10px);
+                    background-color: transparent;
+                    border-top-style: hidden;
+                    border-left-style: hidden;
+                    border-right-style: hidden;
+                    border-bottom-style: solid;
+                    font-weight: $semibold;
+                }
+            }
+        }
+
+        &__content {
+            width: 100%;
+            position: relative;
+
+            table {
+                margin-left: 40px;
+                width: 95%;
+                border-collapse: separate;
+                border-spacing: 0 15px;
+
+                thead > tr > th {
+                    text-align: left;
+                    color: $black;
+                    font-weight: $semibold;
+                    padding: 30px 0;
+                    padding-left: 5px;
+
+                    button {
+                        background-color: $btn-primary;
+
+                        a {
+                            font-weight: $semibold;
+                            color: $front;
+                        
+                        }
+                    }
+                }
+
+                & > thead > tr > th:first-child {
+                    padding: 20px 5px;
+                }
+
+                tbody > tr > td {
+                    padding: 15px 20px;
+                    font-size: $table-modal-paragraph;
+                    font-weight: $medium;
+                    background-color: $back;
+
+                }
+
+                .td-action {
+                    display: flex;
+                  
+                    width: 100%;
+
+                    a {
+                        margin-top: 5px;
+                    }
+
+
+                    .td-edit {
+                        color: $ic-success;
+                    }
+
+                    .td-view {
+                        color: $ic-primary;
+                    }
+
+                    .td-delete {
+                        color: $ic-danger;
+                    }
+                }
+
+            } 
+        }
+    }
+}

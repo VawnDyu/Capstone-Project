@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+label {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+button[type=submit] {
+    width: 100%;
+    padding: 10px 0px 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: whitesmoke;
+    background: #48117c;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 4px;
+    outline: none;
+}
+
+button[type=submit]:hover {
+    background-color: #591697;
+}
+
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 10px 20px 10px;
+    font-size: 20px;
+    margin: 10px 0 20px;
+    background: #6f1abd;
+    color: whitesmoke;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type=email]::placeholder, input[type=password]::placeholder {
+    color: whitesmoke;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+    border: 1px solid whitesmoke;
+}
+
+input[type=email]:focus::placeholder, input[type=password]:focus::placeholder {
+    color: transparent;
+}
+
+.main-container {
+    background-color: whitesmoke;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+
+    & > .company-banner {
+        background-color: whitesmoke;
+        grid-row: 1 / 19;
+        grid-column: 1 / 11;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        & > .banner {
+            padding: 20px;
+            text-align: center;
+            color: #8a2be2;
+            font-size: 30px;
+            margin-top: 90px;
+
+            & > .company {
+                font-weight: 600;
+                font-size: 68px;
+            }
+
+            & > .info {
+                font-weight: 500;
+                font-size: 40px;
+            }
+        }
+    }
+
+    & > .login-form {
+        background-color: #8a2be2;
+        grid-row: 1 / 19;
+        grid-column: 11 / 19;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        & > form {
+            padding: 20px;
+
+            & > .header {
+                color: whitesmoke;
+                text-align: center;
+                padding: 10px;
+                font-size: 20px;
+
+                & > .main {
+                    font-size: 36px;
+                    font-weight: 500;
+                    padding-top: 50px;
+                }
+
+                & > .sub {
+                    padding-bottom: 60px;
+                }
+            }
+
+            & > .message {
+                color: whitesmoke;
+                text-align: center;
+                padding: 10px;
+                background: lightcoral;
+                margin-bottom: 20px;
+                border-radius: 4px;
+            }
+        }
+    }
+}

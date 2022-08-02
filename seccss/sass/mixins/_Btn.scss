@@ -1,0 +1,14 @@
+/* btn-hover */
+@mixin btn-hover($color) {
+    background-color: darken($color, 10%); 
+}
+
+/* for btn icons fontawesome */
+@mixin span($icon) {
+    &::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        content: $icon;
+    }
+}
+

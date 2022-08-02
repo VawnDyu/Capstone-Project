@@ -1,0 +1,326 @@
+@import 'sass/Config';
+
+// .error {
+//     position: absolute;
+//     top: 30px;
+//     right: 30px;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     width: fit-content;
+//     height: 60px;
+//     border-radius: 5px;
+//     background: #FF6C6C;
+//     box-sizing: border-box;
+//     opacity: 0;
+//     animation: popup 4.5s ease-in-out forwards;
+//     z-index: 99;
+
+
+//     & > .icon-container {
+//         height: 100%;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: center;
+//         padding: 0 20px;
+
+        
+//         & > span {
+//             height: 25px;
+//             width: 25px;
+//             border-radius: 50%;
+//             background-color: #fff;
+//             text-align:center;
+//             line-height: 25px;
+//             font-size: 14px;
+//             font-weight: $bold;
+//             color: #FF6C6C;
+//         }
+//     }
+
+//     & > p {
+//         font-weight: $semibold;
+//         color: #fff;
+//         margin-right: 20px;
+//     }
+
+//     & > .closeContainer {
+//         height: 100%;
+//         background-color: #FF8080;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         padding: 0 16px;
+//         border-top-right-radius: 5px;
+//         border-bottom-right-radius: 5px;
+//         cursor: pointer;
+
+//         &:hover {
+//             background-color: lighten(#FF8080, 5%);
+//         }
+
+//         & > span {
+//             color: #fff;
+//         }
+//     }
+// }
+
+// @keyframes popup {
+//     0% {
+//         top: 40px;
+//         opacity: 0;
+//     }
+//     20% {
+//         top: 30px;
+//         opacity: 1;
+//     }
+//     90% {
+//         top: 30px;
+//         opacity: 1;
+//     }
+//     100% {
+//         top: 10px;
+//         display: flex !important;
+//         opacity: 0;
+//     }
+// }
+
+.main-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+
+    & > .leftbar {
+        height: 100%;
+        width: 65%;
+        background: $front;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 30px 30px 50px 30px;
+        position: relative;
+
+        & > nav {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+
+            & > .logo-container {
+                display: flex;
+                align-items: center;
+
+                & > .logo {
+                    height: 37px;
+                    width: 37px;
+                    background-image: url("../img/jtdv.png");
+                    background-size: cover;
+                    object-fit: contain;
+                    background-repeat: no-repeat;
+                    margin-right: 10px;
+                }
+
+                & > h3 {
+                    font-size: 22px;
+                    font-weight: $bold;
+                    color: #774AB0;
+                }
+            }
+        }
+
+        & > .content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            & > .content-svg {
+                height: 70%;
+                width: 100%;
+                @include y-center;
+
+                & > object {
+                    height: 295px;
+                    width: 490px;
+                }
+            }
+
+            & > .content-info {
+                height: 30%;
+                width: 100%;
+                position: relative;
+                @include x-center;
+
+                & > .center {
+                    @include y-center;
+                    width: 70%;
+                    position: relative;
+                    
+                    & > * { text-align: center; }
+                    & > h2 {
+                        font-weight: $medium;
+                        font-size: 28px;
+                    }
+
+                    & > p {
+                        width: 70%;
+                        font-size: 18px;
+                        color: #606060;
+                    }
+                }
+            }
+        }
+    }
+
+    & > .rightbar {
+        background: $loginRight;
+        height: 100%;
+        width: 35%;
+        padding: 60px 50px 80px 50px;
+        position: relative;
+        box-sizing: border-box;
+        @include y-center;
+        gap: 30px;
+
+        & > .welcome-container {
+            @include y-center;
+            height: auto;
+            width: 100%;
+
+            & > h1 {
+                font-weight: $medium;
+                font-size: 35px;
+                color: #FFF;
+                text-align: center;
+            }
+
+            & > p {
+                font-weight: $regular;
+                font-size: 20px;
+                color: #fbfbfb;
+                text-align: center;
+            }
+        }
+
+        & > form {
+            height: 80%;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+
+            & > .message {
+                margin-bottom: 10px;
+                color: rgb(236, 236, 236);
+                border-radius: 5px;
+
+                &.error {
+                    background: #ff8563;
+                    border: 2px solid #f6704b;
+
+                    & > p {
+                        padding: 10px 20px;
+                    }
+                }
+            }
+
+            & > .input-container1, 
+                .input-container2 {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                & > label {
+                    font-size: 18px;
+                    font-weight: $medium;
+                    color: #FFFFFF;
+                }
+
+                & > .icon1:focus-within::before  {
+                    color: #ffdbb8;
+                }
+
+                & > .icon2:focus-within::before  {
+                    color: #ffdbb8;
+                }
+
+                & > .icon1, .icon2 {
+                    width: 100%;
+                    position: relative;
+
+
+                    & > input {
+                        width: 100%;
+                        padding: 10px 46px 10px 15px;
+                        border-radius: 5px;
+                        border: none;
+                        background-color: #E89C51;
+                        font-size: 16px;
+                        color: white;
+                        outline: none;
+                        box-sizing: border-box;
+
+                        &::placeholder {
+                            color: rgb(233, 233, 233);
+                        }
+
+                        &:focus {
+                            background-color: #ee9944;
+                        }
+
+                        &:hover {
+                            outline: 2px solid #f6c28e;
+                        }
+                    }
+                }
+
+                & > .icon1::before {
+                    content: '\f0e0';
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 600;
+                    font-size: 22px;
+                    color: #FFCC99;
+                    position: absolute;
+                    right: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                & > .icon2::before {
+                    content: '\f023';
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 600;
+                    font-size: 22px;
+                    color: #FFCC99;
+                    position: absolute;
+                    right: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            & > .input-container1{ margin-bottom: 10px; }
+            & > .input-container2{ margin-bottom: 30px; }
+
+            & > button {
+                width: 100%;
+                font-size: 16px;
+                padding: 10px 15px;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                background-color: #454545;
+                color: #FFFFFF;
+                font-weight: $medium;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #333333;
+                }
+            }
+        }
+    }
+}
+
+
+

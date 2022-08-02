@@ -1,0 +1,2 @@
+ErrorDocument 404 https://www.jtdv.tech/notfound.html
+ErrorDocument 401 https://www.jtdv.tech/authorizationrequired.html

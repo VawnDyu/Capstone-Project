@@ -1,0 +1,114 @@
+[25-Mar-2022 06:22:20 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u359933141/domains/jtdv.tech/public_html/class.php:35
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(35): PDO->__construct()
+#1 /home/u359933141/domains/jtdv.tech/public_html/class.php(4450): Payroll->con()
+#2 /home/u359933141/domains/jtdv.tech/public_html/company/company.php(80): Payroll->newlyaddedcompany()
+#3 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 35
+[27-Mar-2022 11:53:25 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 428
+[27-Mar-2022 11:53:25 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[27-Mar-2022 11:53:25 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[27-Mar-2022 19:53:25 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 117
+[27-Mar-2022 19:53:25 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 120
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[30-Mar-2022 20:07:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 80
+[31-Mar-2022 04:07:49 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 136
+[31-Mar-2022 04:07:49 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 139
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[30-Mar-2022 20:08:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 80
+[31-Mar-2022 04:08:51 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 136
+[31-Mar-2022 04:08:51 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 139
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[30-Mar-2022 20:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 80
+[31-Mar-2022 04:12:49 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 136
+[31-Mar-2022 04:12:49 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 139
+[31-Mar-2022 16:26:33 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'JTDV Security Agency' for key 'unique_compName' in /home/u359933141/domains/jtdv.tech/public_html/class.php:6182
+Stack trace:
+#0 /home/u359933141/domains/jtdv.tech/public_html/class.php(6182): PDOStatement->execute()
+#1 /home/u359933141/domains/jtdv.tech/public_html/company/company.php(5): Payroll->addcompany()
+#2 {main}
+  thrown in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 6182
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[31-Mar-2022 16:02:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 80
+[01-Apr-2022 00:02:59 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 136
+[01-Apr-2022 00:02:59 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 139
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[31-Mar-2022 16:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 80
+[01-Apr-2022 00:03:03 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 136
+[01-Apr-2022 00:03:03 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 139
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Undefined array key "adminDetails" in /home/u359933141/domains/jtdv.tech/public_html/class.php on line 451
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 4
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 5
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 39
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 40
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 42
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 43
+[31-Mar-2022 23:36:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 80
+[01-Apr-2022 07:36:17 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 136
+[01-Apr-2022 07:36:17 Asia/Manila] PHP Warning:  Trying to access array offset on value of type null in /home/u359933141/domains/jtdv.tech/public_html/company/company.php on line 139

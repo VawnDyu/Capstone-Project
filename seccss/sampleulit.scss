@@ -1,0 +1,11 @@
+@import 'sass/Config';
+@import 'sass/Variables';
+@import 'sass/mixins//Position';
+
+.main-container {
+    .modal{
+        &__form{
+            width: 60vw;
+        }
+    }
+}

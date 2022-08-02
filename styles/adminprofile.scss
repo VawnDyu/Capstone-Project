@@ -1,0 +1,1445 @@
+@import 'sass/Config';
+
+.success {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: 60px;
+    border-radius: 5px;
+    background: #19C773;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: popup 4.5s ease-in-out forwards;
+
+
+    & > .icon-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+
+        
+        & > span {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align:center;
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: $bold;
+            color: #19C773;
+        }
+    }
+
+    & > p {
+        font-weight: $semibold;
+        color: #fff;
+        margin-right: 20px;
+    }
+
+    & > .closeContainer {
+        height: 100%;
+        background-color: #34D889;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten(#34D889, 5%);
+        }
+
+        & > span {
+            color: #fff;
+        }
+    }
+}
+
+.error {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: 60px;
+    border-radius: 5px;
+    background: #FF6C6C;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: popup 4.5s ease-in-out forwards;
+    z-index: 99;
+
+
+    & > .icon-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+
+        
+        & > span {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align:center;
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: $bold;
+            color: #FF6C6C;
+        }
+    }
+
+    & > p {
+        font-weight: $semibold;
+        color: #fff;
+        margin-right: 20px;
+    }
+
+    & > .closeContainer {
+        height: 100%;
+        background-color: #FF8080;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten(#FF8080, 5%);
+        }
+
+        & > span {
+            color: #fff;
+        }
+    }
+}
+
+@keyframes popup {
+    0% {
+        top: 40px;
+        opacity: 0;
+    }
+    20% {
+        top: 30px;
+        opacity: 1;
+    }
+    90% {
+        top: 30px;
+        opacity: 1;
+    }
+    100% {
+        top: 10px;
+        display: flex !important;
+        opacity: 0;
+    }
+}
+
+.main-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: $back;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-right: 30px;
+
+    @media only screen and (min-width: 1050px) {
+        padding-right: 15px;
+	}
+
+    @media only screen and (min-width: 1300px) {
+        padding-right: 30px;
+	}
+
+    @media only screen and (min-width: 1500px) {
+        padding-right: 30px;
+	}
+
+    @media only screen and (min-width: 1700px) {
+        padding-right: 30px;
+	}
+
+    // leftbar and others
+    & > .leftbar, .centerbar, .rightbar {
+        height: 100%;
+        background: $front;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    & > .leftbar {
+        width: 18%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 25px 0px 20px 30px;
+        box-sizing: border-box;
+
+        @media only screen and (min-width: 1050px) {
+            padding: 25px 0px 20px 20px;
+        }
+
+        @media only screen and (min-width: 1300px) {
+            padding: 25px 0px 20px 30px;
+        }
+
+        @media only screen and (min-width: 1500px) {
+            padding: 25px 0px 20px 30px;
+        }
+
+        @media only screen and (min-width: 1700px) {
+            padding: 25px 0px 20px 50px;
+        }
+
+        & > .logo-container {
+            height: 7%;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            @media only screen and (min-width: 1050px) {
+                transform: translateX(0px);
+            }
+    
+            @media only screen and (min-width: 1300px) {
+                transform: translateX(0px);
+            }
+    
+            @media only screen and (min-width: 1500px) {
+                transform: translateX(0px);
+            }
+    
+            @media only screen and (min-width: 1700px) {
+                transform: translateX(-10px);
+            }
+
+
+            & > .logo {
+                height: 30px;
+                width: 30px;
+                background-image: url("../img/jtdv.png");
+                background-size: cover;
+                margin-right: 10px;
+
+                @media only screen and (min-width: 1050px) {
+                    height: 30px;
+                    width: 30px;
+                }
+        
+                @media only screen and (min-width: 1300px) {
+                    height: 30px;
+                    width: 30px;
+                }
+        
+                @media only screen and (min-width: 1500px) {
+                    height: 30px;
+                    width: 30px;
+                }
+        
+                @media only screen and (min-width: 1700px) {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+
+            & > h1 {
+                font-size: 18px;
+                font-weight: $bold;
+                color: #774AB0;
+
+                @media only screen and (min-width: 1050px) {
+                    font-size: 18px;
+                }
+        
+                @media only screen and (min-width: 1300px) {
+                    font-size: 18px;
+                }
+        
+                @media only screen and (min-width: 1500px) {
+                    font-size: 18px;
+                }
+        
+                @media only screen and (min-width: 1700px) {
+                    font-size: 22px;
+                }
+            }
+        }
+
+        & > .links-container {
+            height: 88%;
+            width: 100%;
+            position: relative;
+            box-sizing: border-box;
+            padding-left: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            & > ul {
+                list-style: none;
+
+                & > li {
+                    margin-bottom: 10px;
+                    padding: 5px 0;
+                    font-weight: $semibold;
+                    position: relative;
+                    color: #B7B7B7;
+                    transition: 200ms ease-in-out;
+
+                    @media only screen and (min-width: 1050px) {
+                        font-size: 14px;
+                        padding: 5px 0;
+                    }
+
+                    @media only screen and (min-width: 1300px) {
+                        font-size: 16px;
+                        padding: 5px 0;
+                    }
+
+                    @media only screen and (min-width: 1500px) {
+                        font-size: 16px;
+                        padding: 5px 0;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        font-size: 18px;
+                        padding: 10px 0;
+                    }
+
+                    & > a {
+                        text-decoration: none;
+                        color: #B7B7B7;
+
+                        @media only screen and (min-width: 1050px) {
+                            font-size: 14px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            font-size: 16px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            font-size: 16px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            font-size: 18px;
+                        }
+                    }
+
+                    &:nth-child(1):hover {
+                        color: #000;
+
+                        &::before {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 20px;
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    &:nth-child(2):hover {
+                        color: #000;
+
+                        &::before {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 6px;
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    &:nth-child(3):hover {
+                        color: #000;
+
+                        &::before {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 4%;
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    &:nth-child(4):hover {
+
+                        &::before {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 55%;
+                            left: -38px;
+                            transform: translateY(-45%);
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        & > a {
+                            color: #000;
+                        }
+                    }
+
+                    // dashboard
+                    &:nth-child(1)::before {
+                        content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 56%;
+                        transform: translateY(-50%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/ic/outline-space-dashboard.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    // records
+                    &:nth-child(2)::before {
+                        content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 4%;
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    // manage report
+                    &:nth-child(3)::before {
+                        content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 4%;
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/heroicons-outline/chart-square-bar.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    // activities
+                    &:nth-child(4)::before {
+                        content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                        position: absolute;
+                        top: 55%;
+                        transform: translateY(-45%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=25');
+                            left: -38px;
+                        }
+
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/mdi/text-box-search-outline.svg?color=%23B7B7B7&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    &.active-parent {
+                        color: #000;
+
+                        & > a {
+                            text-decoration: none;
+                            color: #000;
+                        }
+
+                        &::before {
+                            content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                            position: absolute;
+                            top: 20px;
+                            transform: translateY(-50%);
+                            left: -38px;
+
+                            @media only screen and (min-width: 1050px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=25');
+                                left: -38px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                content: url('https://api.iconify.design/fluent/task-list-square-rtl-24-regular.svg?color=%239747ff&height=35');
+                                left: -48px;
+                            }
+                        }
+
+                        &::after {
+                            content: '';
+                            height: 22%;
+                            width: 4px;
+                            border-radius: 4px;
+                            background: #774AB0;
+                            position: absolute;
+                            top: 27%;
+                            right: 0;
+                        }
+                    }
+
+                    & > ul {
+                        list-style: none;
+                        padding-top: 12px;
+                        box-sizing: border-box;
+
+                        & > li {
+                            font-weight: $semibold;
+                            padding: 5px 0 5px 25px;
+                            border-left: 4px solid #8B69B6;
+
+                            @media only screen and (min-width: 1050px) {
+                                padding: 5px 0 5px 25px;
+                            }
+    
+                            @media only screen and (min-width: 1300px) {
+                                padding: 5px 0 5px 25px;
+                            }
+    
+                            @media only screen and (min-width: 1500px) {
+                                padding: 5px 0 5px 25px;
+                            }
+    
+                            @media only screen and (min-width: 1700px) {
+                                padding: 10px 0 5px 25px;
+                            }
+
+                            & > a {
+                                text-decoration: none;
+                                color: #B7B7B7;
+                                transition: 200ms ease-in-out;
+                            }
+
+                            &:hover a {
+                                color: #000;
+                            }
+
+                            &:first-child {
+                                padding-top: 0px;
+                            }
+
+                            &:last-child {
+                                padding-bottom: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // logout
+            & > div {
+                position: relative;
+                margin-bottom: 20px;
+
+                &::before {
+                    content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                    position: absolute;
+                    top: 60%;
+                    transform: translateY(-50%);
+                    left: -38px;
+                    transition: 200ms ease-in-out;
+
+                    @media only screen and (min-width: 1050px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                        left: -38px;
+                    }
+
+                    @media only screen and (min-width: 1300px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                        left: -38px;
+                    }
+
+                    @media only screen and (min-width: 1500px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=25');
+                        left: -38px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%23B7B7B7&height=35');
+                        left: -48px;
+                    }
+                }
+
+                &:focus-within {
+
+                    &::before {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                        position: absolute;
+                        top: 60%;
+                        transform: translateY(-50%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    a {
+                        color: #000;
+                    }
+                }
+
+                &:hover {
+                    &::before {
+                        content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                        position: absolute;
+                        top: 60%;
+                        transform: translateY(-50%);
+                        left: -38px;
+
+                        @media only screen and (min-width: 1050px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1300px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1500px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=25');
+                            left: -38px;
+                        }
+    
+                        @media only screen and (min-width: 1700px) {
+                            content: url('https://api.iconify.design/akar-icons/sign-out.svg?color=%239747ff&height=35');
+                            left: -48px;
+                        }
+                    }
+
+                    a {
+                        color: #000;
+                    }
+                }
+
+                & > a {
+                    text-decoration: none;
+                    color: #B7B7B7;
+                    font-weight: $semibold;
+                    transition: 200ms ease-in-out;
+
+                    @media only screen and (min-width: 1050px) {
+                        font-size: 14px;
+                    }
+
+                    @media only screen and (min-width: 1300px) {
+                        font-size: 16px;
+                    }
+
+                    @media only screen and (min-width: 1500px) {
+                        font-size: 16px;
+                    }
+
+                    @media only screen and (min-width: 1700px) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    & > .centerbar {
+        width: 42%;
+        padding: 35px 0 20px 15px;
+        background: transparent !important;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        & > div {
+            background: $front;
+            width: 100%;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        & > .header-info {
+            height: 4%;
+            background: transparent !important;
+            border: none !important;
+            margin-bottom: 7%;
+
+            & > h1 {
+                font-size: 16px;
+                font-weight: $semibold;
+
+                @media only screen and (min-width: 1050px) {
+                    font-size: 16px;
+                }
+        
+                @media only screen and (min-width: 1300px) {
+                    font-size: 16px;
+                }
+        
+                @media only screen and (min-width: 1500px) {
+                    font-size: 16px;
+                }
+        
+                @media only screen and (min-width: 1700px) {
+                    font-size: 19px;
+                }
+            }
+        }
+
+        & > .sidenav-profile {
+            height: 90%;
+            width: 100%;
+            position: relative;
+            box-sizing: border-box;
+            background: transparent;
+
+            & > .sidenav-profile-header {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 7%;
+
+                & > h1 {
+                    font-size: 16px;
+                    font-weight: $semibold;
+                }
+    
+                & > p {
+                    font-size: 14px;
+                    font-weight: $regular;
+                }
+            }
+
+            & > .sidenav-profile-content {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+                width: 100%;
+                height: 85%;
+
+                & > .sidenav-profile-left {
+                    height: 100%;
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    & > div {
+                        background: white;
+                        padding: 7px 0px 7px 15px;
+                        border-radius: 5px;
+                        position: relative;
+                        
+                        & > a {
+                            text-decoration: none;
+                            font-weight: $semibold;
+                            font-size: 14px;
+                        }
+                    }
+
+                    & > div:nth-child(1) {
+
+                        &:hover {
+
+                            & > a { color: #000; }
+                        }
+
+                        & > a { color: black; }
+
+                        &::before {
+                            content: "";
+                            height: 100%;
+                            width: 4px;
+                            border-radius: 5px;
+                            background: #8B69B6;
+                            position: absolute;
+                            top: 0; right: 0;
+                        }
+                    }
+
+                    & > div:nth-child(2) {
+
+                        &:hover {
+
+                            & > a { color: #000; }
+                        }
+
+                        & > a { color: #B7B7B7 !important; }
+                    }
+
+                    & > div:nth-child(3) {
+
+                        &:hover {
+
+                            & > a { color: #000; }
+                        }
+
+                        & > a { color: #B7B7B7; }
+                    }
+                }
+
+                & > .sidenav-profile-right {
+                    height: 100%;
+                    width: 50%;
+                    position: relative;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    & > .info-container {
+                        height: 77%;
+                        width: 100%;
+                        background: $front;
+                        border-radius: 5px;
+                        box-sizing: border-box;
+                        padding: 20px 20px 20px 17px;
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+
+                        & > .user-photo-container{
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            position: relative;
+
+                            & > div:first-child {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                gap: 20px;
+
+                                & > img {
+                                    height: 55px;
+                                    width: 55px;
+                                    border-radius: 50%;
+                                    background: #343434;
+                                    background-size: cover;
+                                    background-position: center center;
+                                    background-repeat: no-repeat;
+                                }
+
+                                & > .user-name {
+                                    display: flex;
+                                    flex-direction: column;
+
+                                    & > h1 {
+                                        font-size: 14px;
+                                        font-weight: $semibold;
+                                    }
+
+                                    & > p {
+                                        font-weight: $medium;
+                                        font-size: 13px;
+                                        color: #7F7F7F;
+                                        text-transform: capitalize;
+                                    }
+                                }
+                            }
+
+                            & > div:last-child {
+                                margin-top: 15px;
+                                width: 100%;
+                                position: relative;
+                                padding-left: 75px;
+
+                                & > button {
+                                    padding: 5px 0;
+                                    background: $btn-edit;
+                                    border-radius: 5px;
+                                    border: none;
+                                    color: $front;
+                                    font-weight: $semibold;
+                                    cursor: pointer;
+                                    width: 46%;
+                                    font-size: 12px;
+
+                                    &:hover { background: darken($btn-edit, 5%); }
+                                }
+
+                                & > .btn-active {
+                                    background: #7A7A7A !important;
+
+                                    &:hover { background: darken(#7A7A7A, 5%) !important; }
+                                }
+                            }
+                        }
+
+                        & > .about-me-container {
+                            display: flex;
+                            flex-direction: column;
+                            margin-top: 20px;
+                            width: 98%;
+
+                            & > h1 {
+                                font-size: 14px;
+                                font-weight: $semibold;
+                                margin-bottom: 10px;
+                            }
+
+                            & > p {
+                                font-size: 13px;
+                                color: #4A4A4A;
+                            }
+                        }
+
+                        & > .mob-email-container {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+                            margin-top: 20px;
+                            width: 100%;
+                            box-sizing: border-box;
+
+                            & > div { display: flex; align-items: flex-start; }
+
+                            & > div > h1 { font-size: 14px; font-weight: $semibold; }
+                            & > div > p { 
+                                font-size: 13px; 
+                                // font-weight: $medium; 
+                                margin-left: 20px; 
+                                transform: translateX(6px);
+                                color: #4A4A4A;
+                                word-break: break-all;
+                            }
+
+                            & > div:last-child > p { transform: translate(15px, 0px); }
+                        }
+                    }
+
+                    & > .links-container {
+                        height: 23%;
+                        width: 100%;
+                        background: $front;
+                        border-radius: 5px;
+                        box-sizing: border-box;
+                        padding: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        & > h3 {
+                            font-size: 14px;
+                            font-weight: $semibold;
+                        }
+
+                        & > .socialmedia-container {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 20px;
+                            margin-top: 10px;
+
+                            & > a {
+                                height: 25px;
+                                width: 25px;
+                                border-radius: 50%;
+                                position: relative;
+                                cursor: pointer;
+
+                                &.facebook-icon { 
+                                    background: #5E5CEF;
+
+                                    &:hover { background: darken(#5E5CEF, 5%); }
+
+                                    &::before {
+                                        content: url('https://api.iconify.design/eva/facebook-fill.svg?color=%23f8f8f8&height=18');
+                                        position: absolute;
+                                        top: 64%;
+                                        left: 51%;
+                                        transform: translate(-50%, -50%);
+                                    }
+                                }
+                                &.google-icon { 
+                                    background: #414141; 
+
+                                    &:hover { background: darken(#414141, 5%); }
+
+                                    &::before {
+                                        content: url('https://api.iconify.design/flat-color-icons/google.svg?color=%23f8f8f8&height=15');
+                                        position: absolute;
+                                        top: 60%;
+                                        left: 51%;
+                                        transform: translate(-50%, -50%);
+                                    }
+                                }
+                                &.twitter-icon { 
+                                    background: #61B2E4;
+                                    
+                                    &:hover { background: darken(#61B2E4, 5%); }
+
+                                    &::before {
+                                        content: url('https://api.iconify.design/akar-icons/twitter-fill.svg?color=%23f8f8f8&height=15');
+                                        position: absolute;
+                                        top: 60%;
+                                        left: 51%;
+                                        transform: translate(-50%, -50%);
+                                    }
+                                }
+                                &.instagram-icon { 
+                                    background-image: linear-gradient(to top right, #9C06DF, #FF7B03); 
+                                    
+                                    &:hover { background-image: linear-gradient(to top right, darken(#9C06DF, 5%), darken(#FF7B03, 5%)); }
+
+                                    &::before {
+                                        content: url('https://api.iconify.design/uil/instagram.svg?color=%23f8f8f8&height=16');
+                                        position: absolute;
+                                        top: 60%;
+                                        left: 51%;
+                                        transform: translate(-50%, -50%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    
+    & > .rightbar {
+        width: 40%;
+        padding-top: 30px;
+        background: transparent !important;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-sizing: border-box;
+        padding-bottom: 20px;
+        overflow-y: hidden;
+
+        & > .profile-container {
+            height: 10%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            box-sizing: border-box;
+            padding-right: 30px;
+            margin-bottom: 15%;
+
+            & > .profile-setter {
+                display: flex;
+                align-items: center;
+
+                & > h3 {
+                    font-size: 14px;
+                    font-weight: $medium;
+                    margin-right: 15px;
+                }
+    
+                & > a > .image-container > img {
+                    height: 33px;
+                    width: 33px;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        & > .editing-content {
+            height: calc(74% - 5px);
+            width: 100%;
+            position: relative;
+            box-sizing: border-box;
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            padding-right: 35px;
+            
+            &.form-active {
+                display: flex;
+            }
+
+            & > .editing-content-header {
+                width: 100%;
+                background: $front;
+                border-radius: 5px;
+                padding-left: 30px;
+                display: flex;
+                align-items: center;
+                height: 13%;
+                box-sizing: border-box;
+
+                & > h1 {
+                    font-size: 16px;
+                    font-weight: $medium;
+                }
+            }
+
+            & > .editing-content-content {
+                height: 87%;
+                width: 100%;
+                background: $front;
+                position: relative;
+                box-sizing: border-box;
+                padding: 0 30px;
+                border-radius: 5px;
+                
+                & > form {
+                    height: 100%;
+                    width: 100%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    overflow-y: scroll;
+
+                    &::-webkit-scrollbar {
+                        width: 0px;
+                    }
+            
+
+                    & > div:nth-child(1){
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        box-sizing: border-box;
+                        margin-top: 30px;
+                        margin-bottom: 20px;
+
+                        & > .img-container {
+                            position: relative;
+                            box-sizing: border-box;
+                            margin-right: 20px;
+
+                            & > div {
+                                height: 130px;
+                                width: 130px;
+                                border-radius: 50%;
+                                position: relative;
+
+                                & > img {
+                                    height: 100%;
+                                    width: 100%;
+                                    border-radius: 50%;
+                                    background: #343434;
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                }
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 50%; left: 50%;
+                                    border-radius: 50%;
+                                    transform: translate(-50%, -50%) scale(0.88);
+                                    height: 130px;
+                                    width: 130px;
+                                    border: 4px solid #378AEC;
+                                    outline: 5px solid rgba(0,0,0,0.5);
+                                }
+                            }
+
+                            & > label {
+                                height: 35px;
+                                width: 35px;
+                                background: #c7c7c798;
+                                border-radius: 50%;
+                                position: absolute;
+                                bottom: 5px;
+                                right: 5px;
+                                z-index: 99;
+
+                                &:hover {
+                                    background: #c7c7c7cc;
+                                }
+
+                                &::before {
+                                    content: url('https://api.iconify.design/ic/round-photo-camera.svg?color=%23f8f8f8&height=20');
+                                    position: absolute;
+                                    top: 60%; left: 50%;
+                                    transform: translate(-50%, -50%);
+                                }
+                            }
+                        }
+
+                        & > .img-name-container {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+
+                            & > div {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+
+                                & > label {
+                                    font-size: 14px;
+                                    font-weight: $semibold;
+                                    margin-bottom: 10px;
+                                }
+
+                                & > input {
+                                    border: none;
+                                    background: #FAFAFA;
+                                    border-radius: 5px;
+                                    font-size: 12px;
+                                    outline: none;
+                                    text-indent: 15px;
+                                    padding: 7px 0;
+                                }
+                            }
+                        }
+                    }
+
+                    & > div:nth-child(2){
+                        display: flex;
+                        flex-direction: column;
+
+                        & > label {
+                            font-size: 14px;
+                            font-weight: $semibold;
+                            margin-bottom: 10px;
+                        }
+
+                        & > textarea {
+                            height: 64px;
+                            border: none;
+                            outline: none;
+                            border-radius: 5px;
+                            background: #fafafa;
+                            text-indent: 8px;
+                            padding: 7px;
+                            font-size: 12px;
+                        }
+
+                    }
+
+                    & > div:nth-child(3),
+                    & > div:nth-child(4),
+                    & > div:nth-child(5),
+                    & > div:nth-child(6),
+                    & > div:nth-child(7),
+                        div:nth-child(8) {
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+                            margin-top: 15px;
+
+                            & > label {
+                                font-size: 14px;
+                                font-weight: $semibold;
+                            }
+
+                            & > input {
+                                width: 100%;
+                                border: none;
+                                outline: none;
+                                border-radius: 5px;
+                                background: #fafafa;
+                                padding: 7px 0;
+                                text-indent: 15px;
+                                font-size: 12px;
+                            }
+                        }
+
+                    & > button {
+                        margin: 20px 0;
+                        padding: 7px 0;
+                        background: $btn-edit;
+                        font-size: 14px;
+                        font-weight: $semibold;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: darken($btn-edit, 5%);
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

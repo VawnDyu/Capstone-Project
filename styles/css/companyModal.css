@@ -1,0 +1,1461 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.view-modal {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.37);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99;
+}
+
+.view-modal > .modal-holder {
+  width: 33%;
+  max-height: 80%;
+  border-radius: 5px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.view-modal > .modal-holder > .view-modal-header {
+  width: 100%;
+  height: 7%;
+  border-bottom: 1px solid #c8c8c8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.view-modal > .modal-holder > .view-modal-header > h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.view-modal > .modal-holder > .view-modal-header > span {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.view-modal > .modal-holder > .view-modal-content {
+  height: 93%;
+  width: 100%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.view-modal > .modal-holder > .view-modal-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form {
+  height: 100%;
+  width: 72%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding-top: 20px;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div > label {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div > input {
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  margin-top: 5px;
+  font-size: 14px;
+  outline: none;
+  color: #464646;
+  font-weight: 400;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div > select {
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  outline: none;
+  font-size: 14px;
+  color: #464646;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(1)::before {
+  content: url("https://api.iconify.design/bx/bx-building.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(2)::before {
+  content: url("https://api.iconify.design/feather/phone-call.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(3)::before {
+  content: url("https://api.iconify.design/eva/email-outline.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(4) > #map-viewmodal {
+  width: 100%;
+  height: 250px;
+  background: #D9D9D9;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(4)::before {
+  content: url("https://api.iconify.design/akar-icons/map.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(5)::before {
+  content: url("https://api.iconify.design/akar-icons/location.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(6) > #map_b-addmodal {
+  width: 100%;
+  height: 250px;
+  background: #D9D9D9;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(6)::before {
+  content: url("https://api.iconify.design/ri/pin-distance-line.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(7)::before {
+  content: url("https://api.iconify.design/fluent/weather-partly-cloudy-day-16-regular.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(8)::before {
+  content: url("https://api.iconify.design/ic/outline-work-history.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(9)::before {
+  content: url("https://api.iconify.design/bx/bx-time-five.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(10) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(10) > .positions_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(10) > .positions_container > span {
+  margin-top: 5px;
+  color: #464646;
+  font-size: 14px;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(10) > .positions_container > span:first-child {
+  width: 70%;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(10) > .positions_container > span:nth-child(2) {
+  width: 30%;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(10) > .positions_container > span:last-child {
+  width: 30%;
+}
+
+.view-modal > .modal-holder > .view-modal-content > form > div:nth-child(10)::before {
+  content: url("https://api.iconify.design/icon-park-outline/ranking.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.edit-modal {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.37);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99;
+}
+
+.edit-modal > .modal-holder {
+  width: 33%;
+  max-height: 80%;
+  border-radius: 5px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.edit-modal > .modal-holder > .edit-modal-header {
+  width: 100%;
+  height: 7%;
+  border-bottom: 1px solid #c8c8c8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit-modal > .modal-holder > .edit-modal-header > h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.edit-modal > .modal-holder > .edit-modal-header > span {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content {
+  height: 93%;
+  width: 100%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form {
+  height: 100%;
+  width: 72%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding-top: 20px;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div > label {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div > input {
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  margin-top: 5px;
+  font-size: 14px;
+  outline: none;
+  color: #464646;
+  font-weight: 400;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div > select {
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  outline: none;
+  font-size: 14px;
+  color: #464646;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(1)::before {
+  content: url("https://api.iconify.design/bx/bx-building.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(2)::before {
+  content: url("https://api.iconify.design/feather/phone-call.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(3)::before {
+  content: url("https://api.iconify.design/eva/email-outline.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(4) > #map-editmodal {
+  width: 100%;
+  height: 250px;
+  background: #D9D9D9;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(4)::before {
+  content: url("https://api.iconify.design/akar-icons/map.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(5)::before {
+  content: url("https://api.iconify.design/akar-icons/location.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(6) > #map_b-editmodal {
+  width: 100%;
+  height: 250px;
+  background: #D9D9D9;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(6)::before {
+  content: url("https://api.iconify.design/ri/pin-distance-line.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(7)::before {
+  content: url("https://api.iconify.design/fluent/weather-partly-cloudy-day-16-regular.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(8)::before {
+  content: url("https://api.iconify.design/ic/outline-work-history.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(9)::before {
+  content: url("https://api.iconify.design/bx/bx-time-five.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(10) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(10) > .positions_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(10) > .positions_container > button {
+  margin-top: 5px;
+  width: 100%;
+  padding: 7px 0;
+  border-radius: 5px;
+  border: none;
+  background: #4848FE;
+  cursor: pointer;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(10) > .positions_container > button:hover {
+  background: #2f2ffe;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(10) > .positions_container > button > a {
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(11) {
+  padding-bottom: 20px;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(11) > button {
+  padding: 7px 0;
+  background: #19C773;
+  border: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edit-modal > .modal-holder > .edit-modal-content > form > div:nth-child(11) > button:hover {
+  background: #16b066;
+}
+
+.editpositions-modal {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.37);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99;
+}
+
+.editpositions-modal > .modal-holder {
+  width: 43%;
+  max-height: 80%;
+  border-radius: 5px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-header {
+  width: 100%;
+  height: 7%;
+  border-bottom: 1px solid #c8c8c8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-header > h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-header > span {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content {
+  height: 93%;
+  width: 100%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
+  padding: 0 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  margin-bottom: 10px;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > table > thead > tr > th {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ABABAB;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > table > tbody > tr > td {
+  font-size: 13px;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > table > tbody > tr > td > a {
+  text-decoration: none;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > table > tbody > tr > td > a > span {
+  font-size: 16px;
+  height: 21px;
+  width: 21px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > table > tbody > tr > td > a:nth-child(1) > span {
+  background: #C0FADE;
+  color: #19C773;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > table > tbody > tr > td > a:nth-child(1) > span:hover {
+  background: #a8f8d2;
+  color: #16b066;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > table > tbody > tr > td > a:nth-child(2) > span {
+  background: #FAC0C0;
+  color: #FF6C6C;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > table > tbody > tr > td > a:nth-child(2) > span:hover {
+  background: #f8a8a8;
+  color: #ff5353;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > div {
+  width: 100%;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > div > button {
+  border: none;
+  border-radius: 5px;
+  padding: 7px 15px;
+  background: #4848FE;
+  cursor: pointer;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > div > button:hover {
+  background: #2f2ffe;
+}
+
+.editpositions-modal > .modal-holder > .editpositions-content > div > button > a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.addnewpos-modal {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.37);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99;
+}
+
+.addnewpos-modal > .modal-holder {
+  width: 33%;
+  max-height: 80%;
+  border-radius: 5px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-header {
+  width: 100%;
+  height: 7%;
+  border-bottom: 1px solid #c8c8c8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-header > h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-header > span {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-content {
+  height: 93%;
+  width: 100%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-content > form {
+  height: 100%;
+  width: 72%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding-top: 20px;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-content > form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-content > form > div > label {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-content > form > div > input {
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  margin-top: 5px;
+  font-size: 14px;
+  outline: none;
+  color: #464646;
+  font-weight: 400;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-content > form > div > button {
+  margin-top: 20px;
+  border: none;
+  padding: 7px 0;
+  background: #4848FE;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-content > form > div > button:hover {
+  background: #2f2ffe;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-content > form > div:nth-child(1)::before {
+  content: url("https://api.iconify.design/icon-park-outline/ranking.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-content > form > div:nth-child(2)::before {
+  content: url("https://api.iconify.design/ri/money-dollar-circle-line.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.addnewpos-modal > .modal-holder > .addnewpos-content > form > div:nth-child(3)::before {
+  content: url("https://api.iconify.design/ri/money-dollar-circle-line.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.editpos-modal {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.37);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99;
+}
+
+.editpos-modal > .modal-holder {
+  width: 33%;
+  max-height: 80%;
+  border-radius: 5px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.editpos-modal > .modal-holder > .editpos-header {
+  width: 100%;
+  height: 7%;
+  border-bottom: 1px solid #c8c8c8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editpos-modal > .modal-holder > .editpos-header > h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.editpos-modal > .modal-holder > .editpos-header > span {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.editpos-modal > .modal-holder > .editpos-content {
+  height: 93%;
+  width: 100%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editpos-modal > .modal-holder > .editpos-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.editpos-modal > .modal-holder > .editpos-content > form {
+  height: 100%;
+  width: 72%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding-top: 20px;
+}
+
+.editpos-modal > .modal-holder > .editpos-content > form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.editpos-modal > .modal-holder > .editpos-content > form > div > label {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.editpos-modal > .modal-holder > .editpos-content > form > div > input {
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  margin-top: 5px;
+  font-size: 14px;
+  outline: none;
+  color: #464646;
+  font-weight: 400;
+}
+
+.editpos-modal > .modal-holder > .editpos-content > form > div > button {
+  margin-top: 20px;
+  border: none;
+  padding: 7px 0;
+  background: #19C773;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.editpos-modal > .modal-holder > .editpos-content > form > div > button:hover {
+  background: #16b066;
+}
+
+.editpos-modal > .modal-holder > .editpos-content > form > div:nth-child(1)::before {
+  content: url("https://api.iconify.design/icon-park-outline/ranking.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.editpos-modal > .modal-holder > .editpos-content > form > div:nth-child(2)::before {
+  content: url("https://api.iconify.design/ri/money-dollar-circle-line.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.editpos-modal > .modal-holder > .editpos-content > form > div:nth-child(3)::before {
+  content: url("https://api.iconify.design/ri/money-dollar-circle-line.svg?color=%239747ff&height=20");
+  position: absolute;
+  top: 2px;
+  left: -38px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.deletepos-modal {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.37);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99;
+}
+
+.deletepos-modal > .modal-holder {
+  width: 33%;
+  max-height: 80%;
+  border-radius: 5px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  -webkit-transform: translateY(-140px);
+          transform: translateY(-140px);
+}
+
+.deletepos-modal > .modal-holder > .deletepos-header {
+  width: 100%;
+  height: 7%;
+  border-bottom: 1px solid #c8c8c8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.deletepos-modal > .modal-holder > .deletepos-header > h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.deletepos-modal > .modal-holder > .deletepos-header > span {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.deletepos-modal > .modal-holder > .deletepos-content {
+  height: 93%;
+  width: 100%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.deletepos-modal > .modal-holder > .deletepos-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.deletepos-modal > .modal-holder > .deletepos-content > form {
+  height: 100%;
+  width: 72%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding-top: 20px;
+}
+
+.deletepos-modal > .modal-holder > .deletepos-content > form > h1 {
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.deletepos-modal > .modal-holder > .deletepos-content > form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.deletepos-modal > .modal-holder > .deletepos-content > form > div > button {
+  margin-top: 20px;
+  border: none;
+  padding: 7px 0;
+  background: #F24E4E;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.deletepos-modal > .modal-holder > .deletepos-content > form > div > button:hover {
+  background: #f03636;
+}
+
+.delete-modal {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.37);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99;
+}
+
+.delete-modal > .modal-holder {
+  width: 33%;
+  max-height: 80%;
+  border-radius: 5px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  -webkit-transform: translateY(-140px);
+          transform: translateY(-140px);
+}
+
+.delete-modal > .modal-holder > .delete-header {
+  width: 100%;
+  height: 7%;
+  border-bottom: 1px solid #c8c8c8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.delete-modal > .modal-holder > .delete-header > h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.delete-modal > .modal-holder > .delete-header > span {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.delete-modal > .modal-holder > .delete-content {
+  height: 93%;
+  width: 100%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.delete-modal > .modal-holder > .delete-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.delete-modal > .modal-holder > .delete-content > form {
+  height: 100%;
+  width: 72%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding-top: 20px;
+}
+
+.delete-modal > .modal-holder > .delete-content > form > h1 {
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.delete-modal > .modal-holder > .delete-content > form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.delete-modal > .modal-holder > .delete-content > form > div > button {
+  margin-top: 20px;
+  border: none;
+  padding: 7px 0;
+  background: #F24E4E;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.delete-modal > .modal-holder > .delete-content > form > div > button:hover {
+  background: #f03636;
+}

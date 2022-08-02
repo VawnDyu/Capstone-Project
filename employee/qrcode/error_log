@@ -1,0 +1,7 @@
+[24-Mar-2022 02:37:00 UTC] PHP Parse error:  syntax error, unexpected token ";" in /home/u359933141/domains/jtdv.tech/public_html/employee/qrcode/index.php on line 46
+[24-Mar-2022 02:37:46 UTC] PHP Parse error:  syntax error, unexpected token ";" in /home/u359933141/domains/jtdv.tech/public_html/employee/qrcode/index.php on line 46
+[24-Mar-2022 03:58:27 UTC] PHP Warning:  session_cache_limiter(): Session cache limiter cannot be changed when a session is active in /home/u359933141/domains/jtdv.tech/public_html/employee/qrcode/index.php on line 8
+[24-Mar-2022 03:58:27 UTC] PHP Warning:  session_cache_expire(): Session cache expiration cannot be changed when a session is active in /home/u359933141/domains/jtdv.tech/public_html/employee/qrcode/index.php on line 8
+[24-Mar-2022 04:00:46 UTC] PHP Warning:  session_cache_limiter(): Session cache limiter cannot be changed when a session is active in /home/u359933141/domains/jtdv.tech/public_html/employee/qrcode/index.php on line 52
+[24-Mar-2022 04:00:46 UTC] PHP Warning:  session_cache_expire(): Session cache expiration cannot be changed when a session is active in /home/u359933141/domains/jtdv.tech/public_html/employee/qrcode/index.php on line 52
+[24-Mar-2022 11:53:49 UTC] PHP Parse error:  syntax error, unexpected single-quoted string ".$PNG_WEB_DIR.basename($filena...", expecting "," or ";" in /home/u359933141/domains/jtdv.tech/public_html/employee/qrcode/index.php on line 92
