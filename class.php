@@ -1,7 +1,7 @@
 <?php
 
 require_once "index2.php";
-$credentials = array('e_username' => $e_username, 
+$credentials = array('e_username' => $e_username,
                      'e_password' => $e_password);
 
 // required to para makapag send ng email
@@ -13,8 +13,8 @@ require_once "PHPMailer/Exception.php";
 
 Class Payroll
 {
-    private $username = "u359933141_jtdv";
-    private $password = "+Y^HLMVV2h";
+    private $username = "HOSTING_USERNAME"; //HOSTING USERNAME
+    private $password = "HOSTING_PASSWORD"; // HOSTING PASSWORD
 
     private $dns = "mysql:host=localhost;dbname=u359933141_payroll";
     protected $pdo;
@@ -53,7 +53,7 @@ Class Payroll
         // return date and time in array
         $_SESSION['datetime'] = array('time' => $curr_time, 'date' => $curr_date);
         return $_SESSION['datetime'];
-    }  
+    }
 
     // server maintenance
     public function maintenance(){
@@ -88,7 +88,7 @@ Class Payroll
 
         // if attempts hits 2
         if($_SESSION['attempts'] == 2){
-            
+
             if(isset($_POST['login'])){
 
                 $username = $_POST['username'];
@@ -98,7 +98,7 @@ Class Payroll
                     $msg = 'Input field are required to login';
                     echo "<script>window.location.assign('./login.php?errormessage=$msg');</script>";
                 } else {
-                    
+
                     // if user input === reservedEmail
                     if($username === $_SESSION['reservedEmail']){
 
@@ -112,7 +112,7 @@ Class Payroll
                         if($countRowAttempt2 < 1){
 
                             // dito natin gawin
-                            $sqlGetPass =  "SELECT 
+                            $sqlGetPass =  "SELECT
                                                     sa.username,
                                                     sd.secret_key as secret_key
                                             FROM super_admin sa
@@ -135,7 +135,7 @@ Class Payroll
                             $table_name = 'Login';
 
                             // set timezone and get date and time
-                            $datetime = $this->getDateTime(); 
+                            $datetime = $this->getDateTime();
                             $time = $datetime['time'];
                             $date = $datetime['date'];
 
@@ -168,7 +168,7 @@ Class Payroll
                 }
             }
         } else if($_SESSION['attempts'] == 0){ // if attempts bring down to 0
-            
+
             // select username na gumamit ng 5 attempts
             $reservedEmail = $_SESSION['reservedEmail'];
             $setTimerSql = "SELECT * FROM super_admin WHERE username = ?";
@@ -188,9 +188,9 @@ Class Payroll
                 $finalData = $datetimeGet['date']." ".date('h:i:sa', strtotime('+6 hours'));
 
                 // update column timer set value to DATENOW - 6HRS
-                
-                $updateTimerSql = "UPDATE super_admin 
-                                   SET timer = ?, 
+
+                $updateTimerSql = "UPDATE super_admin
+                                   SET timer = ?,
                                        access = ?
                                    WHERE id = ?;
                                   ";
@@ -218,7 +218,7 @@ Class Payroll
                 $username = $_POST['username'];
                 // $password = md5($_POST['password']);
                 $password = $this->generatedPassword($_POST['password']);
-    
+
                 // if username and password are empty
                 if(empty($username) && empty($password[0])){
                     $msg = 'All input fields are required to login.';
@@ -232,30 +232,30 @@ Class Payroll
                     if($checkEmailArray[0]){
 
                         $suspendedAccess = 'suspended';
-                        
+
                         // find account that matches the username and password
                         $sql = "SELECT * FROM super_admin WHERE username = ? AND password = ?";
                         $stmt = $this->con()->prepare($sql);
                         $stmt->execute([$username, $password[0]]);
                         $users = $stmt->fetch();
                         $countRow = $stmt->rowCount();
-        
+
                         // if account exists
                         if($countRow > 0){
 
                             if($users->access != $suspendedAccess){
                                 $fullname = $users->firstname." ".$users->lastname; // create fullname
-                                $action = "Login"; 
-                                $table_name = "Login";    
+                                $action = "Login";
+                                $table_name = "Login";
 
                                 // set timezone and get date and time
-                                $datetime = $this->getDateTime(); 
+                                $datetime = $this->getDateTime();
                                 $time = $datetime['time'];
                                 $date = $datetime['date'];
-                
+
                                 // insert mo sa activity log ni admin
                                 $actLogSql = "INSERT INTO admin_log(`admin_id`,
-                                                                    `name`, 
+                                                                    `name`,
                                                                     `action`,
                                                                     `table_name`,
                                                                     `time`,
@@ -264,7 +264,7 @@ Class Payroll
                                               VALUES(?, ?, ?, ?, ?, ?)";
                                 $actLogStmt = $this->con()->prepare($actLogSql);
                                 $actLogStmt->execute([$users->id, $fullname, $action, $table_name, $time, $date]);
-                
+
                                 // create user details using session
                                 session_start();
                                 $_SESSION['attempts'] = 5;
@@ -292,7 +292,7 @@ Class Payroll
 
                                 // check if user->timer date was expired
                                 if(strtotime($dateExpired) < strtotime($checkDateTimeNow)){
-                                    
+
                                     // timer end, back to its default state
                                     $varNull = NULL;
                                     $setAccess = 'administrator';
@@ -301,17 +301,17 @@ Class Payroll
                                     $stmtUpdateTimer->execute([$varNull, $setAccess, $users->id]);
 
                                     $fullname = $users->firstname." ".$users->lastname; // create fullname
-                                    $action = "Login"; 
-                                    $table_name = "Login"; 
-                                        
+                                    $action = "Login";
+                                    $table_name = "Login";
+
                                     // set timezone and get date and time
-                                    $datetime = $this->getDateTime(); 
+                                    $datetime = $this->getDateTime();
                                     $time = $datetime['time'];
                                     $date = $datetime['date'];
-                    
+
                                     // insert mo sa activity log ni admin
                                     $actLogSql = "INSERT INTO admin_log(`admin_id`,
-                                                                        `name`, 
+                                                                        `name`,
                                                                         `action`,
                                                                         `table_name`,
                                                                         `time`,
@@ -320,7 +320,7 @@ Class Payroll
                                                 VALUES(?, ?, ?, ?, ?, ?)";
                                     $actLogStmt = $this->con()->prepare($actLogSql);
                                     $actLogStmt->execute([$users->id, $fullname, $action, $table_name, $time, $date]);
-                    
+
                                     // create user details using session
                                     session_start();
                                     $_SESSION['attempts'] = 5;
@@ -338,14 +338,14 @@ Class Payroll
                                            'Date: '.$dateExpired;
                                     echo "<script>window.location.assign('./login.php?errormessage=$msg');</script>";
                                 }
-                            } 
+                            }
                         } else {
                             // insert here, pag suspended na tas naglogin ulit same email dapat yung attempt will set to 0
-                            
+
                             $_SESSION['attempts'] -= 1; // decrease 1 attempt to current attempts
                             $msg = 'Username and password are not matched. No of attempts: '.$_SESSION['attempts'];
                             echo "<script>window.location.assign('./login.php?errormessage=$msg');</script>";
-                            
+
                             $_SESSION['reservedEmail'] = $username; // blank to kanina, nagkaron na ng laman
                             $_SESSION['reservedPassword'] = $passwordArray; // blank to kanina, nagkaron na ng laman
                         }
@@ -404,7 +404,7 @@ Class Payroll
 
     public function sendEmail($email, $password)
     {
-        
+
         $name = 'JTDV Incorporation';
         $body = "Credentials
                  Your username: $email <br/>
@@ -433,8 +433,8 @@ Class Payroll
             $mail->Body = $body;                        // textarea
 
             $mail->send();
-          
-        } 
+
+        }
     }
 
     public function logout()
@@ -467,7 +467,7 @@ Class Payroll
         $message = 'You are not allowed to enter the system';
         if($level == 2){
             $level = '../';
-            
+
             if($access == 'administrator'){
                 return;
             } elseif($access == 'secretary'){
@@ -527,7 +527,7 @@ Class Payroll
                         setTimeout(e => msgErr.remove(), 5000);
                       </script>";
             } else {
-                
+
                 // check if secretary fullname and email already exists
                 $sqlFindAccNot = "SELECT * FROM secretary WHERE fullname = ? AND email = ? AND isDeleted = 0";
                 $stmtFindAccNot = $this->con()->prepare($sqlFindAccNot);
@@ -542,7 +542,7 @@ Class Payroll
                 $userFindAcc = $stmtFindAcc->fetch();
                 $countRowFindAcc = $stmtFindAcc->rowCount();
 
-                if($countRowFindAccNot > 0){ 
+                if($countRowFindAccNot > 0){
                     $msg = "Account Already Exists.";
                     echo "<script>window.location.assign('secretary.php?message2=$msg');</script>";
                 } elseif($countRowFindAcc > 0){
@@ -554,17 +554,17 @@ Class Payroll
                 } else {
 
                     // set timezone and get date and time
-                    $datetime = $this->getDateTime(); 
+                    $datetime = $this->getDateTime();
                     $time = $datetime['time'];
                     $date = $datetime['date'];
 
-                    $sql = "INSERT INTO secretary(fullname, 
-                                                  gender, 
-                                                  cpnumber, 
-                                                  address, 
-                                                  email, 
+                    $sql = "INSERT INTO secretary(fullname,
+                                                  gender,
+                                                  cpnumber,
+                                                  address,
+                                                  email,
                                                   password,
-                                                  timer, 
+                                                  timer,
                                                   admin_id,
                                                   access,
                                                   isDeleted
@@ -590,11 +590,11 @@ Class Payroll
                         $admindatetime = $this->getDateTime();
                         $adminTime = $admindatetime['time'];
                         $adminDate = $admindatetime['date'];
-                                                            
+
                         $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                         $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                         $stmtAdminLog->execute([$id, $fullnameAdmin, $action, $table_name, $adminTime, $adminDate]);
-                                                            
+
                         $countRowAdminLog = $stmtAdminLog->rowCount();
                         if($countRowAdminLog > 0){
                             $msg = 'New Data was Added';
@@ -681,15 +681,15 @@ Class Payroll
         }
 
         while($row = $stmt->fetch()){
-            
+
             $gender = "";
             if($row->gender == 'Male'){
                 $gender = "<object data='../styles/SVG_modified/malesec.svg' type='image/svg+xml'></object>";
             } else {
                 $gender = "<object data='../styles/SVG_modified/femalesec.svg' type='image/svg+xml'></object>";
             }
-            
-            
+
+
             $total = $total + 1;
             if($total == 1){
                 echo "<div class='left-svg'>
@@ -742,7 +742,7 @@ Class Payroll
 
     public function secretaryLogs()
     {
-        $sql = "SELECT sl.*, s.fullname 
+        $sql = "SELECT sl.*, s.fullname
                 FROM secretary_log sl
                 INNER JOIN secretary s
                 ON sl.sec_id = s.id
@@ -803,7 +803,7 @@ Class Payroll
 
     public function showAllSecretarySearch($search)
     {
-        $sql = "SELECT * FROM secretary 
+        $sql = "SELECT * FROM secretary
                 WHERE isDeleted = 0 AND fullname LIKE '%$search%' OR
                       isDeleted = 0 AND gender LIKE '%$search%' OR
                       isDeleted = 0 AND email LIKE '%$search%'
@@ -997,7 +997,7 @@ Class Payroll
                                 spanIcon.classList.add('material-icons');
                                 spanIcon.innerText = 'done';
                                 let pError = document.createElement('p');
-                                pError.innerText = 'Contact Number must be ' + minLength + ' digits.'; 
+                                pError.innerText = 'Contact Number must be ' + minLength + ' digits.';
                                 let closeContainerDiv = document.createElement('div');
                                 closeContainerDiv.classList.add('closeContainer');
                                 let spanClose = document.createElement('span');
@@ -1053,7 +1053,7 @@ Class Payroll
             } else {
 
                 if($email != $urlEmail){
-                    
+
                     if($this->checkSecEmailExist($email)){
                         echo "<div class='error'>
                                 <div class='icon-container'>
@@ -1069,12 +1069,12 @@ Class Payroll
                                 setTimeout(e => msgErr.remove(), 5000);
                               </script>";
                     } else {
-                    
+
                         $sql = "UPDATE secretary
-                                SET fullname = ?, 
+                                SET fullname = ?,
                                     gender = ?,
                                     email = ?,
-                                    cpnumber = ?, 
+                                    cpnumber = ?,
                                     address = ?
                                 WHERE id = ?";
                         $stmt = $this->con()->prepare($sql);
@@ -1084,8 +1084,8 @@ Class Payroll
                         if($countRow > 0){
 
                             // after mo maupdate kunin mo yung data
-                            $sql2 = "SELECT s.email, 
-                                            se.se_id, 
+                            $sql2 = "SELECT s.email,
+                                            se.se_id,
                                             se.secret_key as secret_key
                                      FROM secretary s
                                      INNER JOIN secret_diarys se
@@ -1105,11 +1105,11 @@ Class Payroll
                                 $admindatetime = $this->getDateTime();
                                 $adminTime = $admindatetime['time'];
                                 $adminDate = $admindatetime['date'];
-                                                                    
+
                                 $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                                 $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                 $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                                    
+
                                 $countRowAdminLog = $stmtAdminLog->rowCount();
                                 if($countRowAdminLog > 0){
                                     $msg = 'Update Successfully';
@@ -1162,12 +1162,12 @@ Class Payroll
                         }
                     }
                 } else {
-                    
+
                     $sql = "UPDATE secretary
-                    SET fullname = ?, 
+                    SET fullname = ?,
                         gender = ?,
                         email = ?,
-                        cpnumber = ?, 
+                        cpnumber = ?,
                         address = ?
                     WHERE id = ?";
                     $stmt = $this->con()->prepare($sql);
@@ -1181,11 +1181,11 @@ Class Payroll
                         $admindatetime = $this->getDateTime();
                         $adminTime = $admindatetime['time'];
                         $adminDate = $admindatetime['date'];
-                                                            
+
                         $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                         $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                         $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                            
+
                         $countRowAdminLog = $stmtAdminLog->rowCount();
                         if($countRowAdminLog > 0){
                             $msg = 'Update Successfully';
@@ -1294,11 +1294,11 @@ Class Payroll
                     $admindatetime = $this->getDateTime();
                     $adminTime = $admindatetime['time'];
                     $adminDate = $admindatetime['date'];
-                                                        
+
                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                        
+
                     $countRowAdminLog = $stmtAdminLog->rowCount();
                     if($countRowAdminLog > 0){
                         $msg = 'Deleted Successfully';
@@ -1340,10 +1340,10 @@ Class Payroll
 
     public function recentAssignedGuards()
     {
-        $sql = "SELECT * FROM employee 
+        $sql = "SELECT * FROM employee
                 WHERE availability = 'Unavailable'
                 AND isDeleted = 0
-                AND date BETWEEN CURRENT_DATE - 15 
+                AND date BETWEEN CURRENT_DATE - 15
                              AND CURRENT_DATE
                 ORDER BY id DESC
                 LIMIT 3";
@@ -1407,7 +1407,7 @@ Class Payroll
                   ";
         }
     }
-    
+
     public function deleteRecentGuard($adminFullname, $adminId)
     {
         if(isset($_POST['deleteRecord'])){
@@ -1451,7 +1451,7 @@ Class Payroll
                     $intUsersHR = intval($userTotalGuards->hired_guards);
 
                     if($countRowTotalGuards > 0){
-                        if($intUsersHR == 0 || 
+                        if($intUsersHR == 0 ||
                            $intUsersHR == NULL ||
                            $intUsersHR == 'NULL' ||
                            $intUsersHR == ''
@@ -1460,13 +1460,13 @@ Class Payroll
                         } else {
                             $hiredGuards = intval($intUsersHR) - 1;
                         }
-                    } 
+                    }
 
                     // minus 1 in hired_guards inside company table
                     $sqlCompany = "UPDATE company SET hired_guards = ? WHERE company_name = ?";
                     $stmtCompany = $this->con()->prepare($sqlCompany);
                     $stmtCompany->execute([$hiredGuards, $userFindCompany->company]);
-                    
+
 
                     // delete in schedule
                     $sqlSched = "DELETE FROM schedule WHERE empId = ?";
@@ -1491,11 +1491,11 @@ Class Payroll
                     $admindatetime = $this->getDateTime();
                     $adminTime = $admindatetime['time'];
                     $adminDate = $admindatetime['date'];
-                                                        
+
                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                        
+
                     $countRowAdminLog = $stmtAdminLog->rowCount();
                     if($countRowAdminLog > 0){
                         $msg = 'Deleted Successfully';
@@ -1524,7 +1524,7 @@ Class Payroll
 
 
     public function addEmployee($adminFullname, $adminId){
-        
+
         if(isset($_POST['addemployee'])){
 
             date_default_timezone_set('Asia/Manila'); // set default timezone to manila
@@ -1575,9 +1575,9 @@ Class Payroll
             } else {
 
                     // for not deleted account
-                    $sqlFindAccNot = "SELECT * FROM employee 
-                                   WHERE firstname = ? 
-                                   AND lastname = ? 
+                    $sqlFindAccNot = "SELECT * FROM employee
+                                   WHERE firstname = ?
+                                   AND lastname = ?
                                    AND email = ?
                                    AND isDeleted = 0";
                     $stmtFindAccNot = $this->con()->prepare($sqlFindAccNot);
@@ -1586,9 +1586,9 @@ Class Payroll
                     $countRowFindAccNot = $stmtFindAccNot->rowCount();
 
                     // for deleted account
-                    $sqlFindAcc = "SELECT * FROM employee 
-                                   WHERE firstname = ? 
-                                   AND lastname = ? 
+                    $sqlFindAcc = "SELECT * FROM employee
+                                   WHERE firstname = ?
+                                   AND lastname = ?
                                    AND email = ?
                                    AND isDeleted = 1";
                     $stmtFindAcc = $this->con()->prepare($sqlFindAcc);
@@ -1607,7 +1607,7 @@ Class Payroll
                         echo "<script>window.location.assign('employee.php?message2=$msg');</script>";
                     } else {
                         // set timezone and get date and time
-                        $datetime = $this->getDateTime(); 
+                        $datetime = $this->getDateTime();
                         $time = $datetime['time'];
                         $date = $datetime['date'];
 
@@ -1644,11 +1644,11 @@ Class Payroll
                             $admindatetime = $this->getDateTime();
                             $adminTime = $admindatetime['time'];
                             $adminDate = $admindatetime['date'];
-                                                                
+
                             $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                             $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                             $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                                
+
                             $countRowAdminLog = $stmtAdminLog->rowCount();
                             if($countRowAdminLog > 0){
                                 $msg = 'New Data Added';
@@ -1662,7 +1662,7 @@ Class Payroll
                             echo "<script>window.location.assign('employee.php?message2=$msg');</script>";
                         }
                     }
-                
+
             }
         }
 
@@ -1717,9 +1717,9 @@ Class Payroll
             } else {
 
                     // for not deleted account
-                    $sqlFindAccNot = "SELECT * FROM employee 
-                                   WHERE firstname = ? 
-                                   AND lastname = ? 
+                    $sqlFindAccNot = "SELECT * FROM employee
+                                   WHERE firstname = ?
+                                   AND lastname = ?
                                    AND email = ?
                                    AND isDeleted = 0";
                     $stmtFindAccNot = $this->con()->prepare($sqlFindAccNot);
@@ -1728,9 +1728,9 @@ Class Payroll
                     $countRowFindAccNot = $stmtFindAccNot->rowCount();
 
                     // for deleted account
-                    $sqlFindAcc = "SELECT * FROM employee 
-                                   WHERE firstname = ? 
-                                   AND lastname = ? 
+                    $sqlFindAcc = "SELECT * FROM employee
+                                   WHERE firstname = ?
+                                   AND lastname = ?
                                    AND email = ?
                                    AND isDeleted = 1";
                     $stmtFindAcc = $this->con()->prepare($sqlFindAcc);
@@ -1782,7 +1782,7 @@ Class Payroll
                             </script>";
                     } else {
                         // set timezone and get date and time
-                        $datetime = $this->getDateTime(); 
+                        $datetime = $this->getDateTime();
                         $time = $datetime['time'];
                         $date = $datetime['date'];
 
@@ -1819,11 +1819,11 @@ Class Payroll
                             $admindatetime = $this->getDateTime();
                             $adminTime = $admindatetime['time'];
                             $adminDate = $admindatetime['date'];
-                                                                
+
                             $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                             $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                             $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                                
+
                             $countRowAdminLog = $stmtAdminLog->rowCount();
                             if($countRowAdminLog > 0){
                                 $msg = 'New Data Added';
@@ -1870,7 +1870,7 @@ Class Payroll
         $stmt = $this->con()->query($sql);
         $users = $stmt->fetch();
         $getId = $users->id;
-        
+
         return $getId;
     }
 
@@ -1983,7 +1983,7 @@ Class Payroll
 
 
     public function showAllEmpActionsSearch($search){
-        $sql = "SELECT * FROM employee 
+        $sql = "SELECT * FROM employee
                 WHERE isDeleted = 0 AND availability = 'Available' AND lastname LIKE '%$search%' OR
                       isDeleted = 0 AND availability = 'Available' AND firstname LIKE '%$search%' OR
                       isDeleted = 0 AND availability = 'Available' AND email LIKE '%$search%' OR
@@ -2038,7 +2038,7 @@ Class Payroll
 
     // showEmployees.php      td with actions for unavailable
     public function showAllUnavailableEmpActions(){
-        $sql = "SELECT 
+        $sql = "SELECT
                        s.id,
                        s.empId,
                        s.company,
@@ -2054,10 +2054,10 @@ Class Payroll
                 FROM schedule s
                 INNER JOIN employee e
                 ON s.empId = e.empId
-                
+
                 INNER JOIN company c
                 ON s.company = c.company_name
-                
+
                 WHERE e.isDeleted = 0
                 AND e.availability = 'Unavailable' OR
                     e.availability = 'Leave'
@@ -2109,7 +2109,7 @@ Class Payroll
 
 
     public function showAllUnavailableEmpActionsSearch($search){
-        $sql = "SELECT 
+        $sql = "SELECT
                        s.id,
                        s.empId,
                        s.company,
@@ -2125,10 +2125,10 @@ Class Payroll
                 FROM schedule s
                 INNER JOIN employee e
                 ON s.empId = e.empId
-                
+
                 INNER JOIN company c
                 ON s.company = c.company_name
-                
+
                 WHERE e.availability = 'Leave' OR e.availability = 'Unavailable' AND e.isDeleted = 0 AND e.lastname LIKE '%$search%' OR
                       e.availability = 'Leave' OR e.availability = 'Unavailable' AND e.isDeleted = 0 AND e.firstname LIKE '%$search%' OR
                       e.availability = 'Leave' OR e.availability = 'Unavailable' AND e.isDeleted = 0 AND c.company_name LIKE '%$search%' OR
@@ -2186,7 +2186,7 @@ Class Payroll
         if(isset($_GET['sid'])){
             $id = $_GET['sid'];
 
-            $sql = "SELECT 
+            $sql = "SELECT
                           s.id,
                           s.empId,
                           s.company,
@@ -2265,7 +2265,7 @@ Class Payroll
                     if(viewModal.style.display == 'block'){
                         viewModal.style.display = 'none';
                     }
-                    
+
                     let removeModal = document.querySelector('.modal-deleteguard');
                     removeModal.style.display = 'flex';
                     let empId = document.querySelector('#rEmpId');
@@ -2300,7 +2300,7 @@ Class Payroll
                     $price = NULL;
                     $ot = NULL;
                     $availability = 'Available';
-                    
+
                     // delete someone in schedule
                     $sqlUpdateSched = "DELETE FROM schedule WHERE id = ?";
                     $stmtUpdateSched = $this->con()->prepare($sqlUpdateSched);
@@ -2315,13 +2315,13 @@ Class Payroll
 
                     // delete in inbox
 
-                    // remove position, price, type and availability 
+                    // remove position, price, type and availability
                     $sqlUpdateEmp = "UPDATE employee
                                      SET position = ?,
                                          ratesperDay = ?,
                                          overtime_rate = ?,
                                          availability = ?
-                                     WHERE empId = ?"; 
+                                     WHERE empId = ?";
                     $stmtUpdateEmp = $this->con()->prepare($sqlUpdateEmp);
                     $stmtUpdateEmp->execute([$position, $price, $ot, $availability, $empId]);
 
@@ -2339,7 +2339,7 @@ Class Payroll
                         $hiredGuards = intval($intHiredGuards) - 1;
 
                         // decrease 1 in hiredguards inside company table
-                        $sqlUpdateComp = "UPDATE company 
+                        $sqlUpdateComp = "UPDATE company
                                           SET hired_guards = ?
                                           WHERE company_name = ?";
                         $stmtUpdateComp = $this->con()->prepare($sqlUpdateComp);
@@ -2353,11 +2353,11 @@ Class Payroll
                             $admindatetime = $this->getDateTime();
                             $adminTime = $admindatetime['time'];
                             $adminDate = $admindatetime['date'];
-                                                                
+
                             $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                             $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                             $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                                
+
                             $countRowAdminLog = $stmtAdminLog->rowCount();
                             if($countRowAdminLog > 0){
                                 $msg = 'Deleted Successfully';
@@ -2435,7 +2435,7 @@ Class Payroll
     }
 
     public function dropdownCompanyDetails()
-    {        
+    {
         // select all company
         $sql = "SELECT company_name, comp_location, isDeleted FROM company WHERE isDeleted = 0 ORDER BY company_name ASC";
         $stmt = $this->con()->query($sql);
@@ -2466,44 +2466,44 @@ Class Payroll
                 array_push($priceArray, $userPos->price);
                 array_push($otArray, $userPos->overtime_rate);
             }
-            
+
             $posString = implode(',', $posArray);
             $priceString = implode(',', $priceArray);
             $otString = implode(',', $otArray);
 
             echo "<option data-pos='$posString'
-                          data-price='$priceString' 
-                          data-ot='$otString' 
+                          data-price='$priceString'
+                          data-ot='$otString'
                           data-loc='$locGet'
                           value='$companyGet'>$companyGet
                   </option>";
 
-            
+
             unset($posArray);
         }
     }
-    
+
     public function selectguardsAddCompany($ids)
-    {    
-        $idArray = explode (",", $ids); 
+    {
+        $idArray = explode (",", $ids);
 
         $sql = "SELECT * FROM employee WHERE id = ? AND availability = 'Available' AND isDeleted = 0";
         $stmt = $this->con()->prepare($sql);
-        
+
         // set timezone and get date and time
-        $datetime = $this->getDateTime(); 
+        $datetime = $this->getDateTime();
         $date = $datetime['date'];
 
         $countInputs = sizeof($idArray);
         echo "<input type='hidden' value='$countInputs' name='countInput' required/>";
 
         for($i = 0; $i < sizeof($idArray); $i++){
-            $rowId = $idArray[$i]; 
+            $rowId = $idArray[$i];
             $stmt->execute([$idArray[$i]]);
             $user = $stmt->fetch();
-            
 
-            if($user->firstname == ''&& 
+
+            if($user->firstname == ''&&
                $user->firstname == NULL &&
                $user->lastname == '' &&
                $user->lastname == NULL){
@@ -2531,28 +2531,28 @@ Class Payroll
     }
 
     public function selectguardsAddCompanySearch($ids, $search)
-    {    
-        $idArray = explode (",", $ids); 
+    {
+        $idArray = explode (",", $ids);
 
-        $sql = "SELECT * FROM employee 
+        $sql = "SELECT * FROM employee
                 WHERE id = ? AND firstname LIKE '%$search%' OR
                       id = ? AND lastname LIKE '%$search%'";
         $stmt = $this->con()->prepare($sql);
-        
+
         // set timezone and get date and time
-        $datetime = $this->getDateTime(); 
+        $datetime = $this->getDateTime();
         $date = $datetime['date'];
 
         $countInputs = sizeof($idArray);
         echo "<input type='hidden' value='$countInputs' name='countInput' required/>";
 
         for($i = 0; $i < sizeof($idArray); $i++){
-            $rowId = $idArray[$i]; 
+            $rowId = $idArray[$i];
             $stmt->execute([$idArray[$i]]);
             $user = $stmt->fetch();
-            
 
-            if($user->firstname == ''&& 
+
+            if($user->firstname == ''&&
                $user->firstname == NULL &&
                $user->lastname == '' &&
                $user->lastname == NULL){
@@ -2585,7 +2585,7 @@ Class Payroll
         $stmtEmployee = $this->con()->prepare($sqlEmployee);
         $stmtEmployee->execute([$empId]);
         $userEmployee = $stmtEmployee->fetch();
-            
+
         $empPosition = $userEmployee->position;
         $empPrice = $userEmployee->ratesperDay;
         $empOt = $userEmployee->overtime_rate;
@@ -2647,7 +2647,7 @@ Class Payroll
                     $mail->send();
 
                 }
-            } 
+            }
         } elseif($empPosition == 'Head Finance'){
             $sqlCompany = "SELECT * FROM company WHERE company_name = ?";
             $stmtCompany = $this->con()->prepare($sqlCompany);
@@ -2705,7 +2705,7 @@ Class Payroll
                     $mail->send();
 
                 }
-            } 
+            }
         } elseif($empPosition == 'Office Clerk'){
             $sqlCompany = "SELECT * FROM company WHERE company_name = ?";
             $stmtCompany = $this->con()->prepare($sqlCompany);
@@ -2763,7 +2763,7 @@ Class Payroll
                     $mail->send();
 
                 }
-            } 
+            }
         } elseif($empPosition == 'Inspector'){
             $sqlCompany = "SELECT * FROM company WHERE company_name = ?";
             $stmtCompany = $this->con()->prepare($sqlCompany);
@@ -2821,7 +2821,7 @@ Class Payroll
                     $mail->send();
 
                 }
-            } 
+            }
         } elseif($empPosition == 'Operation Manager'){
             $sqlCompany = "SELECT * FROM company WHERE company_name = ?";
             $stmtCompany = $this->con()->prepare($sqlCompany);
@@ -2879,7 +2879,7 @@ Class Payroll
                     $mail->send();
 
                 }
-            } 
+            }
         } elseif($empPosition == 'Collector'){
             $sqlCompany = "SELECT * FROM company WHERE company_name = ?";
             $stmtCompany = $this->con()->prepare($sqlCompany);
@@ -2937,7 +2937,7 @@ Class Payroll
                     $mail->send();
 
                 }
-            } 
+            }
         } elseif($empPosition == 'Secretary'){
             $sqlCompany = "SELECT * FROM company WHERE company_name = ?";
             $stmtCompany = $this->con()->prepare($sqlCompany);
@@ -2995,7 +2995,7 @@ Class Payroll
                     $mail->send();
 
                 }
-            } 
+            }
         } else {
             // not officer in charge
 
@@ -3007,7 +3007,7 @@ Class Payroll
 
             if($countRowCompany > 0){
                 $empLocation = $userCompany->comp_location;
-                
+
                 $name = 'JTDV Incorporation';
                 $body = "Congratulations! You have been assigned to $company. The company located at $empLocation. <br/>
                          Position: $empPosition <br/>
@@ -3055,10 +3055,10 @@ Class Payroll
             if(empty($countInput) || $countInput == '' || $countInput == NULL){
                 echo "<script>window.location.assign('showEmployees.php');</script>";
             } else {
-                
+
                 // year, month, day
                 $year = $_POST['year'];
-                
+
                 if(isset($_POST['month']) && isset($_POST['day'])){
                     $month = $_POST['month'];
                     $day = $_POST['day'];
@@ -3073,7 +3073,7 @@ Class Payroll
                 $availability = "Unavailable";
 
                 $company = $_POST['companyname'];
-                
+
                 $sqlCompany = "SELECT * FROM company WHERE company_name = ?";
                 $stmtCompany = $this->con()->prepare($sqlCompany);
                 $stmtCompany->execute([$company]);
@@ -3089,7 +3089,7 @@ Class Payroll
                     $email = $_POST["email$i"];
 
                     if($position == 'Officer in Charge'){
-                        
+
                         // pag di ka manual meron ka sched
                         $companyShift = $userCompany->shifts;
                         $companyShiftSpan = $userCompany->shift_span;
@@ -3103,18 +3103,18 @@ Class Payroll
 
                         $companyEnd = date("h:i a", strtotime($companyStart." +".$companyShiftSpan." hours"));
 
-                        $sql = "INSERT INTO schedule(empId, 
-                                                     company, 
-                                                     scheduleTimeIn, 
-                                                     scheduleTimeOut, 
+                        $sql = "INSERT INTO schedule(empId,
+                                                     company,
+                                                     scheduleTimeIn,
+                                                     scheduleTimeOut,
                                                      shift,
                                                      shift_span,
                                                      expiration_date
                                                     )
                                 VALUES(?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $this->con()->prepare($sql);
-                        $stmt->execute([$empId, 
-                                        $company, 
+                        $stmt->execute([$empId,
+                                        $company,
                                         $companyStart,
                                         $companyEnd,
                                         $companyShift,
@@ -3144,10 +3144,10 @@ Class Payroll
                                 $hiredGuards = 0;
 
                                 $intUsersHR = intval($usersHR->hired_guards);
-                                    
+
                                 if($countRowHR > 0){
-                                    if($intUsersHR == 0 || 
-                                        $intUsersHR == '0' || 
+                                    if($intUsersHR == 0 ||
+                                        $intUsersHR == '0' ||
                                         $intUsersHR == NULL ||
                                         $intUsersHR == 'NULL' ||
                                         $intUsersHR == ''
@@ -3171,12 +3171,12 @@ Class Payroll
                                     $admindatetime = $this->getDateTime();
                                     $adminTime = $admindatetime['time'];
                                     $adminDate = $admindatetime['date'];
-                                                                        
+
                                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
                                 }
-                                
+
                                 echo "<script>window.location.assign('employee.php');</script>";
                             }
                         } else {
@@ -3208,18 +3208,18 @@ Class Payroll
 
                         $companyEnd = date("h:i a", strtotime($companyStart." +".$companyShiftSpan." hours"));
 
-                        $sql = "INSERT INTO schedule(empId, 
-                                                     company, 
-                                                     scheduleTimeIn, 
-                                                     scheduleTimeOut, 
+                        $sql = "INSERT INTO schedule(empId,
+                                                     company,
+                                                     scheduleTimeIn,
+                                                     scheduleTimeOut,
                                                      shift,
                                                      shift_span,
                                                      expiration_date
                                                     )
                                 VALUES(?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $this->con()->prepare($sql);
-                        $stmt->execute([$empId, 
-                                        $company, 
+                        $stmt->execute([$empId,
+                                        $company,
                                         $companyStart,
                                         $companyEnd,
                                         $companyShift,
@@ -3249,10 +3249,10 @@ Class Payroll
                                 $hiredGuards = 0;
 
                                 $intUsersHR = intval($usersHR->hired_guards);
-                                    
+
                                 if($countRowHR > 0){
-                                    if($intUsersHR == 0 || 
-                                        $intUsersHR == '0' || 
+                                    if($intUsersHR == 0 ||
+                                        $intUsersHR == '0' ||
                                         $intUsersHR == NULL ||
                                         $intUsersHR == 'NULL' ||
                                         $intUsersHR == ''
@@ -3276,12 +3276,12 @@ Class Payroll
                                     $admindatetime = $this->getDateTime();
                                     $adminTime = $admindatetime['time'];
                                     $adminDate = $admindatetime['date'];
-                                                                        
+
                                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
                                 }
-                                
+
                                 echo "<script>window.location.assign('employee.php');</script>";
                             }
                         } else {
@@ -3313,18 +3313,18 @@ Class Payroll
 
                         $companyEnd = date("h:i a", strtotime($companyStart." +".$companyShiftSpan." hours"));
 
-                        $sql = "INSERT INTO schedule(empId, 
-                                                     company, 
-                                                     scheduleTimeIn, 
-                                                     scheduleTimeOut, 
+                        $sql = "INSERT INTO schedule(empId,
+                                                     company,
+                                                     scheduleTimeIn,
+                                                     scheduleTimeOut,
                                                      shift,
                                                      shift_span,
                                                      expiration_date
                                                     )
                                 VALUES(?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $this->con()->prepare($sql);
-                        $stmt->execute([$empId, 
-                                        $company, 
+                        $stmt->execute([$empId,
+                                        $company,
                                         $companyStart,
                                         $companyEnd,
                                         $companyShift,
@@ -3354,10 +3354,10 @@ Class Payroll
                                 $hiredGuards = 0;
 
                                 $intUsersHR = intval($usersHR->hired_guards);
-                                    
+
                                 if($countRowHR > 0){
-                                    if($intUsersHR == 0 || 
-                                        $intUsersHR == '0' || 
+                                    if($intUsersHR == 0 ||
+                                        $intUsersHR == '0' ||
                                         $intUsersHR == NULL ||
                                         $intUsersHR == 'NULL' ||
                                         $intUsersHR == ''
@@ -3381,12 +3381,12 @@ Class Payroll
                                     $admindatetime = $this->getDateTime();
                                     $adminTime = $admindatetime['time'];
                                     $adminDate = $admindatetime['date'];
-                                                                        
+
                                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
                                 }
-                                
+
                                 echo "<script>window.location.assign('employee.php');</script>";
                             }
                         } else {
@@ -3418,18 +3418,18 @@ Class Payroll
 
                         $companyEnd = date("h:i a", strtotime($companyStart." +".$companyShiftSpan." hours"));
 
-                        $sql = "INSERT INTO schedule(empId, 
-                                                     company, 
-                                                     scheduleTimeIn, 
-                                                     scheduleTimeOut, 
+                        $sql = "INSERT INTO schedule(empId,
+                                                     company,
+                                                     scheduleTimeIn,
+                                                     scheduleTimeOut,
                                                      shift,
                                                      shift_span,
                                                      expiration_date
                                                     )
                                 VALUES(?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $this->con()->prepare($sql);
-                        $stmt->execute([$empId, 
-                                        $company, 
+                        $stmt->execute([$empId,
+                                        $company,
                                         $companyStart,
                                         $companyEnd,
                                         $companyShift,
@@ -3459,10 +3459,10 @@ Class Payroll
                                 $hiredGuards = 0;
 
                                 $intUsersHR = intval($usersHR->hired_guards);
-                                    
+
                                 if($countRowHR > 0){
-                                    if($intUsersHR == 0 || 
-                                        $intUsersHR == '0' || 
+                                    if($intUsersHR == 0 ||
+                                        $intUsersHR == '0' ||
                                         $intUsersHR == NULL ||
                                         $intUsersHR == 'NULL' ||
                                         $intUsersHR == ''
@@ -3486,12 +3486,12 @@ Class Payroll
                                     $admindatetime = $this->getDateTime();
                                     $adminTime = $admindatetime['time'];
                                     $adminDate = $admindatetime['date'];
-                                                                        
+
                                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
                                 }
-                                
+
                                 echo "<script>window.location.assign('employee.php');</script>";
                             }
                         } else {
@@ -3523,18 +3523,18 @@ Class Payroll
 
                         $companyEnd = date("h:i a", strtotime($companyStart." +".$companyShiftSpan." hours"));
 
-                        $sql = "INSERT INTO schedule(empId, 
-                                                     company, 
-                                                     scheduleTimeIn, 
-                                                     scheduleTimeOut, 
+                        $sql = "INSERT INTO schedule(empId,
+                                                     company,
+                                                     scheduleTimeIn,
+                                                     scheduleTimeOut,
                                                      shift,
                                                      shift_span,
                                                      expiration_date
                                                     )
                                 VALUES(?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $this->con()->prepare($sql);
-                        $stmt->execute([$empId, 
-                                        $company, 
+                        $stmt->execute([$empId,
+                                        $company,
                                         $companyStart,
                                         $companyEnd,
                                         $companyShift,
@@ -3564,10 +3564,10 @@ Class Payroll
                                 $hiredGuards = 0;
 
                                 $intUsersHR = intval($usersHR->hired_guards);
-                                    
+
                                 if($countRowHR > 0){
-                                    if($intUsersHR == 0 || 
-                                        $intUsersHR == '0' || 
+                                    if($intUsersHR == 0 ||
+                                        $intUsersHR == '0' ||
                                         $intUsersHR == NULL ||
                                         $intUsersHR == 'NULL' ||
                                         $intUsersHR == ''
@@ -3591,12 +3591,12 @@ Class Payroll
                                     $admindatetime = $this->getDateTime();
                                     $adminTime = $admindatetime['time'];
                                     $adminDate = $admindatetime['date'];
-                                                                        
+
                                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
                                 }
-                                
+
                                 echo "<script>window.location.assign('employee.php');</script>";
                             }
                         } else {
@@ -3628,18 +3628,18 @@ Class Payroll
 
                         $companyEnd = date("h:i a", strtotime($companyStart." +".$companyShiftSpan." hours"));
 
-                        $sql = "INSERT INTO schedule(empId, 
-                                                     company, 
-                                                     scheduleTimeIn, 
-                                                     scheduleTimeOut, 
+                        $sql = "INSERT INTO schedule(empId,
+                                                     company,
+                                                     scheduleTimeIn,
+                                                     scheduleTimeOut,
                                                      shift,
                                                      shift_span,
                                                      expiration_date
                                                     )
                                 VALUES(?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $this->con()->prepare($sql);
-                        $stmt->execute([$empId, 
-                                        $company, 
+                        $stmt->execute([$empId,
+                                        $company,
                                         $companyStart,
                                         $companyEnd,
                                         $companyShift,
@@ -3669,10 +3669,10 @@ Class Payroll
                                 $hiredGuards = 0;
 
                                 $intUsersHR = intval($usersHR->hired_guards);
-                                    
+
                                 if($countRowHR > 0){
-                                    if($intUsersHR == 0 || 
-                                        $intUsersHR == '0' || 
+                                    if($intUsersHR == 0 ||
+                                        $intUsersHR == '0' ||
                                         $intUsersHR == NULL ||
                                         $intUsersHR == 'NULL' ||
                                         $intUsersHR == ''
@@ -3696,12 +3696,12 @@ Class Payroll
                                     $admindatetime = $this->getDateTime();
                                     $adminTime = $admindatetime['time'];
                                     $adminDate = $admindatetime['date'];
-                                                                        
+
                                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
                                 }
-                                
+
                                 echo "<script>window.location.assign('employee.php');</script>";
                             }
                         } else {
@@ -3733,18 +3733,18 @@ Class Payroll
 
                         $companyEnd = date("h:i a", strtotime($companyStart." +".$companyShiftSpan." hours"));
 
-                        $sql = "INSERT INTO schedule(empId, 
-                                                     company, 
-                                                     scheduleTimeIn, 
-                                                     scheduleTimeOut, 
+                        $sql = "INSERT INTO schedule(empId,
+                                                     company,
+                                                     scheduleTimeIn,
+                                                     scheduleTimeOut,
                                                      shift,
                                                      shift_span,
                                                      expiration_date
                                                     )
                                 VALUES(?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $this->con()->prepare($sql);
-                        $stmt->execute([$empId, 
-                                        $company, 
+                        $stmt->execute([$empId,
+                                        $company,
                                         $companyStart,
                                         $companyEnd,
                                         $companyShift,
@@ -3774,10 +3774,10 @@ Class Payroll
                                 $hiredGuards = 0;
 
                                 $intUsersHR = intval($usersHR->hired_guards);
-                                    
+
                                 if($countRowHR > 0){
-                                    if($intUsersHR == 0 || 
-                                        $intUsersHR == '0' || 
+                                    if($intUsersHR == 0 ||
+                                        $intUsersHR == '0' ||
                                         $intUsersHR == NULL ||
                                         $intUsersHR == 'NULL' ||
                                         $intUsersHR == ''
@@ -3801,12 +3801,12 @@ Class Payroll
                                     $admindatetime = $this->getDateTime();
                                     $adminTime = $admindatetime['time'];
                                     $adminDate = $admindatetime['date'];
-                                                                        
+
                                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
                                 }
-                                
+
                                 echo "<script>window.location.assign('employee.php');</script>";
                             }
                         } else {
@@ -3853,9 +3853,9 @@ Class Payroll
                                 $hiredGuards = 0;
 
                                 $intUsersHR = intval($usersHR->hired_guards);
-                                    
+
                                     if($countRowHR > 0){
-                                        if($intUsersHR == 0 || 
+                                        if($intUsersHR == 0 ||
                                            $intUsersHR == NULL ||
                                            $intUsersHR == 'NULL' ||
                                            $intUsersHR == ''
@@ -3879,7 +3879,7 @@ Class Payroll
                                     $admindatetime = $this->getDateTime();
                                     $adminTime = $admindatetime['time'];
                                     $adminDate = $admindatetime['date'];
-                                                                        
+
                                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
@@ -3929,9 +3929,9 @@ Class Payroll
                         setTimeout(e => msgErr.remove(), 5000);
                       </script>";
             } else {
-                
+
                 if($email != $urlEmail){
-                    
+
                     if($this->checkEmpEmailExist($email)){
                         echo "<div class='error'>
                                 <div class='icon-container'>
@@ -3947,13 +3947,13 @@ Class Payroll
                                 setTimeout(e => msgErr.remove(), 5000);
                               </script>";
                     } else {
-                        
+
                         // update mo na ko
                         $sql = "UPDATE employee
-                                SET firstname = ?, 
+                                SET firstname = ?,
                                     lastname = ?,
                                     cpnumber = ?,
-                                    address = ?, 
+                                    address = ?,
                                     email = ?
                                 WHERE id = ?";
                         $stmt = $this->con()->prepare($sql);
@@ -3963,8 +3963,8 @@ Class Payroll
                         if($countRow > 0){
 
                             // after mo maupdate kunin mo yung data
-                            $sql2 = "SELECT e.email, 
-                                            de.e_id, 
+                            $sql2 = "SELECT e.email,
+                                            de.e_id,
                                             de.secret_key as secret_key
                                     FROM employee e
                                     INNER JOIN secret_diarye de
@@ -3984,11 +3984,11 @@ Class Payroll
                                 $admindatetime = $this->getDateTime();
                                 $adminTime = $admindatetime['time'];
                                 $adminDate = $admindatetime['date'];
-                                                                    
+
                                 $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                                 $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                 $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                                    
+
                                 $countRowAdminLog = $stmtAdminLog->rowCount();
                                 if($countRowAdminLog > 0){
                                     $msg = 'Updated Successfully';
@@ -4026,13 +4026,13 @@ Class Payroll
                         }
                     }
                 } else {
-                    
+
                     // update mo na ko
                     $sql = "UPDATE employee
-                            SET firstname = ?, 
+                            SET firstname = ?,
                                 lastname = ?,
                                 cpnumber = ?,
-                                address = ?, 
+                                address = ?,
                                 email = ?
                             WHERE id = ?";
                     $stmt = $this->con()->prepare($sql);
@@ -4040,17 +4040,17 @@ Class Payroll
                     $countRow = $stmt->rowCount();
 
                     if($countRow > 0){
-                        
+
                         $action = "Edit";
                         $table_name = "Available Employee";
                         $admindatetime = $this->getDateTime();
                         $adminTime = $admindatetime['time'];
                         $adminDate = $admindatetime['date'];
-                                                            
+
                         $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                         $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                         $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                            
+
                         $countRowAdminLog = $stmtAdminLog->rowCount();
                         if($countRowAdminLog > 0){
                             $msg = 'Updated Successfully';
@@ -4114,11 +4114,11 @@ Class Payroll
                     $admindatetime = $this->getDateTime();
                     $adminTime = $admindatetime['time'];
                     $adminDate = $admindatetime['date'];
-                                                            
+
                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                            
+
                     $countRowAdminLog = $stmtAdminLog->rowCount();
                     if($countRowAdminLog > 0){
                         $msg = 'Deleted Successfully';
@@ -4209,7 +4209,7 @@ Class Payroll
 
     public function recentactivityleave()
     {
-        $sql = "SELECT 
+        $sql = "SELECT
                         l.*,
                         l.date_admin,
                         e.empId,
@@ -4218,9 +4218,9 @@ Class Payroll
                 FROM leave_request l
                 INNER JOIN employee e
                 ON l.empId = e.empId
-                WHERE 
-                    status != 'pending' 
-                AND 
+                WHERE
+                    status != 'pending'
+                AND
                     date_admin BETWEEN date_sub(curdate(),interval 30 day) AND curdate()
                 ORDER BY l.date_admin DESC";
         $stmt = $this->con()->query($sql);
@@ -4237,7 +4237,7 @@ Class Payroll
                             <input type='hidden' name='removeDate' value='' required/>
                             <input type='hidden' name='removeId' value='' required/>
                             <button type='submit' name='removeRecentBtn'><span class='material-icons'></span></button>
-                        </form>  
+                        </form>
                     </div>
                     <div class='card-content'>
                         <p></p>
@@ -4247,7 +4247,7 @@ Class Payroll
         } else {
             while($row = $stmt->fetch()){
                 $fullname = $row->lastname . ", " . $row->firstname;
-    
+
                 echo "<div class='card'>
                         <div class='card-header'>
                             <div class='card-status'>
@@ -4258,7 +4258,7 @@ Class Payroll
                                 <input type='hidden' name='removeDate' value='$row->date_admin' required/>
                                 <input type='hidden' name='removeId' value='$row->id' required/>
                                 <button type='submit' name='removeRecentBtn'><span class='material-icons'>close</span></button>
-                            </form>  
+                            </form>
                         </div>
                         <div class='card-content'>
                             <p>$fullname</p>
@@ -4275,7 +4275,7 @@ Class Payroll
             $removeId = $_POST['removeId'];
             $removeDate = $_POST['removeDate'];
 
-            $sql = "UPDATE leave_request 
+            $sql = "UPDATE leave_request
                     SET date_admin = date_sub(?, interval 31 day)
                     WHERE id = ?";
             $stmt = $this->con()->prepare($sql);
@@ -4292,11 +4292,11 @@ Class Payroll
 
     public function listofleaverequest()
     {
-        $sql = "SELECT 
-                        l.*, 
+        $sql = "SELECT
+                        l.*,
                         l.id as id,
                         e.empId,
-                        e.firstname as firstname,  
+                        e.firstname as firstname,
                         e.lastname as lastname
                 FROM leave_request l
                 INNER JOIN employee e
@@ -4339,11 +4339,11 @@ Class Payroll
 
     public function listofleaveapprove()
     {
-        $sql = "SELECT 
-                        l.*, 
+        $sql = "SELECT
+                        l.*,
                         l.id as id,
                         e.empId,
-                        e.firstname as firstname,  
+                        e.firstname as firstname,
                         e.lastname as lastname
                 FROM leave_request l
                 INNER JOIN employee e
@@ -4381,11 +4381,11 @@ Class Payroll
 
     public function listofleavereject()
     {
-        $sql = "SELECT 
-                        l.*, 
+        $sql = "SELECT
+                        l.*,
                         l.id as id,
                         e.empId,
-                        e.firstname as firstname,  
+                        e.firstname as firstname,
                         e.lastname as lastname
                 FROM leave_request l
                 INNER JOIN employee e
@@ -4519,9 +4519,9 @@ Class Payroll
         }
     }
 
-    public function informSubstitute($email, 
-                                     $company, 
-                                     $comp_address, 
+    public function informSubstitute($email,
+                                     $company,
+                                     $comp_address,
                                      $timeinSched,
                                      $timeoutSched,
                                      $shiftSched,
@@ -4537,7 +4537,7 @@ Class Payroll
                  <br/>
                  <h4>Starting at $leaveStart you may start working on us.</h4> <br/>
                  Shift: $shiftSched <br/>
-                 Total hours per day: $shiftSpanSched <br/> 
+                 Total hours per day: $shiftSpanSched <br/>
                  Schedule: $timeinSched to $timeoutSched <br/>
                  Position: $substiPosition <br/>
                  Rate per hour: $substiPrice <br/>
@@ -4577,7 +4577,7 @@ Class Payroll
         if(isset($_POST['approveRequest'])){
             $id = $_POST['requestId'];
 
-            $sqlFind = "SELECT 
+            $sqlFind = "SELECT
                                 l.*,
                                 l.leave_start as leaveStart,
                                 l.leave_end as leaveEnd,
@@ -4603,7 +4603,7 @@ Class Payroll
                         ON l.empId = e.empId
 
                         INNER JOIN company c
-                        ON s.company = c.company_name 
+                        ON s.company = c.company_name
                         WHERE l.id = ?";
             $stmtFind = $this->con()->prepare($sqlFind);
             $stmtFind->execute([$id]);
@@ -4615,7 +4615,7 @@ Class Payroll
                 $checkData = $userFind->leaveStart;
                 $datetime = $this->getDateTime();
                 $dateNow = $datetime['date'];
-                
+
                 if(strtotime($checkData) < strtotime($dateNow)){
                     echo "<div class='error'>
                             <div class='icon-container'>
@@ -4645,7 +4645,7 @@ Class Payroll
                     $datetime = $this->getDateTime();
                     $date = $datetime['date'];
 
-                    $sqlSubstiUpdate = "UPDATE employee 
+                    $sqlSubstiUpdate = "UPDATE employee
                                         SET position = ?,
                                             ratesperDay = ?,
                                             overtime_rate = ?,
@@ -4704,9 +4704,9 @@ Class Payroll
 
                                     if($countRowFindSubsti > 0){
                                         // inform substitute guard
-                                        $this->informSubstitute($userFindSubsti->email, 
-                                                            $companySched, 
-                                                            $comp_address, 
+                                        $this->informSubstitute($userFindSubsti->email,
+                                                            $companySched,
+                                                            $comp_address,
                                                             $timeinSched,
                                                             $timeoutSched,
                                                             $shiftSched,
@@ -4717,17 +4717,17 @@ Class Payroll
                                                             $substiPrice,
                                                             $substiOT
                                                             );
-                                        
+
                                         $action = "Approve";
                                         $table_name = "Leave";
                                         $admindatetime = $this->getDateTime();
                                         $adminTime = $admindatetime['time'];
                                         $adminDate = $admindatetime['date'];
-                                    
+
                                         $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                                         $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                         $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                    
+
                                         $countRowAdminLog = $stmtAdminLog->rowCount();
                                         if($countRowAdminLog > 0){
                                             $msg = 'Approved Successfully';
@@ -4782,7 +4782,7 @@ Class Payroll
                     }
                 }
 
-                
+
             }
         }
     }
@@ -4793,7 +4793,7 @@ Class Payroll
         if(isset($_POST['approveRequest'])){
             $id = $_POST['requestId'];
 
-            $sqlFind = "SELECT 
+            $sqlFind = "SELECT
                                 l.*,
                                 l.leave_start as leaveStart,
                                 l.leave_end as leaveEnd,
@@ -4819,7 +4819,7 @@ Class Payroll
                         ON l.empId = e.empId
 
                         INNER JOIN company c
-                        ON s.company = c.company_name 
+                        ON s.company = c.company_name
                         WHERE l.id = ?";
             $stmtFind = $this->con()->prepare($sqlFind);
             $stmtFind->execute([$id]);
@@ -4831,7 +4831,7 @@ Class Payroll
                 $checkData = $userFind->leaveStart;
                 $datetime = $this->getDateTime();
                 $dateNow = $datetime['date'];
-                
+
                 if(strtotime($checkData) < strtotime($dateNow)){
                     echo "<div class='error'>
                             <div class='icon-container'>
@@ -4861,7 +4861,7 @@ Class Payroll
                     $datetime = $this->getDateTime();
                     $date = $datetime['date'];
 
-                    $sqlSubstiUpdate = "UPDATE employee 
+                    $sqlSubstiUpdate = "UPDATE employee
                                         SET position = ?,
                                             ratesperDay = ?,
                                             overtime_rate = ?,
@@ -4920,9 +4920,9 @@ Class Payroll
 
                                     if($countRowFindSubsti > 0){
                                         // inform substitute guard
-                                        $this->informSubstitute($userFindSubsti->email, 
-                                                            $companySched, 
-                                                            $comp_address, 
+                                        $this->informSubstitute($userFindSubsti->email,
+                                                            $companySched,
+                                                            $comp_address,
                                                             $timeinSched,
                                                             $timeoutSched,
                                                             $shiftSched,
@@ -4939,9 +4939,9 @@ Class Payroll
                                         $admindatetime = $this->getDateTime();
                                         $adminTime = $admindatetime['time'];
                                         $adminDate = $admindatetime['date'];
-                                    
-                                        $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";                    
-                                        
+
+                                        $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
+
                                         $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                                         $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
 
@@ -5211,7 +5211,7 @@ Class Payroll
     public function viewListViolation() {
         $sql = "SELECT v.*,
                        e.empId,
-                       e.isDeleted 
+                       e.isDeleted
                 FROM violationsandremarks v
                 INNER JOIN employee e
                 ON v.empId = e.empId
@@ -5244,7 +5244,7 @@ Class Payroll
     }
 
     public function viewListRemarkedViolation() {
-        $sql = "SELECT 
+        $sql = "SELECT
                     v.remark,
                     v.empId,
                     i.*,
@@ -5259,7 +5259,7 @@ Class Payroll
                 INNER JOIN employee e
                 ON v.empId = e.empId
 
-                WHERE v.remark IS NOT NULL 
+                WHERE v.remark IS NOT NULL
                 ORDER BY date_created DESC";
         $stmt = $this->con()->prepare($sql);
         $stmt->execute();
@@ -5287,7 +5287,7 @@ Class Payroll
     }
 
     public function viewListRemarkedViolationSearch($search) {
-        $sql = "SELECT 
+        $sql = "SELECT
                     v.remark,
                     v.empId,
                     i.*,
@@ -5337,7 +5337,7 @@ Class Payroll
     public function viewModalListRemarkedViolation() {
         if (isset($_GET['lrid'])) {
             $lrid = $_GET['lrid'];
-            
+
             $sqlView = "SELECT
                             i.*,
                             e.firstname,
@@ -5346,7 +5346,7 @@ Class Payroll
 
                         INNER JOIN employee e
                         ON i.empId = e.empId
-                        
+
                         WHERE i.id = ?";
             $stmtView = $this->con()->prepare($sqlView);
             $stmtView->execute([$lrid]);
@@ -5401,17 +5401,17 @@ Class Payroll
     }
 
     public function addModalRemarks($adminFullname, $adminId) {
-    
+
         if (isset($_GET['rid'])) {
             $rid = $_GET['rid'];
-            
+
             $sqlRem = "SELECT v.*,
                               e.*
                         FROM violationsandremarks v
 
                         INNER JOIN employee e
                         ON v.empId = e.empId
-                        
+
                         WHERE v.id = ? AND v.remark IS NULL";
             $stmtRem = $this->con()->prepare($sqlRem);
             $stmtRem->execute([$rid]);
@@ -5473,7 +5473,7 @@ Class Payroll
             }
 
             if (isset($_POST['submit'])) {
-                
+
                 // Declaring Variables
                 date_default_timezone_set('Asia/Manila');
                 $location = "../inbox/";
@@ -5486,7 +5486,7 @@ Class Payroll
                     $file_name = NULL;
                 }
 
-                
+
                 $file_temp = $_FILES["file"]["tmp_name"]; // Get uploaded file temp
                 $file_size = $_FILES["file"]["size"]; // Get uploaded file size
 
@@ -5532,9 +5532,9 @@ Class Payroll
                                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $this->con()->prepare($sql);
                         $stmt->execute([$generateId, $empId, $subject, $body, $file_name, $file_new_name, $date_created, $status]);
-            
+
                         $countRow = $stmt->rowCount();
-            
+
                         if ($countRow > 0) {
                             //Update the remark data on the violationsandremarks table
                             $sqlUpdate = "UPDATE violationsandremarks SET remark = ? WHERE id = ?";
@@ -5549,11 +5549,11 @@ Class Payroll
                             $admindatetime = $this->getDateTime();
                             $adminTime = $admindatetime['time'];
                             $adminDate = $admindatetime['date'];
-                                                                
+
                             $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                             $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                             $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                                
+
                             $countRowAdminLog = $stmtAdminLog->rowCount();
                             if($countRowAdminLog > 0){
                                 $msg = 'Submitted Successfully';
@@ -5589,14 +5589,14 @@ Class Payroll
                             let msgErr = document.querySelector('.error');
                             setTimeout(e => msgErr.remove(), 5000);
                           </script>";
-                }     
+                }
             }
         }
     }
 
     public function mostViolation()
     {
-        $sql = "SELECT 
+        $sql = "SELECT
                         i.empId as iEmpId,
                         COUNT(i.empId) AS totalEmpId,
                         e.firstname as firstname,
@@ -5650,7 +5650,7 @@ Class Payroll
     // list of most violations
     public function viewMostViolation($id)
     {
-        $sql = "SELECT 
+        $sql = "SELECT
                         empId,
                         subject,
                         body,
@@ -5684,8 +5684,8 @@ Class Payroll
     {
         $user = $name;
 
-        $sql = "SELECT * FROM schedule 
-                WHERE date_assigned BETWEEN CURRENT_DATE - 15 
+        $sql = "SELECT * FROM schedule
+                WHERE date_assigned BETWEEN CURRENT_DATE - 15
                                         AND CURRENT_DATE";
         $stmt = $this->con()->prepare($sql);
         $stmt->execute();
@@ -5723,7 +5723,7 @@ Class Payroll
                        e.lastname,
                        e.position as position,
                        c.comp_location
-                       
+
                 FROM schedule s
                 INNER JOIN employee e
                 ON s.empId = e.empId
@@ -5757,8 +5757,8 @@ Class Payroll
 
         if($countRow > 0){
             $totalEmployees = $countRow;
-            
-            $sqlCountEmp = "SELECT position, 
+
+            $sqlCountEmp = "SELECT position,
                                    COUNT(position) AS positions,
                                    ROUND(100. * count(*) / sum(count(*)) over (), 0) AS percentage,
                                    availability
@@ -5769,7 +5769,7 @@ Class Payroll
                             LIMIT 4;
                             ";
             $stmtCountEmp = $this->con()->query($sqlCountEmp);
-            
+
             while($usersCountEmp = $stmtCountEmp->fetch()){
                 $posName = $usersCountEmp->position;
                 $posTotal = $usersCountEmp->positions;
@@ -5801,7 +5801,7 @@ Class Payroll
         }
     }
 
-    public function viewAllStatistics() 
+    public function viewAllStatistics()
     {
         $sql = "SELECT * FROM employee";
         $stmt = $this->con()->prepare($sql);
@@ -5811,8 +5811,8 @@ Class Payroll
 
         if($countRow > 0){
             $totalEmployees = $countRow;
-            
-            $sqlCountEmp = "SELECT position, 
+
+            $sqlCountEmp = "SELECT position,
                                    COUNT(position) AS positions,
                                    ROUND(100. * count(*) / sum(count(*)) over (), 0) AS percentage,
                                    availability
@@ -5822,7 +5822,7 @@ Class Payroll
                             ORDER BY percentage DESC;
                             ";
             $stmtCountEmp = $this->con()->query($sqlCountEmp);
-            
+
             while($usersCountEmp = $stmtCountEmp->fetch()){
                 $posName = $usersCountEmp->position;
                 $posTotal = $usersCountEmp->positions;
@@ -5846,7 +5846,7 @@ Class Payroll
 
     public function dashboardRecentActivity()
     {
-        $sql = "SELECT * FROM company 
+        $sql = "SELECT * FROM company
                 WHERE isDeleted = 0
                 ORDER BY id DESC";
         $stmt = $this->con()->query($sql);
@@ -5868,11 +5868,11 @@ Class Payroll
             while($users = $stmt->fetch()){
                 $findColor = $users->date;
                 $status = '';
-                
-                if(strtotime($users->date) <= strtotime($date) && 
+
+                if(strtotime($users->date) <= strtotime($date) &&
                    strtotime($users->date) >= strtotime($date.'-15 day')){
                     $status = 'recent';
-    
+
                     $hiredGuards = $users->hired_guards == NULL || '' ? 0 : $users->hired_guards;
 
                     echo "<tr>
@@ -5886,14 +5886,14 @@ Class Payroll
                                 </div>
                             </td>
                           </tr>";
-                } 
+                }
             }
         }
     }
 
     public function dashboardRecentActivityAll()
     {
-        $sql = "SELECT * FROM company 
+        $sql = "SELECT * FROM company
                 WHERE isDeleted = 0
                 ORDER BY id DESC";
         $stmt = $this->con()->query($sql);
@@ -5949,7 +5949,7 @@ Class Payroll
         } else {
             while($users = $stmt->fetch()){
                 $fullname = $users->lastname.", ".$users->firstname;
-    
+
                 echo "<div class='guard-row'>
                             <div class='guard-row-text'>
                                 <p>$fullname</p>
@@ -5966,7 +5966,7 @@ Class Payroll
                                         <span class='material-icons'>delete</span>
                                     </a>
                                 </div>
-                                
+
                             </div>
                       </div>";
             }
@@ -6103,7 +6103,7 @@ Class Payroll
                         }
 
                 } else {
-                    
+
                         // update employee
 
                         $sqlFindEmail = "SELECT * FROM employee WHERE email = ?";
@@ -6139,7 +6139,7 @@ Class Payroll
 
                             if($countRow > 0){
 
-                                $sqlInform = "SELECT e.*, sd.secret_key as secret_key  
+                                $sqlInform = "SELECT e.*, sd.secret_key as secret_key
                                             FROM employee e
                                             INNER JOIN secret_diarye sd
                                             ON e.email = sd.e_id
@@ -6148,7 +6148,7 @@ Class Payroll
                                 $stmtInform->execute([$id]);
                                 $userInform = $stmtInform->fetch();
                                 $countRowInform = $stmtInform->rowCount();
-                                
+
                                 if($countRowInform > 0){
                                     // send credentials in new email
                                     $this->sendEmail($userInform->email, $userInform->secret_key);
@@ -6287,7 +6287,7 @@ Class Payroll
 
     public function dashboardLeaveRequests()
     {
-        $sql = "SELECT 
+        $sql = "SELECT
                         l.*,
                         l.id as finalId,
                         e.position AS position,
@@ -6395,7 +6395,7 @@ Class Payroll
                       let userP = userNameContainer.querySelector('p');
                       userH1.innerText = '$fullname';
                       userP.innerText = '$user->access';
-                      
+
                       let aboutMeContainer = document.querySelector('.about-me-container');
                       let aboutP = aboutMeContainer.querySelector('p');
                       aboutP.innerText = '$user->address';
@@ -6441,7 +6441,7 @@ Class Payroll
                         newA.setAttribute('href', instagramText);
                         socialMediaContainer.appendChild(newA);
                       }
-                      
+
                       let facebookInput = document.querySelector('#facebook');
                       let googleInput = document.querySelector('#google');
                       let twitterInput = document.querySelector('#twitter');
@@ -6495,7 +6495,7 @@ Class Payroll
                       let userP = userNameContainer.querySelector('p');
                       userH1.innerText = '$fullname';
                       userP.innerText = '$user->access';
-                      
+
                       let aboutMeContainer = document.querySelector('.about-me-container');
                       let aboutP = aboutMeContainer.querySelector('p');
                       aboutP.innerText = '$user->address';
@@ -6541,7 +6541,7 @@ Class Payroll
                         newA.setAttribute('href', instagramText);
                         socialMediaContainer.appendChild(newA);
                       }
-                      
+
                       let facebookInput = document.querySelector('#facebook');
                       let googleInput = document.querySelector('#google');
                       let twitterInput = document.querySelector('#twitter');
@@ -6597,7 +6597,7 @@ Class Payroll
                       let userP = userNameContainer.querySelector('p');
                       userH1.innerText = '$fullname';
                       userP.innerText = '$user->access';
-                      
+
                       let aboutMeContainer = document.querySelector('.about-me-container');
                       let aboutP = aboutMeContainer.querySelector('p');
                       aboutP.innerText = '$user->address';
@@ -6643,7 +6643,7 @@ Class Payroll
                         newA.setAttribute('href', instagramText);
                         socialMediaContainer.appendChild(newA);
                       }
-                      
+
                       let facebookInput = document.querySelector('#facebook');
                       let googleInput = document.querySelector('#google');
                       let twitterInput = document.querySelector('#twitter');
@@ -6692,7 +6692,7 @@ Class Payroll
 
     public function editAdminProfile($id, $adminFullname, $adminId)
     {
-        if(isset($_POST["saveChanges"])){ 
+        if(isset($_POST["saveChanges"])){
 
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
@@ -6728,7 +6728,7 @@ Class Payroll
 
                 // username is already exist in super_admin
                 $sqlExist = "SELECT id, username
-                             FROM super_admin 
+                             FROM super_admin
                              WHERE username = ? AND id != ?";
                 $stmtExist = $this->con()->prepare($sqlExist);
                 $stmtExist->execute([$email, $id]);
@@ -6751,7 +6751,7 @@ Class Payroll
                 } else {
 
                     // if nagiba email send credentials
-                    $sqlSend = "SELECT sa.id, sa.username, sd.sa_id, sd.secret_key as secret_key 
+                    $sqlSend = "SELECT sa.id, sa.username, sd.sa_id, sd.secret_key as secret_key
                                 FROM super_admin sa
                                 INNER JOIN secret_diary sd
                                 ON sa.username = sd.sa_id
@@ -6762,7 +6762,7 @@ Class Payroll
                     $countRowSend = $stmtSend->rowCount();
 
                     // fetch old data to get password
-                    $sqlCre = "SELECT sa.username, sd.sa_id, sd.secret_key as secret_key 
+                    $sqlCre = "SELECT sa.username, sd.sa_id, sd.secret_key as secret_key
                                FROM super_admin sa
                                INNER JOIN secret_diary sd
                                ON sa.username = sd.sa_id
@@ -6776,31 +6776,31 @@ Class Payroll
                     }
 
                     // check image file type
-                    $status = 'error'; 
+                    $status = 'error';
                     if(!empty($_FILES["image"]["name"])) {
-                        // Get file info 
+                        // Get file info
                         $fileName = basename($_FILES["image"]["name"]); // sample.jpg
                         $fileType = pathinfo($fileName, PATHINFO_EXTENSION); // .jpg
-                        
-                        // Allow certain file formats 
-                        $allowTypes = array('jpg','png','jpeg','gif'); 
+
+                        // Allow certain file formats
+                        $allowTypes = array('jpg','png','jpeg','gif');
 
                         // kapag jpg yung file or what
-                        if(in_array($fileType, $allowTypes)){ 
-                            $image = $_FILES['image']['tmp_name']; 
-                            $imgContent = addslashes(file_get_contents($image)); 
-                        
+                        if(in_array($fileType, $allowTypes)){
+                            $image = $_FILES['image']['tmp_name'];
+                            $imgContent = addslashes(file_get_contents($image));
+
                             // Delete the existing image because it will fail if we update it
                             $sqlDel = "DELETE FROM admin_profile WHERE sa_id = ?";
                             $stmtDel = $this->con()->prepare($sqlDel);
                             $stmtDel->execute([$id]);
 
-                            // Insert image content into database 
-                            $sql = "INSERT INTO admin_profile (image, sa_id, created) 
+                            // Insert image content into database
+                            $sql = "INSERT INTO admin_profile (image, sa_id, created)
                                     VALUES ('$imgContent', $id, NOW())";
                             $stmt = $this->con()->query($sql);
 
-                        } else{  
+                        } else{
                             echo "<div class='error'>
                                     <div class='icon-container'>
                                         <span class='material-icons'>close</span>
@@ -6813,8 +6813,8 @@ Class Payroll
                                   <script>
                                     let msgErr = document.querySelector('.error');
                                     setTimeout(e => msgErr.remove(), 5000);
-                                  </script>"; 
-                        } 
+                                  </script>";
+                        }
                     }
 
 
@@ -6867,7 +6867,7 @@ Class Payroll
                     }
                 }
             }
-        } 
+        }
     }
 
 
@@ -6900,7 +6900,7 @@ Class Payroll
                       </script>";
             } else {
 
-                $sqlFindUser = "SELECT * FROM super_admin 
+                $sqlFindUser = "SELECT * FROM super_admin
                                 WHERE username = ?
                                 AND password = ?";
                 $stmtFindUser = $this->con()->prepare($sqlFindUser);
@@ -6953,7 +6953,7 @@ Class Payroll
                     }
 
 
-                    
+
                 } else {
                     echo "<div class='error'>
                             <div class='icon-container'>
@@ -6968,7 +6968,7 @@ Class Payroll
                             let msgErr = document.querySelector('.error');
                             setTimeout(e => msgErr.remove(), 5000);
                           </script>";
-                }  
+                }
             }
         }
     }
@@ -6989,7 +6989,7 @@ Class Payroll
             ){
                 echo "Input fields are required!";
             } else {
-                
+
                 $sql = "INSERT INTO feedback(fullname, position, category, comment, date_created)
                         VALUES(?, ?, ?, ?, ?)";
                 $stmt = $this->con()->prepare($sql);
@@ -7031,17 +7031,17 @@ Class Payroll
                 $status = "";
                 $datetime = $this->getDateTime();
                 $date = $datetime['date'];
-    
-                if(strtotime($row->date) <= strtotime($date) && 
+
+                if(strtotime($row->date) <= strtotime($date) &&
                    strtotime($row->date) >= strtotime($date.'-15 day')){
                     $status = 'recent';
-                } elseif(strtotime($row->date) >= strtotime($date.'-30 day') && 
+                } elseif(strtotime($row->date) >= strtotime($date.'-30 day') &&
                          strtotime($row->date) <= strtotime($date.'-15 day')){
                     $status = 'late';
                 } else {
                     $status = 'old';
                 }
-    
+
                 echo "<div class='cards'>
                         <div class='circle $status'></div>
                         <h3>$row->company_name</h3>
@@ -7054,10 +7054,10 @@ Class Payroll
                     <h3>No <br/>Data Found</h3>
                     <p></p>
                   </div>";
-        }   
+        }
     }
 
-    // list of company 
+    // list of company
     public function companylist()
     {
         $sql = "SELECT * FROM company WHERE isDeleted = 0 ORDER BY id DESC";
@@ -7103,7 +7103,7 @@ Class Payroll
 
     public function companylistSearch($search)
     {
-        $sql = "SELECT * FROM company 
+        $sql = "SELECT * FROM company
                 WHERE isDeleted = 0 AND company_name LIKE '%$search%' OR
                       isDeleted = 0 AND hired_guards LIKE '%$search%' OR
                       isDeleted = 0 AND email LIKE '%$search%' OR
@@ -7225,19 +7225,19 @@ Class Payroll
                     echo "<script>window.location.assign('company.php?message2=$msg');</script>";
                 } else {
                     $sql = "INSERT INTO company(company_name,
-                                        cpnumber, 
+                                        cpnumber,
                                         email,
                                         comp_location,
                                         longitude,
                                         latitude,
                                         boundary_size,
-                                        shifts, 
+                                        shifts,
                                         shift_span,
                                         day_start,
-                                        date) 
+                                        date)
                             VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     $stmt = $this->con()->prepare($sql);
-                    $stmt->execute([$company_name, 
+                    $stmt->execute([$company_name,
                                     $cpnumber,
                                     $email,
                                     $comp_location,
@@ -7254,7 +7254,7 @@ Class Payroll
                     if($countRow > 0){
 
                         $lengthInput = $_POST['lengthInput'];
-                        
+
 
                         for($i = 0; $i <= $lengthInput; $i++){
                             $pos = $_POST["position$i"];
@@ -7263,9 +7263,9 @@ Class Payroll
 
                             $sqlPosition = "INSERT INTO `positions`(`company`, `position_name`, `price`, `overtime_rate`) VALUES (?, ?, ?, ?)";
                             $stmtPosition = $this->con()->prepare($sqlPosition);
-                            $stmtPosition->execute([$company_name, 
-                                                    $pos, 
-                                                    $price, 
+                            $stmtPosition->execute([$company_name,
+                                                    $pos,
+                                                    $price,
                                                     $ot]);
                             $countRowPosition = $stmtPosition->rowCount();
                         }
@@ -7275,11 +7275,11 @@ Class Payroll
                         $admindatetime = $this->getDateTime();
                         $adminTime = $admindatetime['time'];
                         $adminDate = $admindatetime['date'];
-                                                            
+
                         $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                         $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                         $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                            
+
                         $countRowAdminLog = $stmtAdminLog->rowCount();
                         if($countRowAdminLog > 0){
                             $msg = 'New data was added';
@@ -7371,19 +7371,19 @@ Class Payroll
                     echo "<script>window.location.assign('company.php?message2=$msg');</script>";
                 } else {
                     $sql = "INSERT INTO company(company_name,
-                                        cpnumber, 
+                                        cpnumber,
                                         email,
                                         comp_location,
                                         longitude,
                                         latitude,
                                         boundary_size,
-                                        shifts, 
+                                        shifts,
                                         shift_span,
                                         day_start,
-                                        date) 
+                                        date)
                             VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     $stmt = $this->con()->prepare($sql);
-                    $stmt->execute([$company_name, 
+                    $stmt->execute([$company_name,
                                     $cpnumber,
                                     $email,
                                     $comp_location,
@@ -7400,7 +7400,7 @@ Class Payroll
                     if($countRow > 0){
 
                         $lengthInput = $_POST['lengthInput2'];
-                        
+
                         for($i = 0; $i <= $lengthInput; $i++){
                             $pos = $_POST["position$i"];
                             $price = $_POST["price$i"];
@@ -7408,9 +7408,9 @@ Class Payroll
 
                             $sqlPosition = "INSERT INTO `positions`(`company`, `position_name`, `price`, `overtime_rate`) VALUES (?, ?, ?, ?)";
                             $stmtPosition = $this->con()->prepare($sqlPosition);
-                            $stmtPosition->execute([$company_name, 
-                                                    $pos, 
-                                                    $price, 
+                            $stmtPosition->execute([$company_name,
+                                                    $pos,
+                                                    $price,
                                                     $ot]);
                             $countRowPosition = $stmtPosition->rowCount();
                         }
@@ -7420,11 +7420,11 @@ Class Payroll
                         $admindatetime = $this->getDateTime();
                         $adminTime = $admindatetime['time'];
                         $adminDate = $admindatetime['date'];
-                                                            
+
                         $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                         $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                         $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                            
+
                         $countRowAdminLog = $stmtAdminLog->rowCount();
                         if($countRowAdminLog > 0){
                             $msg = 'New data was added';
@@ -7503,19 +7503,19 @@ Class Payroll
                                         <select disabled>
                                             <option value='$shifts'>$shifts</option>
                                         </select>
-                                    </div>       
+                                    </div>
                                     <div>
                                         <label for='shift_span'>Shift Span</label>
                                         <select disabled>
                                             <option value='$shift_span'>$shift_span</option>
                                         </select>
-                                    </div>            
+                                    </div>
                                     <div>
                                         <label for='day_start'>Day Start</label>
                                         <select disabled>
                                             <option value='$day_start'>$day_start</option>
                                         </select>
-                                    </div>         
+                                    </div>
                                     <div>
                                         <label>Positions</label>";
 
@@ -7662,7 +7662,7 @@ Class Payroll
                                         </div>
                                     </div>
                                     <div>
-                                        <button type='submit' name='editCompanyInfo' class='btn_primary3'>Edit Company</button> 
+                                        <button type='submit' name='editCompanyInfo' class='btn_primary3'>Edit Company</button>
                                     </div>
                                 </form>
                             </div>
@@ -7690,7 +7690,7 @@ Class Payroll
                                 spanIcon.classList.add('material-icons');
                                 spanIcon.innerText = 'done';
                                 let pError = document.createElement('p');
-                                pError.innerText = 'Contact Number must be ' + minLength3 + ' digits.'; 
+                                pError.innerText = 'Contact Number must be ' + minLength3 + ' digits.';
                                 let closeContainerDiv = document.createElement('div');
                                 closeContainerDiv.classList.add('closeContainer');
                                 let spanClose = document.createElement('span');
@@ -7719,7 +7719,7 @@ Class Payroll
 
     // Action for Editing Company Info
     public function editcompanymodalinfo($adminFullname, $adminId)
-    {  
+    {
         if(isset($_POST['editCompanyInfo']))
         {
             $companyId = $_POST['companyId'];
@@ -7773,9 +7773,9 @@ Class Payroll
                             day_start = ?
                         WHERE id = ?";
                 $stmt = $this->con()->prepare($sql);
-                $stmt->execute([$company_name, 
+                $stmt->execute([$company_name,
                                 $cpnumber,
-                                $email, 
+                                $email,
                                 $comp_location,
                                 $longitude,
                                 $latitude,
@@ -7787,7 +7787,7 @@ Class Payroll
                 $countRow = $stmt->rowCount();
 
                 if($countRow > 0){
-                    $sqlInform = "SELECT s.company, e.email as e_email 
+                    $sqlInform = "SELECT s.company, e.email as e_email
                                   FROM schedule s
                                   INNER JOIN employee e
                                   ON s.empId = e.empId
@@ -7812,11 +7812,11 @@ Class Payroll
                     $admindatetime = $this->getDateTime();
                     $adminTime = $admindatetime['time'];
                     $adminDate = $admindatetime['date'];
-                                                        
+
                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                        
+
                     $countRowAdminLog = $stmtAdminLog->rowCount();
                     if($countRowAdminLog > 0){
                         $msg = 'Updated Successfully';
@@ -7939,12 +7939,12 @@ Class Payroll
 
                         // get all email first
                         $sqlEmail = "SELECT e.email as email
-                                      FROM schedule s 
+                                      FROM schedule s
                                       INNER JOIN employee e
                                       ON s.empId = e.empId
                                       WHERE s.company = '$company'";
                         $stmtEmail = $this->con()->query($sqlEmail);
-                        
+
                         while($rowEmail = $stmtEmail->fetch()){
                             // inform here
                             $this->informEmployeeInCompAddPos($rowEmail->email, $position_name, $price, $ot);
@@ -7955,11 +7955,11 @@ Class Payroll
                         $admindatetime = $this->getDateTime();
                         $adminTime = $admindatetime['time'];
                         $adminDate = $admindatetime['date'];
-                                                            
+
                         $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                         $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                         $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                            
+
                         $countRowAdminLog = $stmtAdminLog->rowCount();
                         if($countRowAdminLog > 0){
                             $msg = 'Added Successfully';
@@ -8103,7 +8103,7 @@ Class Payroll
 
                     // get all email first
                     $sqlEmail = "SELECT e.email as email
-                                 FROM schedule s 
+                                 FROM schedule s
                                  INNER JOIN employee e
                                  ON s.empId = e.empId
                                  WHERE s.company = '$userOld->company'";
@@ -8125,11 +8125,11 @@ Class Payroll
                     $admindatetime = $this->getDateTime();
                     $adminTime = $admindatetime['time'];
                     $adminDate = $admindatetime['date'];
-                                                        
+
                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                        
+
                     $countRowAdminLog = $stmtAdminLog->rowCount();
                     if($countRowAdminLog > 0){
                         $msg = 'Updated Successfully';
@@ -8249,7 +8249,7 @@ Class Payroll
                     $stmt = $this->con()->prepare($sql);
                     $stmt->execute([$posId]);
                     $countRow = $stmt->rowCount();
-        
+
                     if($countRow > 0){
 
                         $action = "Delete";
@@ -8257,11 +8257,11 @@ Class Payroll
                         $admindatetime = $this->getDateTime();
                         $adminTime = $admindatetime['time'];
                         $adminDate = $admindatetime['date'];
-                                                            
+
                         $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                         $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                         $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                            
+
                         $countRowAdminLog = $stmtAdminLog->rowCount();
                         if($countRowAdminLog > 0){
                             $msg = 'Deleted Successfully';
@@ -8297,7 +8297,7 @@ Class Payroll
                               </script>";
                     }
                 }
-            } 
+            }
         }
     }
 
@@ -8365,11 +8365,11 @@ Class Payroll
                     $admindatetime = $this->getDateTime();
                     $adminTime = $admindatetime['time'];
                     $adminDate = $admindatetime['date'];
-                                                        
+
                     $sqlAdminLog = "INSERT INTO admin_log(admin_id, name, action, table_name, time, date) VALUES(?, ?, ?, ?, ?, ?)";
                     $stmtAdminLog = $this->con()->prepare($sqlAdminLog);
                     $stmtAdminLog->execute([$adminId, $adminFullname, $action, $table_name, $adminTime, $adminDate]);
-                                                        
+
                     $countRowAdminLog = $stmtAdminLog->rowCount();
                     if($countRowAdminLog > 0){
                         $msg = 'Deleted Successfully';
@@ -8423,7 +8423,7 @@ Class Payroll
     }
 
     // company basic information
-    public function informEmployeeInComp($email, $eCompanyName, 
+    public function informEmployeeInComp($email, $eCompanyName,
                                                  $eCpNumber,
                                                  $eEmail,
                                                  $eCompLocation,
@@ -8596,10 +8596,10 @@ Class Payroll
     // activity logs
     public function employeeLogs()
     {
-        $sql = "SELECT * 
-                FROM admin_log 
-                WHERE table_name = 'Available Employee' || 
-                    table_name = 'Unavailable Employee' || 
+        $sql = "SELECT *
+                FROM admin_log
+                WHERE table_name = 'Available Employee' ||
+                    table_name = 'Unavailable Employee' ||
                     table_name = 'Available Employee QR' ||
                     table_name = 'Unavailable Employee QR'
                 ORDER BY date DESC";
@@ -8629,9 +8629,9 @@ Class Payroll
 
     public function companyLogs()
     {
-        $sql = "SELECT * 
-                FROM admin_log 
-                WHERE table_name = 'Company' || 
+        $sql = "SELECT *
+                FROM admin_log
+                WHERE table_name = 'Company' ||
                       table_name = 'Company Position'
                 ORDER BY date DESC";
         $stmt = $this->con()->query($sql);
@@ -8660,8 +8660,8 @@ Class Payroll
 
     public function secretaryLogs2()
     {
-        $sql = "SELECT * 
-                FROM admin_log 
+        $sql = "SELECT *
+                FROM admin_log
                 WHERE table_name = 'Secretary'
                 ORDER BY date DESC";
         $stmt = $this->con()->query($sql);
@@ -8690,8 +8690,8 @@ Class Payroll
 
     public function leaveLogs()
     {
-        $sql = "SELECT * 
-                FROM admin_log 
+        $sql = "SELECT *
+                FROM admin_log
                 WHERE table_name = 'Leave'
                 ORDER BY date DESC";
         $stmt = $this->con()->query($sql);
@@ -8720,8 +8720,8 @@ Class Payroll
 
     public function remarksLogs()
     {
-        $sql = "SELECT * 
-                FROM admin_log 
+        $sql = "SELECT *
+                FROM admin_log
                 WHERE table_name = 'Remarks'
                 ORDER BY date DESC";
         $stmt = $this->con()->query($sql);
@@ -8750,9 +8750,9 @@ Class Payroll
 
     public function adminLogs()
     {
-        $sql = "SELECT * 
-                FROM admin_log 
-                WHERE table_name = 'Login' || 
+        $sql = "SELECT *
+                FROM admin_log
+                WHERE table_name = 'Login' ||
                       table_name = 'Profile'
                 ORDER BY date DESC";
         $stmt = $this->con()->query($sql);

@@ -12,8 +12,8 @@ require 'vendor/autoload.php';
 
 Class Payroll
 {
-    private $username = "u359933141_jtdv";
-    private $password = "+Y^HLMVV2h";
+    private $username = "HOSTING_USERNAME"; //HOSTING USERNAME
+    private $password = "HOSTING_PASSWORD"; // HOSTING PASSWORD
 
     private $dns = "mysql:host=localhost;dbname=u359933141_payroll";
     protected $pdo;
@@ -43,7 +43,7 @@ Class Payroll
     }
     public function sendEmail($email, $password)
     {
-       
+
 
         $name = 'JTDV Incorporation';
         $subject = 'subject kunwari';
@@ -58,12 +58,12 @@ Class Payroll
 
             // smtp settings
             $mail->isSMTP();
-            $mail->Host = "smtp.gmail.com";
+            $mail->Host = "SMTP_DOMAIN"; //SMTP_DOMAIN
             $mail->SMTPAuth = true;
-            $mail->Username =  "sicnarfarerreh@gmail.com";  // gmail address
-            $mail->Password = "sicnarf123";  // gmail password
+            $mail->Username =  "EMAIL_DOMAIN";  // gmail address
+            $mail->Password = "EMAIL_PW";  // gmail password
 
-            $mail->Port = 587;
+            $mail->Port = 0; //PORT
             $mail->SMTPSecure = "tls";
             $mail->SMTPOptions = array(
                 'ssl' => array(
@@ -89,7 +89,7 @@ Class Payroll
                 $response = "Something is wrong: <br/>". $mail->ErrorInfo;
                 echo '<br/>'.$status."<br/>".$response;
             }
-        } 
+        }
     }
 
     public function login()
@@ -100,7 +100,7 @@ Class Payroll
     }
 
 
-    
+
     public function formatDateLocked($date)
     {
         $dateArray = explode(" ", $date);
@@ -109,14 +109,14 @@ Class Payroll
         $timeExpired = date("h:i:s A", strtotime($dateArray[1])); // time
         return array($dateExpired, $timeExpired);
     }
-    
+
     public function generatedPassword($pword)
     {
         $keyword = "%15@!#Fa4%#@kE";
         $generatedPassword = md5($pword.$keyword);
         return array($generatedPassword, $pword.$keyword);
     }
-    
+
     public function checkAccountTimer($id)
     {
         $sql = "SELECT * FROM super_admin WHERE id = ?";
@@ -153,7 +153,7 @@ Class Payroll
         }
     }
 
-    
+
     public function checkEmailExistEmployee($email)
     {
         // find email exist in the database
@@ -188,7 +188,7 @@ Class Payroll
         }
     }
     public function logout()
-    {   
+    {
         session_start();
         session_destroy();
         $this->pdo = null;
@@ -218,7 +218,7 @@ Class Payroll
         $message = 'You are not allowed to enter the system';
         if($level == 2){
             $level = '../';
-            
+
             if($access == 'super administrator'){
                 return;
             } elseif($access == 'secretary'){
@@ -269,9 +269,9 @@ Class Payroll
 
         // kapag may nadetect
         if($countRow > 0){
-            return true; 
+            return true;
         } else {
-            return false; 
+            return false;
         }
     }
 
@@ -297,7 +297,7 @@ Class Payroll
             <td>",date('h:i A',strtotime($row->timeOut)),"</td>
             <td>",date('M j, Y', strtotime($row->datetimeOut)),"</td>
             <td>$row->status</td>
-            </tr>";   
+            </tr>";
                                         }
     $this->pdo= null;
     }
@@ -351,7 +351,7 @@ Class Payroll
         $stmt = $this->con()->prepare($sql);
         $stmt->execute([$empid]);
         $countrow = $stmt->rowCount();
-        if($countrow > 0) 
+        if($countrow > 0)
         {
             $action = "Delete Salary";
             $sqlSecLog = "INSERT INTO secretary_log (sec_id, name, action, time, date)
@@ -381,11 +381,11 @@ Class Payroll
     {
             if(isset($_POST['bsearch']))
             $search = strtolower($_POST['search']);
-    
+
             if(!empty($search))
             {
-                $sql ="SELECT employee.empId, employee.firstname, employee.lastname, 
-                emp_attendance.location, emp_attendance.timeIn, emp_attendance.datetimeIn, 
+                $sql ="SELECT employee.empId, employee.firstname, employee.lastname,
+                emp_attendance.location, emp_attendance.timeIn, emp_attendance.datetimeIn,
                 emp_attendance.timeOut, emp_attendance.datetimeOut,
                 emp_attendance.status
                 FROM employee
@@ -406,7 +406,7 @@ Class Payroll
                     echo "<tr>
                     <td>&nbsp;$user->empId&nbsp;</td>
                     <td>&nbsp;$user->firstname&nbsp;$user->lastname</td>
-                    
+
                     <td>&nbsp;$user->location&nbsp;</td>
                     <td>&nbsp;$user->timeIn&nbsp;</td>
                     <td>&nbsp;$user->datetimeIn&nbsp;</td>
@@ -456,7 +456,7 @@ Class Payroll
     {
             if(isset($_POST['empsearch'])){
                 $search = strtolower($_POST['employeesearch']);
-        
+
                 if(!empty($search)){
                     $sql ="SELECT empId, firstname, lastname, address, cpnumber, position, availability
                     FROM employee;";
@@ -503,7 +503,7 @@ Class Payroll
     public function automaticGenerateSalary($fullname,$id)
     {
         if(isset($_POST['createsalary']))
-        {   
+        {
             $sql="SELECT * FROM employee;";
             $stmt = $this->con()->prepare($sql);
             $stmt->execute();
@@ -516,7 +516,7 @@ Class Payroll
                 $sqla="SELECT emp_attendance.*,
                 schedule.*,
                 employee.*
-                FROM emp_attendance 
+                FROM emp_attendance
                 LEFT JOIN schedule
                 ON emp_attendance.empId = schedule.empId
                 LEFT JOIN employee
@@ -531,7 +531,7 @@ Class Payroll
                 $stmtsched->execute([$empid]);
                 $usersched = $stmtsched->fetch();
                 $countRowsched = $stmtsched->rowCount();
-                if($countRowa > 0) 
+                if($countRowa > 0)
                 {
                     if($countRowsched>0)
                     {//need may sched para magpush through
@@ -557,16 +557,16 @@ Class Payroll
                     $endlog = 0;
                     $noatt = $countRowa;
                     foreach($usera as $att) //attendance
-                    {   
+                    {
                         $endlog = $att->id;
-                        $late=0;    
-                        $getdateTimeIn = strtotime($att->timeIn); 
+                        $late=0;
+                        $getdateTimeIn = strtotime($att->timeIn);
                         $getdateTimeOut = strtotime($att->timeOut);
                         $empdatein = date ('F d' , strtotime($att->datetimeIn));
                         $empdateout = date ('F d' , strtotime($att->datetimeOut));
-                        $StandardSchedule = date("h:i:s A", strtotime($usersched->scheduleTimeIn) + 8*60*60); 
-                        $diff =  $getdateTimeOut - $getdateTimeIn  / (60*60); 
-                        
+                        $StandardSchedule = date("h:i:s A", strtotime($usersched->scheduleTimeIn) + 8*60*60);
+                        $diff =  $getdateTimeOut - $getdateTimeIn  / (60*60);
+
                         $diff2 = $getdateTimeOut - strtotime($StandardSchedule); //compare nilabas sa standard sched
                         $diffAccumulated = strtotime($StandardSchedule) - $getdateTimeIn; //compute total hours pinasok standard
                         $valueAccumulatedTime = $diffAccumulated / (60*60);
@@ -577,8 +577,8 @@ Class Payroll
                         $overtimerate =$att->overtime_rate;
                         $diffLate = $getdateTimeIn - strtotime($usersched->scheduleTimeIn);
                         $valueLate = $diffLate / 60;
-                        if ($valueLate == 0) 
-                        { 
+                        if ($valueLate == 0)
+                        {
                             } else if($valueLate <=0 )
                             {
                             }else
@@ -604,7 +604,7 @@ Class Payroll
                         {
                             $holidateto = date('F d',strtotime($holidate->date_holiday));
                             if(preg_match("/{$empdatein}/i", strtolower($holidateto)) OR preg_match("/{$empdateout}/i", strtolower($holidateto)))
-                            {   
+                            {
                                 if(preg_match("/{$holidate->type}/i", $regular))
                                 {
                                     $regholiday += $valueAccumulatedTime;
@@ -614,7 +614,7 @@ Class Payroll
                                     $specholiday += $valueAccumulatedTime;
                                     $specholidayot += $valueOvertime;
                                 }else {
-                                    
+
                                 }
                             }
                         }
@@ -632,7 +632,7 @@ Class Payroll
                             if(strtolower(trim($ded->deduction))=="cashbond")
                                 {
                                     $cashbond = $ded->amount;
-                                }else   
+                                }else
                                 {
                                     $other .= $ded->deduction."<br>";
                                     $otheramount+=$ded->amount;
@@ -671,9 +671,9 @@ Class Payroll
                     $stmt0 = $this->con()->prepare($sql0);
                     $stmt0->execute([$empid]);
                     $users0 = $stmt0->fetch();
-                    $countRow0 = $stmt0->rowCount();                 
+                    $countRow0 = $stmt0->rowCount();
                     if($countRow0 >= 1)
-                    {   
+                    {
                         $getin=$countRow0;
                         while($countRow0 >= $getin)
                         {
@@ -681,7 +681,7 @@ Class Payroll
                             $getin++;
                         }
                             $end = $start;
-                            $users01 = $stmt0->fetchall();                        
+                            $users01 = $stmt0->fetchall();
                         foreach($users01 as $user0)
                         {
                                 $end = $user0->datetimeOut;
@@ -729,16 +729,16 @@ Class Payroll
                     $specholidaypay = $specpercent;
                     $specholiday = number_format($specholiday) + number_format($specholidayot);
                     $thirteenmonth = 0;
-                    $laterate = floor($totallate * $ratelate);                                      
+                    $laterate = floor($totallate * $ratelate);
                     $totalgross = ($standardpay + $regholidaypay + $specholidaypay + $thirteenmonth + $overtimepay);
                     $totaldeduction = ($sss + $pagibig + $philhealth + $otheramount + $cashbond + $vale + $laterate + $violationdeduction);
                     $totalnetpay = $totalgross - $totaldeduction;
                     $salary_status="for release";
                     date_default_timezone_set('Asia/Manila');
                     $date = date('F j, Y h:i:s A');
-                    $sql1="INSERT INTO `automatic_generated_salary`(`emp_id`, `total_hours`,`total_overtime`,`standard_pay`,`overtime_pay`,`regular_holiday`, 
+                    $sql1="INSERT INTO `automatic_generated_salary`(`emp_id`, `total_hours`,`total_overtime`,`standard_pay`,`overtime_pay`,`regular_holiday`,
                     `regular_holiday_pay`, `special_holiday`, `special_holiday_pay`, `thirteenmonth`, `sss`,`pagibig`,`philhealth`,`violation`, `cashbond`, `other`,
-                    `other_amount`,`vale`, `total_hours_late`,`late_total`, `total_gross`, `total_deduction`, `total_netpay` ,`start`,`end`,`start_id`,`end_id`,`for_release`,`date_created`,`process_by`) 
+                    `other_amount`,`vale`, `total_hours_late`,`late_total`, `total_gross`, `total_deduction`, `total_netpay` ,`start`,`end`,`start_id`,`end_id`,`for_release`,`date_created`,`process_by`)
                     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
                     $stmt1 = $this->con()->prepare($sql1);
                     $stmt1->execute([$empid,number_format($totalaccumulated,2),$totalovertime,$standardpay,$overtimepay,$regholiday,$regholidaypay,
@@ -833,7 +833,7 @@ Class Payroll
         $nov = 'november';
         $dec = 'december';
         if($CountRowreport > 0)
-        {  
+        {
             if(preg_match("/{$end}/i", $jan))
             {
                 $sqlupdate="UPDATE salary_report SET january = ('january' + $totnetpay) WHERE empId = '$empid'";
@@ -885,7 +885,7 @@ Class Payroll
                 $stmtupdate->execute();
             } else {
 
-            } 
+            }
         } else {
             if(preg_match("/{$end}/i", $jan))
             {
@@ -937,7 +937,7 @@ Class Payroll
                 $stmtinsert = $this->con()->prepare($sqlinsert);
                 $stmtinsert->execute();
             } else {
-            } 
+            }
         }
         $this->pdo= null;
     }
@@ -994,8 +994,8 @@ Class Payroll
                             $CountRowcheck = $stmtcheck ->rowCount();
                             $this->pdo = null;
                             if($CountRowcheck > 0 ){
-                                $sql4="UPDATE contributions SET sss = sss + $currsss, pagibig = pagibig + $currpagibig, 
-                                philhealth =  philhealth + $currphilhealth , cashbond = cashbond + $currcashbond, 
+                                $sql4="UPDATE contributions SET sss = sss + $currsss, pagibig = pagibig + $currpagibig,
+                                philhealth =  philhealth + $currphilhealth , cashbond = cashbond + $currcashbond,
                                 date = CURRENT_TIMESTAMP() WHERE empId = '$user->emp_id';";
                                 $stmt4 = $this->con()->prepare($sql4);
                                 $stmt4->execute();
@@ -1010,7 +1010,7 @@ Class Payroll
                                 $stmtvio->execute();
                             }else{
                                 echo "error";
-                            }   
+                            }
                         }
                     }
                     $this->salarychart($empid,$end,$totnetpay);
@@ -1077,7 +1077,7 @@ Class Payroll
     public function adddeduction($fullname,$id)
     {
             if(isset($_POST['generatededuction']))
-            {   
+            {
                 $_POST['deduction']="other";
                 $countrow = 0;
                 $deduction = strtolower($_POST['deduction']);
@@ -1090,7 +1090,7 @@ Class Payroll
                 $countrowc = $stmt->rowCount();
                 $user = $stmt->fetch();
                 if ($countrowc > 0)
-                {   
+                {
                     if($deduction != 'other'){
                         $percentage = (float)$_POST['percentage'];
                         $sql="UPDATE deductions SET deduction = ?, percentage = ? WHERE id = $user->id;";
@@ -1123,7 +1123,7 @@ Class Payroll
                 else
                 {
                     if($deduction == 'other')
-                    {   
+                    {
                         $sqlcheck2="SELECT * FROM deductions WHERE deduction = ?";
                         $stmt2 = $this->con()->prepare($sqlcheck2);
                         $stmt2->execute([$name]);
@@ -1179,7 +1179,7 @@ Class Payroll
                             }
                         }
                     }
-                    else 
+                    else
                     {
                         $percentage = (float)$_POST['percentage'];
                         $sql="INSERT INTO  deductions (`deduction`,`percentage`) VALUES (?,?);";
@@ -1340,7 +1340,7 @@ Class Payroll
                             $stmt = $this->con()->prepare($sql);
                             $stmt->execute([$empid,$date,$amount]);
                             $countrow = $stmt->rowCount();
-                            if($countrow > 0) 
+                            if($countrow > 0)
                             {
                                 $action = "Add Cash Advance";
                                 $datetime = $this->getDateTime();
@@ -1354,14 +1354,14 @@ Class Payroll
                                 if($countRowSecLog > 0)
                                 {
                                 echo 'Succesfully Added';
-                                } else 
+                                } else
                                 {
                                 echo 'di pumasok sa act log';
                                 header('location:deductions.php');
                                 }
                             }
                         }
-                    }  
+                    }
                 }//empty
         }//isset
         else if(isset($_POST['cancel'])){
@@ -1454,9 +1454,9 @@ Class Payroll
             $stmt->execute();
             $found=false;
             while($row = $stmt->fetch()){
-                if(preg_match("/{$ssched}/i", $row->empId) || preg_match("/{$ssched}/i", $row->firstname) || preg_match("/{$ssched}/i", $row->lastname) || 
+                if(preg_match("/{$ssched}/i", $row->empId) || preg_match("/{$ssched}/i", $row->firstname) || preg_match("/{$ssched}/i", $row->lastname) ||
                 preg_match("/{$ssched}/i", $row->company) || preg_match("/{$ssched}/i", $row->scheduleTimeIn) || preg_match("/{$ssched}/i", $row->scheduleTimeOut))
-                {   
+                {
                     $found=true;
                     echo "<tr>
                     <td>$row->empId</td>
@@ -1493,10 +1493,10 @@ Class Payroll
     }
     public function searchviolation(){
         if(isset($_POST['searchvio']))
-        {   
+        {
             $found=false;
             if(!empty($_POST['svio']))
-            {   
+            {
                 $search=$_POST['svio'];
                 $sql="SELECT * FROM violationsandremarks LEFT JOIN employee ON employee.empId = violationsandremarks.empId;";
                 $stmt = $this->con()->prepare($sql);
@@ -1515,7 +1515,7 @@ Class Payroll
                         <td>$row->date_created</td>
                         </tr>";
                     }
-            
+
 
                 }
                     if(!$found){
@@ -1528,12 +1528,12 @@ Class Payroll
     }
     public function displayreleasedsalary()
     {
-        $sql="SELECT * FROM automatic_generated_salary INNER JOIN employee WHERE automatic_generated_salary.emp_id = employee.empId 
+        $sql="SELECT * FROM automatic_generated_salary INNER JOIN employee WHERE automatic_generated_salary.emp_id = employee.empId
         AND automatic_generated_salary.for_release = 'released';";
         $stmt=$this->con()->prepare($sql);
         $stmt->execute();
         while($row = $stmt->fetch()){
-            
+
             echo "<tr>
             <td>$row->empId</td>
             <td>$row->firstname</td>
@@ -1551,11 +1551,11 @@ Class Payroll
     public function searchreleasedsalary()
     {
         if(isset($_POST['searchreleased']))
-        {   
+        {
             if(!empty($_POST['salary']))
             {
                 $salary = strtolower($_POST['salary']);
-                $sql="SELECT * FROM automatic_generated_salary LEFT JOIN employee ON automatic_generated_salary.emp_id = employee.empId WHERE automatic_generated_salary.emp_id = employee.empId 
+                $sql="SELECT * FROM automatic_generated_salary LEFT JOIN employee ON automatic_generated_salary.emp_id = employee.empId WHERE automatic_generated_salary.emp_id = employee.empId
                 AND automatic_generated_salary.for_release = 'released';";
                 $stmt=$this->con()->prepare($sql);
                 $stmt->execute();
@@ -1576,9 +1576,9 @@ Class Payroll
                         <td>",number_format($all->total_netpay),"</td>
                         <td>$all->date_released</td>
                         <td><a href='viewautomatedsalary.php?logid=$all->log'>View</td>
-                        </tr>";            
+                        </tr>";
                     } else{
-                       
+
                     }
                 }
                     if(!$found)
@@ -1669,7 +1669,7 @@ Class Payroll
     public function searchcontribution()
     {
         if(isset($_POST['searchcon']) && !empty($_POST['emp']))
-        {   
+        {
             $found=false;
             $emp=$_POST['emp'];
             $sql="SELECT * FROM contributions INNER JOIN employee ON contributions.empId = employee.empId;";
@@ -1714,18 +1714,18 @@ Class Payroll
         $stmt=$this->con()->prepare($sql);
         $stmt->execute();
             while($user=$stmt->fetch())
-            {   
+            {
                 $has=false;
                 $tothrs=0;              // ex may 4 attendance siya
                 $OTtohrs=0;
-                $sql1="SELECT 
+                $sql1="SELECT
                         ea.*,
                         s.scheduleTimeIn
-                    FROM emp_attendance ea 
-                    
+                    FROM emp_attendance ea
+
                     LEFT JOIN schedule s
                     ON ea.empId = s.empId
-                    
+
                     WHERE ea.empId = '$user->empId' AND ea.salary_status != 'paid';";
                 $stmt1=$this->con()->prepare($sql1);
                 $stmt1->execute();
@@ -1765,13 +1765,13 @@ Class Payroll
                                 <td>$user->firstname $user->lastname</td>
                                 <td>$countattendance</td>
                             </tr>";
-                           
+
                     }
             }
     }
     // public function searchempatt($fullname,$id){  //generateauto
     //     if(isset($_POST['searchempatt']) && !empty($_POST['emp']))
-    //     {   
+    //     {
     //         $found=false;
     //         $emp=$_POST['emp'];
     //         $sqls="SELECT * FROM employee;";
@@ -1781,7 +1781,7 @@ Class Payroll
     //         {            // ex may 4 attendance siya
     //             if(preg_match("/{$emp}/i", $users->empId) || preg_match("/{$emp}/i", $users->firstname) ||
     //             preg_match("/{$emp}/i", $users->lastname))
-    //             {   
+    //             {
     //                 $found=true;
     //                 $tothrss=0;
     //                 $foundempid=$users->empId;
@@ -1798,9 +1798,9 @@ Class Payroll
     //                     $tothrss += abs(strtotime($timeins) - strtotime($timeouts)) / 3600 ;
     //                 }
     //             }
-    //         }   
+    //         }
 
-                
+
     //             if($found){
     //                 $tothrss=number_format($tothrss,2);
     //                 $tothrss = sprintf('%02d:%02d', (int) $tothrss, fmod($tothrss   , 1) * 60);
@@ -1837,7 +1837,7 @@ Class Payroll
         $payslip = "<!DOCTYPE html>
         <html>
         <head>
-        
+
         <style>
         * {
           box-sizing: border-box;
@@ -1846,12 +1846,12 @@ Class Payroll
                     background:#F2F2F2;
                     border: 1px solid black;
                 }
-        
+
         .row {
           margin-left:-5px;
           margin-right:-5px;
         }
-          
+
         .column {
           float: left;
           width: 48.5%;
@@ -1862,23 +1862,23 @@ Class Payroll
           clear: both;
           display: table;
         }
-        
+
         table {
           border-collapse: collapse;
           border-spacing: 0;
           width: 100%;
           border: 2px solid #ddd;
         }
-        
+
         th, td {
           text-align: left;
           padding: 10px;
         }
-        
+
         tr:nth-child(even) {
           background-color: #f8f9f9;
         }
-        
+
         /* Responsive layout - makes the two columns stack on top of each other instead of next to each other on screens that are smaller than 600 px */
         @media screen and (max-width: 600px) {
           .column {
@@ -2042,7 +2042,7 @@ Class Payroll
         // (Optional) Setup the paper size and orientation
         $customPaper = array(0,0,1000,600);
         $dompdf->set_paper($customPaper);
-        
+
         $dompdf->render();
         ob_end_clean();
         $file = $dompdf->output();
@@ -2059,7 +2059,7 @@ Class Payroll
             $stmt = $this->con()->prepare($sql);
             $stmt->execute([$id]);
             $rows = $stmt->fetch();
-    
+
             $dompdf = new Dompdf();
             $path = '../img/icon.png';
             $type = pathinfo($path, PATHINFO_EXTENSION);
@@ -2068,7 +2068,7 @@ Class Payroll
             $payslip = "<!DOCTYPE html>
             <html>
             <head>
-            
+
             <style>
             * {
               box-sizing: border-box;
@@ -2077,12 +2077,12 @@ Class Payroll
                         background:#F2F2F2;
                         border: 1px solid black;
                     }
-            
+
             .row {
               margin-left:-5px;
               margin-right:-5px;
             }
-              
+
             .column {
               float: left;
               width: 48.5%;
@@ -2093,23 +2093,23 @@ Class Payroll
               clear: both;
               display: table;
             }
-            
+
             table {
               border-collapse: collapse;
               border-spacing: 0;
               width: 100%;
               border: 2px solid #ddd;
             }
-            
+
             th, td {
               text-align: left;
               padding: 10px;
             }
-            
+
             tr:nth-child(even) {
               background-color: #f8f9f9;
             }
-            
+
             /* Responsive layout - makes the two columns stack on top of each other instead of next to each other on screens that are smaller than 600 px */
             @media screen and (max-width: 600px) {
               .column {
@@ -2122,7 +2122,7 @@ Class Payroll
             style='float:right; margin-left:-200px; margin-right: 70px; margin-top: 20px'></img>
             <center><h2>JTDV SECURITY AGENCY</h2>
             <p><u>400 Gem Bldg.,Gen T De Leon Ave.<br/>Barangay Gen T. De Leon, Valenzuela City</u></p></center>
-    
+
             <div class='row'>
               <div class='column'>
                 Employee ID: $rows->empId <br/>
@@ -2248,7 +2248,7 @@ Class Payroll
                     <td></td>
                     <td>".number_format($rows->total_deduction)."</td>
                   </tr>
-                  
+
                 </table>
                 <h3>Salary From: $rows->start  - $rows->end </h3>
               </div>
@@ -2262,7 +2262,7 @@ Class Payroll
             // (Optional) Setup the paper size and orientation
             $customPaper = array(0,0,1000,600);
             $dompdf->set_paper($customPaper);
-            
+
             $dompdf->render();
             ob_end_clean();
             $file = $dompdf->output();
@@ -2289,7 +2289,7 @@ Class Payroll
         $payslip = "<!DOCTYPE html>
         <html>
         <head>
-        
+
         <style>
         * {
           box-sizing: border-box;
@@ -2298,12 +2298,12 @@ Class Payroll
                     background:#F2F2F2;
                     border: 1px solid black;
                 }
-        
+
         .row {
           margin-left:-5px;
           margin-right:-5px;
         }
-          
+
         .column {
           float: left;
           width: 48.5%;
@@ -2314,23 +2314,23 @@ Class Payroll
           clear: both;
           display: table;
         }
-        
+
         table {
           border-collapse: collapse;
           border-spacing: 0;
           width: 100%;
           border: 2px solid #ddd;
         }
-        
+
         th, td {
           text-align: left;
           padding: 10px;
         }
-        
+
         tr:nth-child(even) {
           background-color: #f8f9f9;
         }
-        
+
         /* Responsive layout - makes the two columns stack on top of each other instead of next to each other on screens that are smaller than 600 px */
         @media screen and (max-width: 600px) {
           .column {
@@ -2592,7 +2592,7 @@ Class Payroll
             $countrow = $stmt->rowCount();
             $user=$stmt->fetch();
             if($countrow>0)
-            {   
+            {
                 $email=true;
                 if(!isset($_SESSION['reservedsecemail'])){
                 $_SESSION['reservedsecemail'] = $user->email;
@@ -2608,7 +2608,7 @@ Class Payroll
                                 $email=false;
                                 echo "Username and password does not match!";
                             }
-                            else{   
+                            else{
                                     if($users->isDeleted <=0){
                                     $sqlm="SELECT * FROM maintenance WHERE module = 'Secretary';";
                                     $stmtm = $this->con()->prepare($sqlm);
@@ -2621,15 +2621,15 @@ Class Payroll
                                         if($users->access != $suspendedAccess){
                                         $id = $users->id;
                                         $fullname = $users->fullname; // create fullname
-                                        $action = "login"; 
-                                            
+                                        $action = "login";
+
                                         // set timezone and get date and time
-                                        $datetime = $this->getDateTime(); 
+                                        $datetime = $this->getDateTime();
                                         $time = $datetime['time'];
                                         $date = $datetime['date'];
-                        
+
                                         // insert mo sa activity log ni admin
-                                        $actLogSql = "INSERT INTO secretary_log(`sec_id`,`name`, 
+                                        $actLogSql = "INSERT INTO secretary_log(`sec_id`,`name`,
                                                                             `action`,
                                                                             `time`,
                                                                             `date`
@@ -2637,7 +2637,7 @@ Class Payroll
                                                     VALUES(?, ?, ?, ?, ?)";
                                         $actLogStmt = $this->con()->prepare($actLogSql);
                                         $actLogStmt->execute([$id,$fullname, $action, $time, $date]);
-                        
+
                                         // // create user details using session
                                         $_SESSION['SecretaryDetails'] = array('fullname' => $fullname,
                                                                             'access' => $users->access,
@@ -2687,7 +2687,7 @@ Class Payroll
         // $payslip = "<!DOCTYPE html>
         // <html>
         // <head>
-        
+
         // <style>
         // * {
         //   box-sizing: border-box;
@@ -2696,12 +2696,12 @@ Class Payroll
         //             background:#F2F2F2;
         //             border: 1px solid black;
         //         }
-        
+
         // .row {
         //   margin-left:-5px;
         //   margin-right:-5px;
         // }
-          
+
         // .column {
         //   float: left;
         //   width: 48.5%;
@@ -2712,23 +2712,23 @@ Class Payroll
         //   clear: both;
         //   display: table;
         // }
-        
+
         // table {
         //   border-collapse: collapse;
         //   border-spacing: 0;
         //   width: 100%;
         //   border: 2px solid #ddd;
         // }
-        
+
         // th, td {
         //   text-align: left;
         //   padding: 10px;
         // }
-        
+
         // tr:nth-child(even) {
         //   background-color: #f8f9f9;
         // }
-        
+
         // /* Responsive layout - makes the two columns stack on top of each other instead of next to each other on screens that are smaller than 600 px */
         // @media screen and (max-width: 600px) {
         //   .column {
@@ -2937,7 +2937,7 @@ Class Payroll
                         $time = $datetime['time'];
                         $date = $datetime['date'];
                         $action = "Change Password";
-                        $actLogSql = "INSERT INTO secretary_log(`sec_id`,`name`, 
+                        $actLogSql = "INSERT INTO secretary_log(`sec_id`,`name`,
                         `action`,
                         `time`,
                         `date`
@@ -2949,13 +2949,13 @@ Class Payroll
                 } else{
                     echo "Password does not match";
                 }
-                
+
             } else {
                 echo "Wrong Password";
             }
         }
         $this->pdo= null;
-    
+
     }
     public function displaybonus()
     {
@@ -2972,7 +2972,7 @@ Class Payroll
         $countRowc=$stmtc->rowCount();
         if($countRowc > 0){
                 $sqlsr="SELECT
-                    SUM(case when january >0 then 1 else 0 end) a, 
+                    SUM(case when january >0 then 1 else 0 end) a,
                     SUM(case when february > 0 then 1 else 0 end) b,
                     SUM(case when march >0 then 1 else 0 end)c,
                     SUM(case when april > 0 then 1 else 0 end)d,
@@ -3011,7 +3011,7 @@ Class Payroll
     public function createbonus($id,$fullname)
     {
         if(isset($_POST['bonus'])){
-            
+
             $sql="SELECT * FROM employee;";
             $stmt=$this->con()->prepare($sql);
             $stmt->execute();
@@ -3051,7 +3051,7 @@ Class Payroll
                 $countRow1=$stmt1->rowCount();
                 $rows1=$stmt1->fetchall();
                 if($countRow1 > 0 )
-                {   
+                {
                     $number = 0;
                     $length=0;
                     foreach($rows1 as $row1){
@@ -3061,10 +3061,10 @@ Class Payroll
                     $curryear = date('Y');
                     $year=date('Y',strtotime($row1->end));
                     // if($year == $curryear)
-                    // {   
+                    // {
                         $month=date('F',strtotime($row1->end));
                             if(strtolower($month)=='january')
-                            {   
+                            {
                                 $grossjan += $row1->total_gross;
                                 $latejan += $row1->late_total;
                                 if($grossjan > 0){
@@ -3137,7 +3137,7 @@ Class Payroll
                                     $length+=1;
                                 }
                             } else {
-    
+
                             }
                             $number+=1;
                     // }// pag di current year
@@ -3146,12 +3146,12 @@ Class Payroll
                         {
                             $total_gross = $grossjan + $grossfeb + $grossmar + $grossapr + $grossmay + $grossjun +
                             $grossjul + $grossaug + $grosssep + $grossoct + $grossnov + $grossdec;
-                            $total_late = $latejan + $latefeb + $latemar + $lateapr + $latemay + $latejun + $latejul + 
+                            $total_late = $latejan + $latefeb + $latemar + $lateapr + $latemay + $latejun + $latejul +
                             $lateaug + $latesep + $lateoct + $latenov + $latedec;
                             $amount = $total_gross / 12;
                             date_default_timezone_set('Asia/Manila');
                             $date = date('F d, Y');
-                            $sqlb="INSERT INTO thirteenmonth (empId,january,february,march,april,may,june,july,august,september,october,november,december,total_gross,late,amount,date_created) 
+                            $sqlb="INSERT INTO thirteenmonth (empId,january,february,march,april,may,june,july,august,september,october,november,december,total_gross,late,amount,date_created)
                             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                             $stmtb=$this->con()->prepare($sqlb);
                             $stmtb->execute([$row->empId,$grossjan,$grossfeb,$grossmar,$grossapr,$grossmay,$grossjun,$grossjul,$grossaug,$grosssep,$grossoct,$grossnov,$grossdec,$total_gross,$total_late,$amount,$date]);
@@ -3171,7 +3171,7 @@ Class Payroll
                                     $time = $datetime['time'];
                                     $date = $datetime['date'];
                                     $action = "Generate 13 Month Pay for ".$number." Employee/s";
-                                    $actLogSql = "INSERT INTO secretary_log(`sec_id`,`name`, 
+                                    $actLogSql = "INSERT INTO secretary_log(`sec_id`,`name`,
                                     `action`,
                                     `time`,
                                     `date`
@@ -3209,8 +3209,8 @@ Class Payroll
         }
     }
     public function feedback($id,$fullname)
-    {   
-        
+    {
+
         if(isset($_POST['feedback'])){
             $comment = $_POST['comment'];
             $position = 'Secretary';
@@ -3236,4 +3236,4 @@ Class Payroll
 
 $payroll = new Payroll;
 
-?> 
+?>

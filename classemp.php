@@ -8,8 +8,8 @@ require_once "PHPMailer/Exception.php";
 
 Class Payroll
 {
-    private $username = "u359933141_jtdv";
-    private $password = "+Y^HLMVV2h";
+    private $username = "HOSTING_USERNAME"; //HOSTING USERNAME
+    private $password = "HOSTING_PASSWORD"; // HOSTING PASSWORD
 
     private $dns = "mysql:host=localhost;dbname=u359933141_payroll";
     protected $pdo;
@@ -53,9 +53,9 @@ Class Payroll
 
     public function mobile_login() {
         session_start();
-        
+
         date_default_timezone_set("Asia/Manila");
-        $dateNow = date('Y/m/d'); 
+        $dateNow = date('Y/m/d');
         $timedateNow = date('Y-m-d h:i:s A');
 
         if (isset($_POST['login'])) {
@@ -65,16 +65,16 @@ Class Payroll
             }
 
             if ($_SESSION['attempts'] == 3) {
-                $sqlFindEmail = "SELECT 
+                $sqlFindEmail = "SELECT
                                     e.lastname,
                                     sd.e_id,
                                     sd.secret_key
-                                            
+
                                 FROM employee e
-                                            
+
                                 INNER JOIN secret_diarye sd
                                 ON e.email = sd.e_id
-                                            
+
                                 WHERE sd.e_id = ?";
                 $stmtFindEmail = $this->con()->prepare($sqlFindEmail);
                 $stmtFindEmail->execute([$_POST['login-email']]);
@@ -94,7 +94,7 @@ Class Payroll
 
             if ($_SESSION['attempts'] == 1) {
                 $timer = date('Y/m/d h:i:s A', strtotime('+5 minutes'));
-                
+
                 $email = $_POST['login-email'];
 
                 $sqlLock = "UPDATE employee SET timer = ? WHERE email = ?";
@@ -121,16 +121,16 @@ Class Payroll
                         lr.substitute_by,
                         lrx.leave_start AS 'Start'
                     FROM employee e
-                    
+
                     LEFT JOIN schedule s
                     ON e.empId = s.empId
 
                     LEFT JOIN leave_request lr
                     ON e.empId = lr.empId
-                    
+
                     LEFT JOIN leave_request lrx
                     ON e.empId = lrx.substitute_by
-                    
+
                     WHERE e.email = ? AND e.password = ? ORDER BY lr.leave_start DESC LIMIT 1;";
 
             $stmt = $this->con()->prepare($sql);
@@ -140,7 +140,7 @@ Class Payroll
             $countRow = $stmt->rowCount();
 
             if ($countRow > 0) {
-                
+
                 if (strtotime($timedateNow) >= strtotime($users->timer) && $users->timer != NULL) {
                     $_SESSION['login-error-message'] = 'Timer has completely done. <br> Please log-in again to proceed';
                     $_SESSION['attempts'] = 5;
@@ -170,7 +170,7 @@ Class Payroll
                 } else if ($users->availability == 'Leave' && strtotime($timedateNow) >= strtotime($users->leave_start) && strtotime($timedateNow) <= strtotime($users->leave_end) && $users->status == 'approved') {
                     $_SESSION['login-error-message'] = 'You are on the process of leave <br>'.date("M d, Y", strtotime($users->leave_start)).' - '.date("M d, Y", strtotime($users->leave_end));
                     $_SESSION['attempts'] = 5;
-                    
+
                     // echo strtotime($timedateNow) .'<br>'. strtotime($users->leave_start) . '<br>'. strtotime($timedateNow) . '<br>'. strtotime($users->leave_end) .'<br>'.$users->status.'<br>'.$users->availability;
 
                 } else if ($users->availability == 'Available' && $users->scheduleTimeIn == NULL) {
@@ -180,7 +180,7 @@ Class Payroll
                 } else if ($users->availability == 'Unavailable' && strtotime($users->Start) >= strtotime($timedateNow)) {
                     $_SESSION['login-error-message'] = "It is not yet your schedule for work.";
                     $_SESSION['attempts'] = 5;
-                    
+
                 } else if (strtotime($dateNow) >= strtotime($users->expiration_date)) {
                     $_SESSION['login-error-message'] = "Your account has been expired.";
                     $_SESSION['attempts'] = 5;
@@ -212,7 +212,7 @@ Class Payroll
                                                         'shift_span' => $users->shift_span
                                                         );
 
-                        
+
                         $sqlAddLog = "INSERT INTO emp_log (empId, action, date_created) VALUES (?, ?, ?)";
                         $stmtAddLog = $this->con()->prepare($sqlAddLog);
                         $stmtAddLog->execute([$users->empId, 'Login', $timedateNow]);
@@ -255,9 +255,9 @@ Class Payroll
 
                 $users = $stmt->fetch();
                 $countRow = $stmt->rowCount();
-                
+
                 if ($countRow > 0) {
-                    
+
                     if ($users->timer != NULL) {
                         $_SESSION['login-error-message'] = 'Your account is temporarily locked until <br>'.date('M d, Y - h:i:s A', strtotime($users->timer));
                         $_SESSION['attempts'] = 5;
@@ -269,7 +269,7 @@ Class Payroll
                     $_SESSION['login-error-message'] = "Email does not exist";
                     $_SESSION['attempts'] = 5;
                 }
-                
+
             }
         }
     }
@@ -350,11 +350,11 @@ Class Payroll
 
             // smtp settings
             $mail->isSMTP();
-            $mail->Host = "smtp.gmail.com";
+            $mail->Host = "SMTP_DOMAIN"; //SMTP_DOMAIN
             $mail->SMTPAuth = true;
-            $mail->Username = "DammiDoe123@gmail.com";  // gmail address
-            $mail->Password = "dammiedoe123456789";         // gmail password
-            $mail->Port = 587;
+            $mail->Username =  "EMAIL_DOMAIN";  // gmail address
+            $mail->Password = "EMAIL_PW";  // gmail password
+            $mail->Port = 0; //PORT
             $mail->SMTPSecure = "tls";
 
             // email settings
@@ -379,11 +379,11 @@ Class Payroll
                 $response = "Something is wrong: <br/>". $mail->ErrorInfo;
                 echo '<br/>'.$status."<br/>".$response;
             }
-        } 
+        }
     }
 
     public function sendEmailSchedule($email, $lastname, $timeIn, $timeOut) {
-        
+
         $name = 'JTDV Security Agency';
         $subject = 'Schedule';
 
@@ -425,11 +425,11 @@ Class Payroll
                 echo '<br/>'.$status."<br/>".$response;
                 echo !extension_loaded('openssl')?"Not Available":"Available";
             }
-        } 
+        }
     }
-    
+
     public function sendEmailNewMessage($email, $lastname) {
-        
+
         $name = 'JTDV Security Agency';
         $subject = 'You have a new message!';
 
@@ -469,7 +469,7 @@ Class Payroll
                 echo '<br/>'.$status."<br/>".$response;
                 echo !extension_loaded('openssl')?"Not Available":"Available";
             }
-        } 
+        }
     }
 
     //OIC Attendance Functions
@@ -489,7 +489,7 @@ Class Payroll
                 $getShiftSpan = $_SESSION['OICDetails']['shift_span'];
             }
 
-            date_default_timezone_set("Asia/Manila");            
+            date_default_timezone_set("Asia/Manila");
             $timenow = strtotime($_POST['timenow']);
             $timein = strtotime($getScheduleTimeIn) - 60*60;
             $timeout = strtotime($getScheduleTimeIn) + 60*60*$getShiftSpan - 60*60;
@@ -498,11 +498,11 @@ Class Payroll
                 $this->TimeInValidate();
             } else {
                 if (isset($_SESSION['GuardsDetails'])) {
-                    $_SESSION['errmsg'] = 'You can only time-in (1 hour) before time schedule';  
-                    header('Location: GuardsAttendance.php?msg=time_in_error'); 
+                    $_SESSION['errmsg'] = 'You can only time-in (1 hour) before time schedule';
+                    header('Location: GuardsAttendance.php?msg=time_in_error');
                 } else {
-                    $_SESSION['errmsg'] = 'You can only time-in (1 hour) before time schedule';  
-                    header('Location: OICAttendance.php?msg=time_in_error'); 
+                    $_SESSION['errmsg'] = 'You can only time-in (1 hour) before time schedule';
+                    header('Location: OICAttendance.php?msg=time_in_error');
                 }
             }
         }
@@ -547,16 +547,16 @@ Class Payroll
                 } else {
                     $status = 'Good';
                 }
-    
+
                 $sqlgetLoginSession = "SELECT login_session FROM emp_attendance WHERE login_session = ? AND empId = ?";
                 $stmtLoginSession = $this->con()->prepare($sqlgetLoginSession);
                 $stmtLoginSession->execute([$login_session, $empId]);
-    
+
                 $verify = $stmtLoginSession->fetch();
-    
+
                 if ($row = $verify) {
                     echo 'You can only login once.';
-                } else {    
+                } else {
                     $getHours = abs(strtotime($getScheduleTimeIn) - strtotime($getScheduleTimeOut)) / 3600;
                     $ConcatTimeDate = strtotime($getScheduleTimeIn." ".$datenow."+ ".$getHours." HOURS");
                     $ConvertToDate = date("Y/m/d", $ConcatTimeDate);
@@ -570,7 +570,7 @@ Class Payroll
                     $sql = "INSERT INTO emp_attendance(empId, timeIn, datetimeIn, datetimeOut, location, login_session, status) VALUES(?, ?, ?, ?, ?, ?, ?)";
                     $stmt = $this->con()->prepare($sql);
                     $stmt->execute([$empId, $TimeInsert, $datenow, $ConvertToDate, $location, $login_session, $status]);
-        
+
                     $users = $stmt->fetch();
                     $countRow = $stmt->rowCount();
 
@@ -633,7 +633,7 @@ Class Payroll
                             header('Location: GuardsAttendance.php?msg=time_out_error');
                         } else {
                             header('Location: OICAttendance.php?msg=time_out_error');
-                        } 
+                        }
                     }
                 } else if ($NewTimeNow >= $NewSchedTimeOut) {
                     if ($NewTimeNow >= $NewSchedTimeOut && $NewTimeNow <= $NewSchedTimeOutNoInterval) {
@@ -641,12 +641,12 @@ Class Payroll
                     } else if ($NewTimeNow <= $NewSchedTimeOut && $NewTimeNow <= $NewSchedTimeOutNoInterval) {
                         $this->TimeOutUpdate();
                     } else {
-                        $_SESSION['errmsg'] = 'You can only time-out 1 hour before your time out schedule.';  
+                        $_SESSION['errmsg'] = 'You can only time-out 1 hour before your time out schedule.';
                         if (isset($_SESSION['GuardsDetails'])) {
                             header('Location: GuardsAttendance.php?msg=time_out_error');
                         } else {
                             header('Location: OICAttendance.php?msg=time_out_error');
-                        } 
+                        }
                     }
                 }
             } else {
@@ -661,7 +661,7 @@ Class Payroll
             $getempId = $_SESSION['GuardsDetails']['empId'];
         } else {
             $getempId = $_SESSION['OICDetails']['empId'];
-        } 
+        }
 
         $strReplace = str_replace('-', '_', $getempId);
         $textformat = "time_in_".$strReplace;
@@ -675,7 +675,7 @@ Class Payroll
 
         $verify = $stmtTimeOutUpdate->fetch();
         $countRowUpdate = $stmtTimeOutUpdate->rowCount();
-        
+
         $_SESSION['successmsg'] = 'Time-out successfully';
 
         if (isset($_SESSION['GuardsDetails'])) {
@@ -705,7 +705,7 @@ Class Payroll
     }
 
     public function alreadyLogin() {
-        
+
         if (isset($_SESSION['GuardsDetails'])) {
             $getSessionEmpId = $_SESSION['GuardsDetails']['empId'];
         } else {
@@ -782,7 +782,7 @@ Class Payroll
                         for (var i=0;i<x.length;i+=1) {
                             x[i].style.display = 'block';
                         }
-                    </script>"; 
+                    </script>";
             } else if ($getmsg == 'time_out_success') {
                 echo "<script>
                         let viewModal = document.querySelector('.view-modal-success');
@@ -792,7 +792,7 @@ Class Payroll
                         for (var i=0;i<x.length;i+=1) {
                             x[i].style.display = 'block';
                         }
-                    </script>"; 
+                    </script>";
             } else if ($getmsg == 'leave_success') {
                 echo "<script>
                         let viewModal = document.querySelector('.view-modal-success');
@@ -802,7 +802,7 @@ Class Payroll
                         for (var i=0;i<x.length;i+=1) {
                             x[i].style.display = 'block';
                         }
-                    </script>"; 
+                    </script>";
             } else if ($getmsg == 'violation_success'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-success');
@@ -812,7 +812,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'update_violation_success'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-success');
@@ -822,7 +822,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'you_did_not_change_anything'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-error');
@@ -832,7 +832,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'delete_violation_success'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-success');
@@ -842,7 +842,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'delete_violation_error'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-error');
@@ -852,7 +852,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'guard_schedule_updated'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-success');
@@ -862,7 +862,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'query_schedule_error'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-error');
@@ -872,7 +872,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'change_info_success'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-success');
@@ -882,7 +882,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'change_info_not_changed'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-error');
@@ -892,7 +892,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'account_incorrect_password'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-error');
@@ -902,7 +902,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'password_not_match'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-error');
@@ -912,7 +912,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'password_length_error'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-error');
@@ -922,7 +922,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'incorrect_current_password'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-error');
@@ -932,7 +932,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'change_password_successfully'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-success');
@@ -942,7 +942,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'mark_absent_request_denied'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-error');
@@ -952,7 +952,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'mark_absent_success'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-success');
@@ -962,7 +962,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'feedback_already_committed'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-error');
@@ -972,7 +972,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             } else if ($getmsg == 'feedback_success'){
                 echo "<script>
                 let viewModal = document.querySelector('.view-modal-success');
@@ -982,7 +982,7 @@ Class Payroll
                 for (var i=0;i<x.length;i+=1) {
                     x[i].style.display = 'block';
                 }
-            </script>"; 
+            </script>";
             }
         }
     }
@@ -1011,7 +1011,7 @@ Class Payroll
             } else {
                 $timeOut = $users->datetimeOut.'<br>'.date("H:i:s", strtotime($users->timeOut));
             }
-        
+
                 echo "<tr>
                         <td>$timeIn</td>
                         <td>$timeOut</td>
@@ -1034,14 +1034,14 @@ Class Payroll
                     $getId = $_SESSION['OICDetails']['empId'];
                 }
                 $statuscheck = 'Pending';
-    
+
                 $sqlfind = "SELECT * FROM leave_request WHERE empId = ? AND status = ?";
                 $stmtfind = $this->con()->prepare($sqlfind);
                 $stmtfind->execute([$getId, $statuscheck]);
-    
+
                 $countRowfind = $stmtfind->rowCount();
-    
-                if ($countRowfind > 0) {        
+
+                if ($countRowfind > 0) {
                     $_SESSION['errmsg'] = 'You already have a pending request. Please wait until it approves.';
                     if (isset($_SESSION['GuardsDetails'])) {
                         header('Location: GuardsLeave.php?msg=request_denied');
@@ -1053,10 +1053,10 @@ Class Payroll
                     if ($typeOfLeave == "Sick Leave" || $typeOfLeave == "Emergency Leave") {
                         $this->insertLeave();
                     } else {
-                        $sqlCountLeave = "SELECT COUNT(typeOfLeave) 
-                        FROM leave_request 
-                        WHERE empId = ? 
-                        AND typeOfLeave 
+                        $sqlCountLeave = "SELECT COUNT(typeOfLeave)
+                        FROM leave_request
+                        WHERE empId = ?
+                        AND typeOfLeave
                         IN ('Maternity Leave', 'Paternity Leave', 'Vacation Leave')";
 
                         $stmtCountLeave = $this->con()->prepare($sqlCountLeave);
@@ -1092,7 +1092,7 @@ Class Payroll
         $stmtselect->execute([$getempId]);
 
         while ($users = $stmtselect->fetch()) {
-        
+
             $parse_leave_end = strtotime($users->leave_end);
             $getdate = $this->getDateTime();
             $parse_date_now = strtotime("now". ' '.'Asia/Manila');
@@ -1102,7 +1102,7 @@ Class Payroll
             } else {
                 $status = ucfirst($users->status);
             }
-        
+
             if (isset($_SESSION['GuardsDetails'])) {
                 echo "<tr>
                         <td>$users->date_created</td>
@@ -1143,7 +1143,7 @@ Class Payroll
                 $parse_leave_end = strtotime($getUserId->leave_end);
                 $getdate = $this->getDateTime();
                 $parse_date_now = strtotime("now". ' '.'Asia/Manila');
-    
+
                 if ($parse_date_now >= $parse_leave_end && $getUserId->status == 'approved') {
                     $status = 'Completed';
                 } else {
@@ -1158,7 +1158,7 @@ Class Payroll
                 echo "<script>
                         let viewModal = document.querySelector('.view-modal');
                         viewModal.setAttribute('id', 'show-modal');
-                        
+
                         let status = document.querySelector('#showStatus').value = '$status';
                         let typeOfLeave = document.querySelector('#showType').value = '$type';
                         let leave_start = document.querySelector('#showInputFrom').value = '$leave_start';
@@ -1189,7 +1189,7 @@ Class Payroll
         $typeOfLeave = $_POST['type'];
         $status = 'Pending';
         $getDateNow = $getDateTime['date'];
-        
+
         $strFrom = $dateFrom;
         $strTo = $dateTo;
 
@@ -1200,9 +1200,9 @@ Class Payroll
         $stmt->execute([$getId, $days, $strFrom, $strTo, $typeOfLeave, $reason, $status, $getDateNow]);
 
         $countRow = $stmt->rowCount();
-        
+
         if ($countRow > 0) {
-            $_SESSION['successmsg'] = 'Request added successfully'; 
+            $_SESSION['successmsg'] = 'Request added successfully';
 
             $sqlAddLog = "INSERT INTO emp_log (empId, action, date_created) VALUES (?, ?, ?)";
             $stmtAddLog = $this->con()->prepare($sqlAddLog);
@@ -1252,9 +1252,9 @@ Class Payroll
 
             $getdate = $this->getDateTime();
             $datenow = $getdate['date'];
-            
+
             $paid >= 100 ? $description = "uniform" : $description = NULL;
-            
+
             $sql = "INSERT INTO violationsandremarks (empId, violation, fine, date_created, paid, description) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $this->con()->prepare($sql);
             $stmt->execute([$empId, $violation, $fine, $datenow, $paid, $description]);
@@ -1321,9 +1321,9 @@ Class Payroll
                             e.email,
                             e.empId
                         FROM violationsandremarks v
-                        INNER JOIN employee e 
+                        INNER JOIN employee e
                         ON v.empId = e.empId
-                        WHERE v.empId = ? 
+                        WHERE v.empId = ?
                         ORDER BY id DESC";
             $stmtselect = $this->con()->prepare($sqlselect);
             $stmtselect->execute([$getEmpId]);
@@ -1345,7 +1345,7 @@ Class Payroll
                             e.email,
                             e.empId
                         FROM violationsandremarks v
-                        INNER JOIN employee e 
+                        INNER JOIN employee e
                         ON v.empId = e.empId
                         ORDER BY id DESC";
             $stmtselect = $this->con()->query($sqlselect);
@@ -1400,7 +1400,7 @@ Class Payroll
             $countRow = $stmt->rowCount();
 
             if ($countRow > 0) {
-                $_SESSION['successmsg'] = 'Violation updated successfully'; 
+                $_SESSION['successmsg'] = 'Violation updated successfully';
                 header('location: OICViewViolations.php?msg=update_violation_success');
             } else {
                 $_SESSION['errmsg'] = 'You did not change anything';
@@ -1422,13 +1422,13 @@ Class Payroll
             $countRow = $stmt->rowCount();
 
             if ($countRow > 0) {
-                $_SESSION['successmsg'] = 'Violation deleted successfully'; 
+                $_SESSION['successmsg'] = 'Violation deleted successfully';
                 header('location: OICViewViolations.php?msg=delete_violation_success');
             } else {
-                $_SESSION['successmsg'] = 'There is an error to the system'; 
+                $_SESSION['successmsg'] = 'There is an error to the system';
                 header('location: OICViewViolations.php?msg=delete_violation_error');
             }
-        } 
+        }
     }
 
     public function showModalViolation() {
@@ -1437,7 +1437,7 @@ Class Payroll
 
             $sql = "SELECT v.*,
                             i.body
-                    FROM violationsandremarks v 
+                    FROM violationsandremarks v
 
                     LEFT JOIN inbox i
                     ON v.remark = i.id
@@ -1460,7 +1460,7 @@ Class Payroll
                 echo "<script>
                         let viewModal = document.querySelector('.view-modal');
                         viewModal.setAttribute('id', 'show-modal');
-                        
+
                         let showempId = document.querySelector('#showempId').value = '$empId';
                         let showViolation = document.querySelector('#showViolation').value = '$violation';
                         let showViolationFine = document.querySelector('#showViolationFine').value = '$violationfine';
@@ -1480,10 +1480,10 @@ Class Payroll
             $timeOut = $_POST['timeOut'];
             $shiftSpan = $_POST['shiftSpan'];
             $shift = $_POST['shift'];
-    
+
             $newtimeIn = strtotime($timeIn);
             $newtimeOut = strtotime($timeOut);
-    
+
             $strTimeIn = date('h:i:s A', $newtimeIn);
             $strTimeOut = date('h:i:s A', $newtimeOut);
 
@@ -1554,7 +1554,7 @@ Class Payroll
 
         while($row = $stmt->fetch()) {
             $fullname = $row->lastname.', '.$row->firstname;
-            
+
             if ($row->scheduleTimeIn === NULL || $row->scheduleTimeOut === NULL) {
                 $scheduled = 'No';
             } else {
@@ -1590,10 +1590,10 @@ Class Payroll
         $company = $_SESSION['OICDetails']['company'];
 
         $sql = "SELECT COUNT(*)
-                FROM schedule 
+                FROM schedule
                 WHERE company = ?
-                AND empId != ? 
-                AND scheduleTimeIn 
+                AND empId != ?
+                AND scheduleTimeIn
                 AND scheduleTimeOut IS NOT NULL";
         $stmt = $this->con()->prepare($sql);
         $stmt->execute([$company, $empId]);
@@ -1609,9 +1609,9 @@ Class Payroll
         $company = $_SESSION['OICDetails']['company'];
         $shift = 'First Shift';
         $sql = "SELECT COUNT(*)
-                FROM schedule 
+                FROM schedule
                 WHERE company = ?
-                AND empId != ? 
+                AND empId != ?
                 AND shift = ?";
         $stmt = $this->con()->prepare($sql);
         $stmt->execute([$company, $empId, $shift]);
@@ -1627,9 +1627,9 @@ Class Payroll
         $company = $_SESSION['OICDetails']['company'];
         $shift = 'Second Shift';
         $sql = "SELECT COUNT(*)
-                FROM schedule 
+                FROM schedule
                 WHERE company = ?
-                AND empId != ? 
+                AND empId != ?
                 AND shift = ?";
         $stmt = $this->con()->prepare($sql);
         $stmt->execute([$company, $empId, $shift]);
@@ -1665,7 +1665,7 @@ Class Payroll
 
                 if ($getUserId->scheduleTimeIn === NULL) {
                     $timeIn = NULL;
-                } else {                
+                } else {
                     $originalTimeIn = $getUserId->scheduleTimeIn;
                     $parseToTimeDate = strtotime($originalTimeIn);
                     $timeIn = date("H", $parseToTimeDate);
@@ -1673,13 +1673,13 @@ Class Payroll
 
                 if ($getUserId->shift_span === NULL) {
                     $shift_span = NULL;
-                } else {                
+                } else {
                     $shift_span = $getUserId->shift_span;
                 }
 
                 if ($getUserId->shift === NULL) {
                     $shift = NULL;
-                } else {                
+                } else {
                     $shift = $getUserId->shift;
                 }
 
@@ -1734,7 +1734,7 @@ Class Payroll
     public function ShowAbsentModal() {
         if(isset($_GET['aid'])) {
             $aid = $_GET['aid'];
-    
+
             echo "<script>
                     let viewModal = document.querySelector('.view-modal');
                     viewModal.setAttribute('id', 'show-modal');
@@ -1745,7 +1745,7 @@ Class Payroll
     public function ShowVoidModal() {
         if(isset($_GET['void'])) {
             $aid = $_GET['void'];
-    
+
             echo "<script>
                     let viewModal = document.querySelector('.view-modal-void');
                     viewModal.setAttribute('id', 'show-modal');
@@ -1761,10 +1761,10 @@ Class Payroll
             $sqlCheck = "SELECT * FROM schedule WHERE empId = ?";
             $stmtCheck = $this->con()->prepare($sqlCheck);
             $stmtCheck->execute([$getId]);
-        
+
             $usersCheck = $stmtCheck->fetch();
             $countRowCheck = $stmtCheck->rowCount();
-        
+
             if ($countRowCheck > 0) {
                 $hours = $usersCheck->shift_span;
 
@@ -1787,53 +1787,53 @@ Class Payroll
                     $event_name = "Absent_".$strReplace;
                     $nextDay = date('Y-m-d H:i:s', strtotime(date("Y/m/d").' 1 DAY'));
                     $doFunction = "UPDATE `employee` SET `availability` = 'Unavailable' WHERE `empId` = '$getId'; DELETE FROM `do_event` WHERE `event_name` = '$event_name'";
-        
+
                     $sqlUpdate = "BEGIN;
                                     INSERT INTO emp_attendance (empId, timeIn, timeOut, datetimeIn, datetimeOut, status, login_session) VALUES (?, ?, ?, ?, ?, ?, ?);
                                     INSERT INTO violationsandremarks (empId, violation, date_created) VALUES (?, ?, ?);
                                     UPDATE employee SET availability = ? WHERE empId = ?;
-                                    INSERT INTO do_event (event_name, execute_at, do_function) VALUES (?, ?, ?); 
+                                    INSERT INTO do_event (event_name, execute_at, do_function) VALUES (?, ?, ?);
                                 COMMIT;";
-        
+
                     $stmtUpdate = $this->con()->prepare($sqlUpdate);
                     $stmtUpdate->execute([$getId, $strtimeNow, $strtimeNow, $dateNow, $dateNow, $status, $login_session, $getId, $violation, $dateNow, $availability, $getId, $event_name, $nextDay, $doFunction]);
-        
+
                     $sqlFind = "SELECT * FROM employee WHERE empId = ?";
                     $stmtFind = $this->con()->prepare($sqlFind);
                     $stmtFind->execute([$getId]);
-                    
+
                     $usersFind = $stmtFind->fetch();
                     $countRowFind = $stmtFind->rowCount();
-                    
+
                     if ($countRowFind > 0) {
                         $email = $usersFind->email;
                         $lastname = $usersFind->lastname;
-                        
+
                         $empId = $getId;
                         $subject = "Marked as Absent";
                         $body = "You will not be able to time-in for this day for not attending to the establishment for more than 1 hour.
-                        
+
 If you think that it is just a mistake, you may comply to our agency to solve this issue.";
                         $date_created = date("Y/m/d h:i:s A");
                         $status = "Unread";
                         $generateId = date("dmy") . time();
-                        
+
                         $sqlInbox = "INSERT INTO inbox (id, empId, subject, body, date_created, status) VALUES (?,?,?,?,?,?)";
                         $stmtInbox = $this->con()->prepare($sqlInbox);
                         $stmtInbox->execute([$generateId, $empId, $subject, $body, $date_created, $status]);
-                        
+
                         $countRowInbox = $stmtInbox->rowCount();
-                        
+
                         if ($countRowInbox > 0) {
                             $this->sendEmailNewMessage($email, $lastname);
-                            $_SESSION['successmsg'] = "The selected guard has been successfully marked as absent and not be able to login to our system for the day."; 
+                            $_SESSION['successmsg'] = "The selected guard has been successfully marked as absent and not be able to login to our system for the day.";
                              header("location: OICMonitorGuards.php?msg=mark_absent_success");
                         } else {
                             //It must be an error;
                         }
                     }
                 } else {
-                    $_SESSION['errmsg'] = "You can't mark this as Absent Without Official Leave (AWOL) when this guards' schedule isn't started yet"; 
+                    $_SESSION['errmsg'] = "You can't mark this as Absent Without Official Leave (AWOL) when this guards' schedule isn't started yet";
                     header("location: OICMonitorGuards.php?msg=mark_absent_request_denied");
                 }
             }
@@ -1847,10 +1847,10 @@ If you think that it is just a mistake, you may comply to our agency to solve th
             $sqlCheck = "SELECT * FROM schedule WHERE empId = ?";
             $stmtCheck = $this->con()->prepare($sqlCheck);
             $stmtCheck->execute([$getId]);
-        
+
             $usersCheck = $stmtCheck->fetch();
             $countRowCheck = $stmtCheck->rowCount();
-        
+
             if ($countRowCheck > 0) {
                 date_default_timezone_set('Asia/Manila');
                 $dateNow = date("Y/m/d");
@@ -1870,28 +1870,28 @@ If you think that it is just a mistake, you may comply to our agency to solve th
 
 
                 $sqlUpdate = "BEGIN;
-                                INSERT INTO do_event (event_name, execute_at, do_function) VALUES (?, ?, ?); 
+                                INSERT INTO do_event (event_name, execute_at, do_function) VALUES (?, ?, ?);
                                 INSERT INTO emp_attendance (empId, timeIn, timeOut, datetimeIn, datetimeOut, status, login_session) VALUES (?, ?, ?, ?, ?, ?, ?);
                                 INSERT INTO violationsandremarks (empId, violation, date_created) VALUES (?, ?, ?);
                                 UPDATE employee SET availability = ? WHERE empId = ?;
                                 DELETE FROM do_event WHERE event_name = ?;
                                 DELETE FROM emp_attendance WHERE datetimeIn = ? AND empId = ? AND status != ?;
                             COMMIT;";
-        
+
                 $stmtUpdate = $this->con()->prepare($sqlUpdate);
                 $stmtUpdate->execute([$newEventName, $nextDay, $doFunction, $getId, $strtimeNow, $strtimeNow, $dateNow, $dateNow, $status, $login_session, $getId, $violation, $dateNow, $availability, $getId, $event_name, $dateNow, $getId, $status]);
-                
+
                 $sqlFind = "SELECT * FROM employee WHERE empId = ?";
                 $stmtFind = $this->con()->prepare($sqlFind);
                 $stmtFind->execute([$getId]);
-                    
+
                 $usersFind = $stmtFind->fetch();
                 $countRowFind = $stmtFind->rowCount();
-                
+
                 if ($countRowFind > 0) {
                     $email = $usersFind->email;
                     $lastname = $usersFind->lastname;
-                        
+
                     $empId = $getId;
                     $subject = "Marked as Absent";
                     $body = "It seems like you are not in your post for less than hour while you are timed-in. We void your attenendance and you may not be able to time-in for this day.
@@ -1900,20 +1900,20 @@ If you think that it is just a mistake, you may comply to our agency to solve th
                     $date_created = date("Y/m/d h:i:s A");
                     $status = "Unread";
                     $generateId = date("dmy") . time();
-                        
+
                     $sqlInbox = "INSERT INTO inbox (id, empId, subject, body, date_created, status) VALUES (?,?,?,?,?,?)";
                     $stmtInbox = $this->con()->prepare($sqlInbox);
                     $stmtInbox->execute([$generateId, $empId, $subject, $body, $date_created, $status]);
-                        
+
                     $countRowInbox = $stmtInbox->rowCount();
-                    
+
                     if ($countRowInbox > 0) {
-                        $_SESSION['successmsg'] = "The selected guard has been successfully marked as absent and not be able to login to our system for the day."; 
+                        $_SESSION['successmsg'] = "The selected guard has been successfully marked as absent and not be able to login to our system for the day.";
                         header("location: OICMonitorGuards.php?msg=mark_absent_success");
                     } else {
                         //It must be an error;
                     }
-                    
+
                 }
             }
         }
@@ -1944,9 +1944,9 @@ If you think that it is just a mistake, you may comply to our agency to solve th
             $dateNow = date("Y/m/d");
 
             if ($row->login_session == 'true') {
-                
+
                 $timeIn = 'Yes';
-    
+
                 echo "<tr>
                         <td>$fullname</td>
                         <td class='schedule_table'>$timeIn</td>
@@ -1975,15 +1975,15 @@ If you think that it is just a mistake, you may comply to our agency to solve th
         }
         $login_session = 'true';
 
-        $sql = "SELECT * 
-                FROM emp_attendance 
+        $sql = "SELECT *
+                FROM emp_attendance
                 WHERE empId = ? AND login_session = ?";
         $stmt = $this->con()->prepare($sql);
         $stmt->execute([$getEmpId, $login_session]);
 
         $users = $stmt->fetch();
         $countRow = $stmt->rowCount();
-        
+
         if ($users = $stmt->fetch()) {
             $timeIn = date('H:i:s', strtotime($users->timeIn));
         } else {
@@ -2107,24 +2107,24 @@ If you think that it is just a mistake, you may comply to our agency to solve th
             $seed = $_SESSION['seed'];
             $getSeed = $_GET['seed'];
         }
-        
+
         date_default_timezone_set('Asia/Manila');
 
-        $sql = "SELECT 
+        $sql = "SELECT
                 s.empId,
                 s.scheduleTimeIn,
                 s.scheduleTimeOut,
                 s.company,
                 c.comp_location,
                 e.lastname
-            FROM employee e 
-        
+            FROM employee e
+
             INNER JOIN schedule s
             ON e.empId = s.empId
 
             LEFT JOIN company c
             ON s.company = c.company_name
-        
+
             WHERE e.email = ? AND e.password = ? AND e.qrcode = ?";
         $stmt = $this->con()->prepare($sql);
         $stmt->execute([$email, $password, $seed]);
@@ -2163,14 +2163,14 @@ If you think that it is just a mistake, you may comply to our agency to solve th
             $sqlgetLoginSession = "SELECT login_session FROM emp_attendance WHERE login_session = ? AND empId = ?";
             $stmtLoginSession = $this->con()->prepare($sqlgetLoginSession);
             $stmtLoginSession->execute([$login_session, $empId]);
-    
+
             $verify = $stmtLoginSession->fetch();
             $countRowVerify = $stmtLoginSession->rowCount();
 
             if ($countRowVerify > 0) {
                 $_SESSION['login_session'] = "already";
             } else {
-                    
+
                 $getHours = abs(strtotime($getScheduleTimeIn) - strtotime($getScheduleTimeOut)) / 3600;
                 $ConcatTimeDate = strtotime($getScheduleTimeIn." ".$datenow."+ ".$getHours." HOURS");
                 $ConvertToDate = date("Y/m/d", $ConcatTimeDate);
@@ -2184,10 +2184,10 @@ If you think that it is just a mistake, you may comply to our agency to solve th
                 $sql = "INSERT INTO emp_attendance(empId, timeIn, datetimeIn, datetimeOut, location, login_session, status) VALUES(?, ?, ?, ?, ?, ?, ?)";
                 $stmt = $this->con()->prepare($sql);
                 $stmt->execute([$empId, $TimeInsert, $datenow, $ConvertToDate, $location, $login_session, $status]);
-        
+
                 $users = $stmt->fetch();
                 $countRow = $stmt->rowCount();
-                    
+
                 if($countRow > 0) {
                     $doFunction = "UPDATE `emp_attendance` SET `login_session` = 'false', `timeOut` = '$getScheduleTimeOut', `datetimeOut` = '$ConvertToDate', `salary_status` = '$salary_status' WHERE `empid` = '$empId'; DELETE FROM `do_event` WHERE `event_name` = '$customEventname'";
                     $sqlInsertEvent = "INSERT INTO do_event (event_name, execute_at, do_function) VALUES (?, ?, ?)";
@@ -2212,18 +2212,18 @@ If you think that it is just a mistake, you may comply to our agency to solve th
             $getSeed = $_GET['seed'];
         }
 
-        $sql = "SELECT 
+        $sql = "SELECT
                 s.empId,
                 s.scheduleTimeIn,
                 s.shift_span,
                 e.lastname
-            FROM employee e 
-        
+            FROM employee e
+
             INNER JOIN schedule s
             ON e.empId = s.empId
-        
+
             WHERE email = ? AND password = ? AND qrcode = ?";
-        
+
         $stmt = $this->con()->prepare($sql);
         $stmt->execute([$email, $password, $seed]);
 
@@ -2249,7 +2249,7 @@ If you think that it is just a mistake, you may comply to our agency to solve th
             }
         }
     }
-    
+
     public function popupMessage() {
 
         isset($_SESSION['GuardsDetails']) ? $empId = $_SESSION['GuardsDetails']['empId'] : $empId = $_SESSION['OICDetails']['empId'];
@@ -2259,7 +2259,7 @@ If you think that it is just a mistake, you may comply to our agency to solve th
         $sql = "SELECT * FROM inbox WHERE empId = ? AND status = ?";
         $stmt = $this->con()->prepare($sql);
         $stmt->execute([$empId, $status]);
-        
+
         $users = $stmt->rowCount();
 
         if ($users > 0) {
@@ -2283,7 +2283,7 @@ If you think that it is just a mistake, you may comply to our agency to solve th
         $sql = "SELECT * FROM inbox WHERE empId = ? AND status = ?";
         $stmt = $this->con()->prepare($sql);
         $stmt->execute([$empId, $status]);
-        
+
         $users = $stmt->rowCount();
 
         if ($users > 0) {
@@ -2299,11 +2299,11 @@ If you think that it is just a mistake, you may comply to our agency to solve th
 
             isset($_SESSION['GuardsDetails']) ? $empId = $_SESSION['GuardsDetails']['empId'] : $empId = $_SESSION['OICDetails']['empId'];
             isset($_SESSION['GuardsDetails']) ? $link = 'GuardsInboxView.php' : $link = 'OICInboxView.php';
-    
+
             $sql = "SELECT * FROM inbox WHERE empId = ? AND subject LIKE ?";
             $stmt = $this->con()->prepare($sql);
             $stmt->execute([$empId, $search]);
-    
+
             while ($row = $stmt->fetch()) {
 
                 $date = date("Y/m/d", strtotime($row->date_created));
@@ -2319,14 +2319,14 @@ If you think that it is just a mistake, you may comply to our agency to solve th
         } else {
             isset($_SESSION['GuardsDetails']) ? $empId = $_SESSION['GuardsDetails']['empId'] : $empId = $_SESSION['OICDetails']['empId'];
             isset($_SESSION['GuardsDetails']) ? $link = 'GuardsInboxView.php' : $link = 'OICInboxView.php';
-    
+
             $sql = "SELECT * FROM inbox WHERE empId = ?";
             $stmt = $this->con()->prepare($sql);
             $stmt->execute([$empId]);
             while ($row = $stmt->fetch()) {
-    
+
                 $date = date("Y/m/d", strtotime($row->date_created));
-    
+
                 echo "<tr>
                         <td>$date</td>
                         <td>$row->subject</td>
@@ -2342,7 +2342,7 @@ If you think that it is just a mistake, you may comply to our agency to solve th
         $sql = "SELECT * FROM violationsandremarks WHERE remark IS NULL";
         $stmt = $this->con()->prepare($sql);
         $stmt->execute();
-    
+
         while ($row = $stmt->fetch()) {
             echo "<tr>
                     <td>$row->empId</td>
@@ -2352,26 +2352,26 @@ If you think that it is just a mistake, you may comply to our agency to solve th
                 </tr>";
         }
     }
-    
+
     public function viewListRemarkedViolation() {
-        $sql = "SELECT 
+        $sql = "SELECT
                     v.remark,
                     v.empId,
                     i.*,
                     e.firstname,
                     e.lastname
                 FROM violationsandremarks v
-    
+
                 INNER JOIN inbox i
                 ON v.remark = i.id
-    
+
                 INNER JOIN employee e
                 ON v.empId = e.empId
-    
+
                 WHERE v.remark IS NOT NULL";
         $stmt = $this->con()->prepare($sql);
         $stmt->execute();
-    
+
         while ($row = $stmt->fetch()) {
             echo "<tr>
                     <td>$row->empId</td>
@@ -2382,52 +2382,52 @@ If you think that it is just a mistake, you may comply to our agency to solve th
                 </tr>";
         }
     }
-    
+
     public function viewModalListRemarkedViolation() {
         if (isset($_GET['lrid'])) {
             $lrid = $_GET['lrid'];
-                
+
             $sqlView = "SELECT
                             i.*,
                             e.firstname,
                             e.lastname
                         FROM inbox i
-    
+
                         INNER JOIN employee e
                         ON i.empId = e.empId
-                            
+
                         WHERE i.id = ?";
             $stmtView = $this->con()->prepare($sqlView);
             $stmtView->execute([$lrid]);
-    
+
             $usersView = $stmtView->fetch();
             $countRowView = $stmtView->rowCount();
-    
+
             if ($countRowView > 0) {
                 echo "<div>
                         <h1>View</h1>
-    
+
                         <div>
                             <label for='showName'>Name</label>
                             <input type='text' id='showName' value='$usersView->firstname $usersView->lastname' readonly>
                         </div>
-    
+
                         <div>
                             <label for='showEmpID'>Employee ID</label>
                             <input type='text' id='showEmpID' value='$usersView->empId' readonly>
                         </div>
-                    
+
                         <div>
                             <label for='showSubject'>Subject</label>
                             <input type='text' id='showSubject' value='$usersView->subject' readonly>
                         </div>
-                    
+
                         <div>
                             <label for='showBody'>Remark</label>
                             <br>
                             <textarea style='resize: none; width: 30%; padding: 6px 20px; height: 100px;' id='showBody' readonly>$usersView->body</textarea>
                         </div>
-                    
+
                         <div>
                             <label for='showDate'>Date</label>
                             <input type='text' id='showDate' value='$usersView->date_created' readonly>
@@ -2436,49 +2436,49 @@ If you think that it is just a mistake, you may comply to our agency to solve th
             }
         }
     }
-    
+
     public function viewModalViolation() {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
-                
+
             $sqlView = "SELECT v.*,
                                 e.*
                         FROM violationsandremarks v
-    
+
                         INNER JOIN employee e
                         ON v.empId = e.empId
-                            
+
                         WHERE v.id = ? AND v.remark IS NULL";
             $stmtView = $this->con()->prepare($sqlView);
             $stmtView->execute([$id]);
-    
+
             $usersView = $stmtView->fetch();
             $countRowView = $stmtView->rowCount();
-    
+
             if ($countRowView > 0) {
                 echo "<div>
                         <h1>View</h1>
-    
+
                         <div>
                             <label for='showName'>Name</label>
                             <input type='text' id='showName' value='$usersView->firstname $usersView->lastname' readonly>
                         </div>
-    
+
                         <div>
                             <label for='showEmpID'>Employee ID</label>
                             <input type='text' id='showEmpID' value='$usersView->empId' readonly>
                         </div>
-                    
+
                         <div>
                             <label for='showViolation'>Violation</label>
                             <input type='text' id='showViolation' value='$usersView->violation' readonly>
                         </div>
-                    
+
                         <div>
                             <label for='showFine'>Fine</label>
                             <input type='text' id='showFine' value='$usersView->fine' placeholder='No fine' readonly>
                         </div>
-                    
+
                         <div>
                             <label for='showDate'>Date</label>
                             <input type='text' id='showDate' value='$usersView->date_created' readonly>
@@ -2487,34 +2487,34 @@ If you think that it is just a mistake, you may comply to our agency to solve th
             }
         }
     }
-    
+
     public function addModalRemarks() {
-    
+
         if (isset($_GET['rid'])) {
             $rid = $_GET['rid'];
-                
+
             $sqlRem = "SELECT v.*,
                                 e.*
                         FROM violationsandremarks v
-    
+
                         INNER JOIN employee e
                         ON v.empId = e.empId
-                            
+
                         WHERE v.id = ? AND v.remark IS NULL";
             $stmtRem = $this->con()->prepare($sqlRem);
             $stmtRem->execute([$rid]);
-    
+
             $usersRem = $stmtRem->fetch();
             $countRowRem = $stmtRem->rowCount();
-    
+
             if ($countRowRem > 0) {
-    
-                if ($usersRem->fine != NULL) {          
+
+                if ($usersRem->fine != NULL) {
                     $autoRemark = "Violation: $usersRem->violation&#013;&#013;Fine: $usersRem->fine.00&#013;&#013;(Insert message here)";
                 } else {
                     $autoRemark = "Violation: $usersRem->violation&#013;&#013;(Insert message)";
                 }
-    
+
                 echo "<div>
                         <h1>Remark</h1>
                         <form method='post' enctype='multipart/form-data'>
@@ -2522,34 +2522,34 @@ If you think that it is just a mistake, you may comply to our agency to solve th
                                 <label for='fullname'>Name</label>
                                 <input type='text' id='fullname' name='fullname' value='$usersRem->firstname $usersRem->lastname' readonly>
                             </div>
-    
+
                             <div>
                                 <label for='empid'>Employee ID</label>
                                 <input type='text' id='empid' name='empid' value='$usersRem->empId' readonly>
                             </div>
-    
+
                             <div>
                                 <label for='subject'>Subject</label>
                                 <input type='text' id='subject' name='subject' placeholder='Enter a subject' required>
                             </div>
-    
+
                             <div>
                                 <label for='body'>Remark</label>
                                 <br>
                                 <textarea style='resize: none; width: 30%; padding: 6px 20px; height: 100px;' id='body' name='body' maxlength='255' placeholder='Max of 255 characters.' required>$autoRemark</textarea>
                             </div>
-    
+
                             <div>
                                 <input type='file' name='file' id='file'>
                             </div>
-    
+
                             <input type='submit' name='submit'>
                         </form>
                     </div>";
             }
-    
+
             if (isset($_POST['submit'])) {
-                    
+
                 // Declaring Variables
                 date_default_timezone_set('Asia/Manila');
                 $location = "inbox/";
@@ -2562,32 +2562,32 @@ If you think that it is just a mistake, you may comply to our agency to solve th
                     $file_name = NULL;
                 }
 
-                    
+
                 $file_temp = $_FILES["file"]["tmp_name"]; // Get uploaded file temp
                 $file_size = $_FILES["file"]["size"]; // Get uploaded file size
-    
+
                 //$_POST Variable
-    
+
                 $empId = $_POST['empid'];
                 $subject = $_POST['subject'];
                 $body = $_POST['body'];
                 $date_created = date("Y/m/d h:i:s A");
                 $status = "Unread";
                 $generateId = date("dmy") . time();
-    
+
                 /*
                 How we can get mb from bytes
                 (mb*1024)*1024
-    
+
                 In my case i'm 10 mb limit
                 (10*1024)*1024
                 */
-    
+
                 $fileExt = explode('.', $file_name);
                 $fileActualExt = strtolower(end($fileExt));
-    
+
                 $allowed = array('docx', 'pdf', NULL);
-    
+
                 if (in_array($fileActualExt, $allowed)) {
                     if ($file_size > 10485760) { // Check file size 10mb or not
                         echo "Woops! File is too big. Maximum file size allowed for upload 10 MB.";
@@ -2596,15 +2596,15 @@ If you think that it is just a mistake, you may comply to our agency to solve th
                                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                         $stmt = $this->con()->prepare($sql);
                         $stmt->execute([$generateId, $empId, $subject, $body, $file_name, $file_new_name, $date_created, $status]);
-                
+
                         $countRow = $stmt->rowCount();
-                
+
                         if ($countRow > 0) {
                             //Update the remark data on the violationsandremarks table
                             $sqlUpdate = "UPDATE violationsandremarks SET remark = ? WHERE id = ?";
                             $stmtUpdate = $this->con()->prepare($sqlUpdate);
                             $stmtUpdate->execute([$generateId, $rid]);
-    
+
                             //This will move the uploaded file to the specific location
                             move_uploaded_file($file_temp, $location . $file_new_name);
                             header('Location: remarks.php?msg=success');
@@ -2612,11 +2612,11 @@ If you think that it is just a mistake, you may comply to our agency to solve th
                     }
                 } else {
                     echo 'Cannot upload this type of file.';
-                }     
+                }
             }
         }
     }
-    
+
     public function addFeedback() {
         if (isset($_POST['feedback'])) {
 
@@ -2640,10 +2640,10 @@ If you think that it is just a mistake, you may comply to our agency to solve th
                     $sql = "INSERT INTO feedback (fullname, position, category, comment, date_created) VALUES (?, ?, ?, ?, ?)";
                     $stmt = $this->con()->prepare($sql);
                     $stmt->execute([$fullname, $position, $category, $comment, $date_created]);
-        
+
                     $users = $stmt->fetch();
                     $countRow = $stmt->rowCount();
-        
+
                     if ($countRow > 0) {
                         $_SESSION['successmsg'] = "Your request has sent successfully.";
                         header('location: ?msg=feedback_success');
